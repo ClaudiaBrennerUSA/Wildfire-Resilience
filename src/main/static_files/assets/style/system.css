@@ -1,0 +1,134 @@
+.width-100-pct {
+    min-width: 100%;
+    width:100%;
+}
+.align-top {
+    vertical-align: top;
+    padding: 0px;
+}
+
+.leader-box {
+    
+}
+
+.company-name {
+    color: blue;
+}
+
+.banner {
+    background-color: yellow;
+    
+}
+
+.banner-image-container {
+    min-width: 100%;
+    width:100%;
+    min-height: 500px;
+    height: 500px; 
+    border: 2px solid blue;;
+    background-size: cover;
+  }
+.logo-box 
+{
+    background-color: rebeccapurple;
+}
+
+.homepage-header-box
+{
+    border: 3px solid black;
+}
+
+.hero-text-level-0
+{
+    font-size: xx-large;
+    color: orange;
+}
+
+.hero-text-level-1
+{
+    font-size: x-large;
+    color:white;
+}
+
+.image-text-0
+{
+    color: orange;
+}
+
+
+.hero-text-level-2
+{
+    font-size: large;
+    color: blue;
+}
+
+.content-box
+{
+    background-color: whitesmoke; 
+    padding-top: 3px;
+    padding-left: 1em; 
+    padding-right: 1em; 
+    padding-bottom: 2em; 
+    margin-bottom: 2em;
+}
+
+.content-box-header
+{
+    margin-bottom: 1em;
+
+}
+.content-box-header-headline
+{
+    text-align: center; 
+    width:100%;
+    font-size:x-large;
+    font-weight: bold;
+    color:blue;
+}
+
+.content-box-content
+{
+    font-size: medium;
+    padding-top:.5em;
+    padding-bottom: .5em;
+}
+
+.bg-system-pallette-a
+{
+    background-color: orangered;
+}
+
+.bg-system-pallette-b
+{
+    background-color: olivedrab;
+}
+
+.bg-system-pallette-c
+{
+    background-color: yellow;
+}
+ 
+.rs-card {
+    _background-color: red;
+    width:100%;
+    min-width:100%;
+    margin-bottom: 2em;
+    padding: 2px;
+}
+
+  @media screen and (min-width: 818px) {
+    .rs-card {
+        _background-color:yellow;
+        width: 100%;
+        min-width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .rs-card {
+        _background-color:green;
+        width: 50%;
+        min-width: 50%;
+    }
+  }
+

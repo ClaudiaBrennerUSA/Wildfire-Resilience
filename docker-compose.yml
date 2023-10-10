@@ -1,0 +1,19 @@
+services:
+  os:
+    build: ./docker/ubuntu
+    volumes:
+    - ./src:/var/www/scorecard/app
+
+    ports:
+    - "${PORT}:${PORT}"
+    
+    restart: always
+    container_name: scorecard_microsite_ubuntu
+    # #######
+    # These are ways to keep the container up and running after it starts
+    #
+    # command: tail -f /dev/null
+    # tty: true
+    # stdin_open: true
+    # ######
+    stdin_open: true

@@ -1,0 +1,5 @@
+#ignore the container level environment variables used by docker-compose.yml
+./.env
+
+#ignore the configuration of the environment variables (such as port) as these will be specific to each implementation
+src/main/config/env.js
