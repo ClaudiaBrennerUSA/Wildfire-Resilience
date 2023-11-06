@@ -4,136 +4,339 @@ body {
 }
 
 .width-100-pct {
-    min-width: 100%;
-    width:100%;
+  min-width: 100%;
+  width:100%;
 }
 .align-top {
-    vertical-align: top;
-    padding: 0px;
+  vertical-align: top;
+  padding: 0px;
+  color: #ADD8E6; /*arman*/
 }
 
 .leader-box {
-    
+  
 }
 
 .company-name {
-    color: blue;
+  color: blue;
 }
 
 .banner {
-    background-color: yellow;
-    
+  background-color: yellow;
+  
 }
 
 .banner-image-container {
-    min-width: 100%;
-    width:100%;
-    min-height: 500px;
-    height: 500px; 
-    border: 2px solid blue;;
-    background-size: cover;
-  }
+  min-width: 100%;
+  width:100%;
+  min-height: 500px;
+  height: 500px; 
+  border: 2px solid blue;;
+  background-size: cover;
+}
 .logo-box 
 {
-    background-color: rebeccapurple;
+  padding: 10px 10px;
+  background-color: rebeccapurple;
 }
 
 .homepage-header-box
 {
-    border: 3px solid black;
+  border: 3px solid black;
 }
 
 .hero-text-level-0
 {
-    font-size: xx-large;
-    color: orange;
+  font-size: xx-large;
+  color: orange;
 }
 
 .hero-text-level-1
 {
-    font-size: x-large;
-    color:white;
+  font-size: x-large;
+  color:white;
 }
 
 .image-text-0
 {
-    color: orange;
+  color: orange;
 }
 
 
 .hero-text-level-2
 {
-    font-size: large;
-    color: blue;
+  font-size: large;
+  color: blue;
 }
 
 .content-box
 {
-    background-color: whitesmoke; 
-    padding-top: 3px;
-    padding-left: 1em; 
-    padding-right: 1em; 
-    padding-bottom: 2em; 
-    margin-bottom: 2em;
+  background-color: whitesmoke; 
+  padding-top: 3px;
+  padding-left: 1em; 
+  padding-right: 1em; 
+  padding-bottom: 2em; 
+  margin-bottom: 2em;
 }
 
 .content-box-header
 {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 
 }
 .content-box-header-headline
 {
-    text-align: center; 
-    width:100%;
-    font-size:x-large;
-    font-weight: bold;
-    color:blue;
+  text-align: center; 
+  width:100%;
+  font-size:x-large;
+  font-weight: bold;
+  color:blue;
 }
 
 .content-box-content
 {
-    font-size: medium;
-    padding-top:.5em;
-    padding-bottom: .5em;
+  font-size: medium;
+  padding-top:.5em;
+  padding-bottom: .5em;
 }
 
 .bg-system-pallette-a
 {
-    background-color: orangered;
+  background-color: orangered;
 }
 
 .bg-system-pallette-b
 {
-    background-color: olivedrab;
+  background-color: olivedrab;
 }
 
 .bg-system-pallette-c
 {
-    background-color: yellow;
+  background-color: yellow;
 }
- 
+
 .rs-card {
-    _background-color: red;
-    width:100%;
-    min-width:100%;
-    margin-bottom: 2em;
-    padding: 2px;
+  _background-color:whitesmoke;
+  width:100%;
+  min-width:100%;
+  margin-bottom: 2em;
+  padding: 2px;
 }
 
-  @media screen and (min-width: 818px) {
-    .rs-card {
-        _background-color:yellow;
-        width: 100%;
-        min-width: 100%;
-    }
+@media screen and (min-width: 818px) {
+  .rs-card {
+      width: 100%;
+      min-width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .rs-card {
+      width: 50%;
+      min-width: 50%;
+  }
+}
+
+/*
+Navbar - Arman's code
+*/
+
+.row-under-comppany-name{
+  padding-bottom: 10px;
+  text-align: center; 
+  font-size: 15px;
+  
+}
+.row-under-logo{
+  font-size: 12px;
+  padding-left: 10px;
+}
+.navbar2{
+  height: 80px; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav1 {
+  display: flex;
+  justify-content: space-between; /* Pushes "CWPC" to the left and the navigation bar to the right */
+  align-items: center; 
+  width: 100%;
+  background-color: #333;
+  color: #fff; /* Change the text color for all text within .header */
+  padding: 22px 36px;
+  font-size: 12px;
+  text-transform: uppercase;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+.nav2 {
+  
+  display: flex;
+  justify-content: space-between; /* Pushes the menu items to the left and right edges */
+  align-items: center; 
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 22px 36px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link {
+  color: #fff; /* Replace 'your-desired-color' with the color you want */
+}
+
+
+
+.nav2 ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav2 li {
+  margin: 0 10px; /* Adjust the spacing between menu items */
+}
+
+.nav2 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav2 a:hover {
+  color: #f5f5f5; /* Change the color on hover if desired */
+}
+
+
+.cwpc{
+  font-size: 16px;
+}
+
+/* Style the contact link */
+#contact-and-search-row span {
+  font-weight: bold;
+  color: #007bff; /* Change to your preferred color */
+  margin-right: 1rem; /* Adjust spacing as needed */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Style the search form */
+#search-form-box form {
+  display: inline-block;
+  vertical-align: middle; /* Align the form vertically in the middle of the line */
+}
+
+#search-form-box input[type="search"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  width: 150px; /* Adjust width as needed */
+  vertical-align: middle; /* Align the input vertically in the middle of the form */
+}
+
+#search-form-box button {
+  padding: 5px 10px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle; /* Align the button vertically in the middle of the form */
+}
+
+/* Add some hover effect to the button */
+#search-form-box button:hover {
+  background-color: #0056b3; /* Change to your preferred hover color */
+}
+
+#consistent-row{
+  background-color: #ADD8E6;
+}
+  
+ /*
+  Claudia webflow file - hiral's code
+  */
+  body {
+    grid-column-gap: 2em;
+    grid-row-gap: 2.5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    color: #18181d;
+    text-align: left;
+    grid-auto-flow: row;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif !important;
+    font-size: 1em;
+    line-height: 1.5em;
+    width: 100%;
+  }
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 
-  @media screen and (min-width: 992px) {
-    .rs-card {
-        _background-color:green;
-        width: 50%;
-        min-width: 50%;
-    }
+  .content16-left-column {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
   }
 
+  .text-label {
+    opacity: .7;
+    text-transform: uppercase;
+    margin-bottom: .6em;
+    font-size: .7em;
+    font-weight: 500;
+    line-height: 1.2em;
+    display: block;
+}
+.size1-text {
+  white-space: normal;
+  margin: .7em;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 52px;
+}
+
+.size1-text.size1-top-clear {
+  margin-top: 0;
+}
+
+.size1-text.size1-bottom-clear {
+  margin-bottom: 0;
+}
+
+.size1-text.size1-full-clear {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+  .paragraph-70 {
+    opacity: .7;
+    margin-bottom: 10px;
+  }
+  
+  .paragraph-70.paragraph70-bottom-clear {
+    margin-bottom: 0;
+  }
+
+  .button-text{
+    color: var(--18181d);
+    text-transform: uppercase;
+    justify-content: flex-center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+    display: flex;
+  }
+  
