@@ -17,6 +17,8 @@ const listenCallBackFunction = () =>
 }        
 
 app.get('/', home);
-
 app.listen(PORT, listenCallBackFunction);
 app.use(express.static('static_files'));
+
+const scorecardRouter = require('./routes/scorecard.js');
+app.use('/scorecard', scorecardRouter);
