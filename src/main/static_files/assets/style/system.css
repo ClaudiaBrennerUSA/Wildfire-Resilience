@@ -1,6 +1,5 @@
  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 body {
     color: #18181d;
     padding-left: 36px;
@@ -8,24 +7,91 @@ body {
     background-color: whitesmoke;
 }
 
+.row-container{
+  display:inline-flex;
+  /* justify-content:stretch;
+  align-items:stretch; */
+  padding:0;
+  width:inherit;
+}
+
+.logo-box 
+{
+  display: flex;
+  justify-content:left;
+}
+
+#search-and-company-name{
+  display: flex;
+  flex-direction:column;
+ } 
+
+#company-name-box{
+  flex: 1;
+  text-align:justify;
+}
+h1, p{
+  display: block;
+  align-items: center;
+}
+  
+#contact-and-search-row{
+  flex:1;
+  text-align: right;
+  cursor: pointer;
+}
+.search-form{
+  display: inline-block;
+  max-width: 20em;
+  white-space: nowrap;
+}
+
+/* Style the search form */
+#search-form-box form {
+  display: inline-block;
+  vertical-align: middle; /* Align the form vertically in the middle of the line */
+}
+
+#search-form-box button {
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  vertical-align: middle; 
+}
+
+/* Add some hover effect to the button */
+#search-form-box button:hover {
+  background-color: #0056b3; /* Change to your preferred hover color */
+}
+
+.global-navbar {
+  display: flex;
+  justify-content: left;
+  align-items:inherit; 
+  width: 100%;
+  background-color: #333;
+  color: #fff; 
+  padding: 10px 0px;
+  text-transform: uppercase;
+}
+
+
+/* .global-navbar .nav-link.active {
+  color: rgb(255, 128, 0);
+  font-weight: bold;
+} */
+
 .width-100-pct {
   min-width: 100%;
   width:100%;
 }
+
 .align-top {
   vertical-align: top;
   padding: 0px;
   color: #ADD8E6; /*arman*/
   color:#18181d;
-}
-
-.leader-box {
-  
-}
-
-.company-name {
-  color: #18181D;
-  font-size: 3em;
 }
 
 .banner {
@@ -38,13 +104,10 @@ body {
   width:100%;
   min-height: 500px;
   height: 500px; 
-  border: 2px solid blue;;
+  /* border: 2px solid black;; */
   background-size: cover;
 }
-.logo-box 
-{
-  padding: 10px 10px;
-}
+
 
 .homepage-header-box
 {
@@ -110,12 +173,6 @@ body {
 {
   background-color: white;
 }
-
-.bg-system-pallette-b
-{
-  background-color: olivedrab;
-}
-
 .bg-system-pallette-c
 {
   background-color: yellow;
@@ -147,58 +204,29 @@ body {
 Navbar - Arman's code
 */
 
-.row-under-comppany-name{
-  padding-bottom: 10px;
-  text-align: center; 
-  font-size: 15px;
-  
-}
-.row-under-logo{
-  font-size: 12px;
-  padding-left: 10px;
-}
 .navbar2{
   height: 80px; 
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-.nav1 {
-  display: flex;
-  justify-content: space-between; /* Pushes "CWPC" to the left and the navigation bar to the right */
-  align-items: center; 
-  width: 100%;
-  background-color: #333;
-  color: #fff; /* Change the text color for all text within .header */
-  padding: 22px 36px;
-  font-size: 12px;
-  text-transform: uppercase;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-  font-size: .75em;
-  height: 1em;
-
-}
 
 
 .nav2 {
-  
   display: flex;
-  justify-content: space-between; /* Pushes the menu items to the left and right edges */
-  align-items: center; 
+  justify-content: left; /* Pushes the menu items to the left and right edges */
+  align-items: inherit; 
   width: 100%;
   background-color: #333;
   color: #fff;
-  font-size: 12px;
+  /* font-size: 12px; */
   text-transform: uppercase;
-  padding: 22px 36px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  padding:10px 0px;
 }
 
 .nav-link {
   color: #fff; /* Replace 'your-desired-color' with the color you want */
 }
-
-
 
 .nav2 ul {
   display: flex;
@@ -208,7 +236,7 @@ Navbar - Arman's code
 }
 
 .nav2 li {
-  margin: 0 10px; /* Adjust the spacing between menu items */
+  margin: 0 12px; /* Adjust the spacing between menu items */
 }
 
 .nav2 a {
@@ -225,53 +253,20 @@ Navbar - Arman's code
   font-size: 16px;
 }
 
-/* Style the contact link */
-#contact-and-search-row span {
-  font-weight: bold;
-  color: #007bff; /* Change to your preferred color */
-  margin-right: 1rem; /* Adjust spacing as needed */
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Style the search form */
-#search-form-box form {
-  display: inline-block;
-  vertical-align: middle; /* Align the form vertically in the middle of the line */
-}
-
-#search-form-box input[type="search"] {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 16px;
-  width: 150px; /* Adjust width as needed */
-  vertical-align: middle; /* Align the input vertically in the middle of the form */
-}
-
-#search-form-box button {
-  padding: 5px 10px;
-  background-color: blue;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  vertical-align: middle; /* Align the button vertically in the middle of the form */
-}
-
-/* Add some hover effect to the button */
-#search-form-box button:hover {
-  background-color: #0056b3; /* Change to your preferred hover color */
-}
 
 #consistent-row{
   background-color: #ADD8E6;
 }
-  
+
+
+
+
+
+
  /*
   Claudia webflow file - hiral's code
   */
-  body {
+  /* body {
     grid-column-gap: 2em;
     grid-row-gap: 2.5em;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -280,20 +275,11 @@ Navbar - Arman's code
     grid-auto-flow: row;
     align-items: center;
     font-family: 'Work Sans', sans-serif !important;
-    
-
     font-size: 1em;
     line-height: 1.5em;
     width: 100%;
-  }
-  p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-  }
-
+  } */
+ 
   .content16-left-column {
     flex-direction: column;
     align-items: flex-start;
@@ -356,3 +342,8 @@ Navbar - Arman's code
     font-weight:500; 
     font-size:21px;
   }
+  .paragraph-heading{
+    font-family: "Work Sans";
+    font-weight:500; 
+    font-size:21px;
+  } 

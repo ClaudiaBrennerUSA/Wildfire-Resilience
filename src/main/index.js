@@ -52,6 +52,7 @@ app.get('/about_us', aboutUs);
 
 app.listen(PORT, listenCallBackFunction);
 app.use(express.static('static_files'));
+// app.use('/assets/style', express.static('static_files/assets/style'));
 
 const scorecardRouter = require('./routes/scorecard.js');
 app.use('/scorecard', scorecardRouter);

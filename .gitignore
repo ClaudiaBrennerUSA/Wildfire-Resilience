@@ -3,3 +3,7 @@
 
 #ignore the configuration of the environment variables (such as port) as these will be specific to each implementation
 src/main/config/env.js
+
+/node_modules
+/package-lock.json
+docker/ubuntu/package.json
