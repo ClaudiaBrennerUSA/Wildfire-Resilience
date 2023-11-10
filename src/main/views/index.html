@@ -13,95 +13,60 @@
 
     <!-- local styling -->
     <!-- <link rel="stylesheet" type="text/css" href="../assets/style/system.css"> -->
-    <link rel="stylesheet" type="text/css" href="../assets/style/system.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/style/system.css" /> -->
+    <link rel="stylesheet" href="/assets/style/system.css" />
+
 
     <title>Masonry PoC - Community Resilience Wildfire Scorecard</title>
   </head>
-  <body style="border: 2px solid green;">
-    <div class="row h-100" id="header-row">
+  <body class="container-fluid" style="border: 2px solid green;">
+    <div class="row-container" id="header-row">
       <div class="col-3" id="logo-col">
         <div class="logo-box">
-          <img
-            style="_width: 100%; max-height: 100%; max-width: 100%"
-            src="assets/images/cd-logo-name-resize-70.png"
-          />
-        </div>
-        <div class="row-under-logo">
-          Catastrophic Wildfire Prevention & Consortium
+          <img style="width: 30%; height: 30%; margin-top: 2px;" src="assets/images/cd-logo-name-resize-70.png" alt="CrowdDoing">
+          <img style="height: 50%; width: 50%;" src="assets/images/wildfire_logo-removebg-preview.png" alt="Wildfire Prevention & Consortium">
         </div>
       </div>
-      <!-- /logo-col-->
-      <div class="col-9 text-end" id="search-and-company-name">
-        <div class="row" id="coantact-and-search-row">
-          <div
-            class="col-12"
-            id="contact-and-search-col"
-            style="white-space: nowrap; padding-top: 10px"
-          >
-            <span style="white-space: nowrap; margin-right: 3em"
-              >Subscribe</span
-            >
-            <span style="white-space: nowrap; margin-right: 3em"
-              >Contact Us</span
-            >
-            <div class="d-inline-block" id="search-form-box">
-              <form
-                class=""
-                style="
-                  display: inline-block;
-                  max-width: 20em;
-                  white-space: nowrap;
-                "
-              >
-                <input
-                  class="_form-control"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
-            </div>
-            <!-- /search-form-box-->
+      <div class="col-9" id="search-and-company-name">
+        <div class="row" id="contact-and-search-row">
+          <div class="col-12" id="contact-and-search-col">
+            <span style="white-space: nowrap; margin-right: 3em">
+              Subscribe
+            </span>
+            <span style="white-space: nowrap; margin-right: 3em">
+              Contact Us
+            </span>
+            <form class="search-form">
+              <input class="_form-control" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary" type="submit">
+                Search
+              </button>
+            </form>
           </div>
-          <!-- /contact-and-search-col -->
         </div>
-        <!-- /contact-and-search-row-->
         <div class="row" id="company-name-row">
           <div class="col-12" id="company-name-col">
-            <div class="width-100-pct text-center" id="company-name-box">
+            <div id="company-name-box">
               <h1 class="company-name">
                 Community Wildfire Resilience Scorecard
               </h1>
+              <p>
+                Empower Communities to Assess Wildfire Risk, Boost Preparedness
+              <p>
             </div>
-            <!-- /company-name-box-->
           </div>
-          <!-- /company-name-col-->
-        </div>
-        <!-- /company-name-row-->
-        <div class="row-under-comppany-name" id="moto">
-          Empower Communities to Assess Wildfire Risk, Boost Preparedness
         </div>
       </div>
-      <!-- /search-and-company-name-->
     </div>
-    <!-- /consistent row-->
     <div class="row">
       <div class="col-12">
-        <div
-          class="leader-box bg-system-pallette-a width-100-pct"
-          id="homepage-banner"
-        >
-        <div id="top-nav-container" name="top-nav-container"></div>
-
+        <div id="top-nav-container" name="top-nav-container">
+        </div>
           <div class="align-top pt-3" >
             <div class="">
-              <span class="paragraph-heading" _style="font-weight:500; font-size:21px">Catastrophic Wildfire Prevention & Consortium at CrowdDoing</span>
-              
+              <h3>Catastrophic Wildfire Prevention & Consortium at CrowdDoing</h3>
               <p>
-                a cross-sector, international consortium of wildfire experts,
+                A cross-sector, international consortium of wildfire experts,
                 institutions and volunteers with a goal of preventing
                 catastrophic wildfires through a portfolio of tailored,
                 integrated innovations for communities.
@@ -128,7 +93,7 @@
                 </div>
               </div>
 
-              <div class="col-6">
+              <div class="col-6 col-sm-6">
                 <div class="d-flex align-items-end flex-column h-100">
                   <div class="p-1 hero-text-level-1 image-text-0">
                     Canada Wildfires Burning
@@ -146,9 +111,7 @@
     <!--/row-->
 
     <nav
-      class="navbar2 navbar-expand-sm navbar-dark py-0 bg-system-pallette-b"
-      _style="padding-top:0px; padding-bottom:0px; "
-    >
+      class="navbar2 navbar-expand-sm navbar-dark py-0 bg-system-pallette-b">
       <button
         type="button"
         class="navbar-toggler"

@@ -3,7 +3,7 @@ let __generateTopNav = (topNavContainerElementId) =>
     let topNavContainer= document.getElementById(topNavContainerElementId);
     let markup = `
     <nav class="navbar navbar-expand-sm navbar-dark custom-navbar-bg py-0">
-        <div class="nav1" id="top-navbar">
+        <div class="global-navbar" id="top-navbar">
             <div class="first-navbar">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="/" class="nav-link">HOME</a></li>
@@ -30,22 +30,19 @@ let generateTopNav = (topNavContainerElementId) =>
         data-bs-target="#topmenu-navbar"
         aria-controls="topmenu-navbar"
         aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="nav1" id="top-navbar">
-        <!-- <div class="cwpc">CWPC</div> -->
+      <div class="global-navbar" id="top-navbar">
         <div class="first-navbar">
           <div class="collapse navbar-collapse" id="topmenu-navbar">
-            <!--navbar-navigation-->
             <ul class="navbar-nav">
               <li class="nav-item active">
                 <a href="/" class="nav-link active"> Home </a>
               </li>
-              <li class="nav-item" >
-                <a href="/using_the_scorecard" class="nav-link"  style="margin-top: .5em; line-height: 1.2em; color: whitesmoke;" >Using the Scorecard</a>
+              <li class="nav-item">
+                <a href="/using_the_scorecard" class="nav-link">Using the Scorecard</a>
               </li>
               <li class="nav-item">
                 <a href="/faq" class="nav-link"> FAQ </a>
