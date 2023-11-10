@@ -6,4 +6,4 @@ src/main/config/env.js
 
 /node_modules
 /package-lock.json
-docker/ubuntu/package.json
+/docker
