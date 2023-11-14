@@ -1,8 +1,9 @@
 function generateStandardFooter() {
   let footerMarkup = `
   <footer>
+  <button id="back-to-top"><i class="fa-solid fa-circle-arrow-up">go to top</i></button>
   <div class="row">
-    <div class="col-3" id="footer-logo">
+    <div class="col-4" id="footer-logo">
       <img style="width: inherit; height: inherit; margin-top: 2px;" src="assets/images/cd-logo-name-resize-70.png" alt="CrowdDoing">
       <img style="height: inherit; width: inherit;" src="assets/images/wildfire_logo-removebg-preview.png" alt="Wildfire Prevention & Consortium">
     </div>

@@ -65,6 +65,12 @@ h1, p{
   background-color: #0056b3; /* Change to your preferred hover color */
 }
 
+#top-nav-container{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .global-navbar {
   display: flex;
   justify-content: left;
@@ -74,8 +80,18 @@ h1, p{
   color: #fff; 
   padding: 10px 0px;
   text-transform: uppercase;
+  
 }
-
+#back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+  z-index: 10;
+  border:none;
+  background: transparent;
+  font-size: x-large;
+}
 
 /* .global-navbar .nav-link.active {
   color: rgb(255, 128, 0);
@@ -350,12 +366,6 @@ Navbar - Arman's code
     padding-bottom: 0%;
     margin: 0%;
   }
-
-  /* footer .btn-group{
-    display: block;
-    justify-content: center;
-    align-items: center;
-  } */
 
   footer .btn-group, #copyright {
     display: block;
