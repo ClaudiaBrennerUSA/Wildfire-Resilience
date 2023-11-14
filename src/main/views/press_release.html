@@ -17,76 +17,11 @@
 
     <title>Press Release - Community Resilience Wildfire Scorecard</title>
   </head>
-  <body style="border: 2px solid green;">
-    <div class="row h-100" id="header-row">
-      <div class="col-3" id="logo-col">
-        <div class="logo-box">
-          <img
-            style="max-height: 100%; max-width: 100%"
-            src="assets/images/cd-logo-name-resize-70.png"
-          />
-        </div>
-        <div class="row-under-logo">
-          Catastrophic Wildfire Prevention & Consortium
-        </div>
-      </div>
-      <!-- /logo-col-->
-      <div class="col-9 text-end" id="search-and-company-name">
-        <div class="row" id="coantact-and-search-row">
-          <div
-            class="col-12"
-            id="contact-and-search-col"
-            style="white-space: nowrap; padding-top: 10px"
-          >
-            <span style="white-space: nowrap; margin-right: 3em"
-              >Subscribe</span
-            >
-            <span style="white-space: nowrap; margin-right: 3em"
-              >Contact Us</span
-            >
-            <div class="d-inline-block" id="search-form-box">
-              <form
-                class=""
-                style="
-                  display: inline-block;
-                  max-width: 20em;
-                  white-space: nowrap;
-                "
-              >
-                <input
-                  class="_form-control"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
-            </div>
-            <!-- /search-form-box-->
-          </div>
-          <!-- /contact-and-search-col -->
-        </div>
-        <!-- /contact-and-search-row-->
-        <div class="row" id="company-name-row">
-          <div class="col-12" id="company-name-col">
-            <div class="width-100-pct text-center" id="company-name-box">
-              <h1 class="company-name">
-                Community Wildfire Resilience Scorecard
-              </h1>
-            </div>
-            <!-- /company-name-box-->
-          </div>
-          <!-- /company-name-col-->
-        </div>
-        <!-- /company-name-row-->
-        <div class="row-under-comppany-name" id="moto">
-          Empower Communities to Assess Wildfire Risk, Boost Preparedness
-        </div>
-      </div>
-      <!-- /search-and-company-name-->
-    </div>
+  <body class="container-fluid" style="border: 2px solid green;">
+    
+    <div class="row-container" id="header-row" name="header-row"></div>
+    <button id="back-to-top"><i class="fa-solid fa-circle-arrow-up"></i></button>
+
     <!-- /consistent row-->
     <div class="row">
       <div class="col-12">
@@ -134,16 +69,20 @@
       async
     ></script>
 
-    <!-- page specific scripts -->
-    <script src="/assets/javascript/footer.js"></script>
-    <script src="/assets/javascript/topnav.js"></script>
-    
-    <script>
-      window.onload = (event) => {
-        generateStandardFooter();
-        generateTopNav("top-nav-container");
-      };
-    </script>
+   <!-- page specific scripts -->
+   <script src="/assets/javascript/common.js"></script>
+  <script src="/assets/javascript/footer.js"></script>
+  <script src="/assets/javascript/topnav.js"></script>
+  <script src="/assets/javascript/header.js"></script>
+
+
+  <script>
+    window.onload = (event) => {
+      generateHeader("header-row");
+      generateTopNav("top-nav-container");
+      generateStandardFooter();
+    };
+  </script>
 
   </body>
 </html>
