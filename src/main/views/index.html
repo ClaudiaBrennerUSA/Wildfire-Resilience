@@ -4,200 +4,87 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/style/system.css" />
+  <link rel="stylesheet" href="/assets/style/style.css" />
   <script src="https://kit.fontawesome.com/e29cb68718.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
   <title>Masonry PoC - Community Resilience Wildfire Scorecard</title>
 </head>
 
-<body class="container-fluid" style="border: 2px solid green;">
- 
-  <div class="row-container" id="header-row" name="header-row">
+<body class="container-fluid">
+  <div id="header-row" name="header-row">
   </div>
-  
-
-  <div class="row">
-    <div class="col-12">
-      <div id="top-nav-container" name="top-nav-container">
-      </div>
-      <div class="align-top pt-3">
-        <div class="">
-          <h3>Catastrophic Wildfire Prevention & Consortium at CrowdDoing</h3>
-          <p>
-            A cross-sector, international consortium of wildfire experts,
-            institutions and volunteers with a goal of preventing
-            catastrophic wildfires through a portfolio of tailored,
-            integrated innovations for communities.
-          </p>
-        </div>
-      </div>
-
-      <div class="width-100-pct banner-image-container" style="
-              background-repeat: no-repeat;
-              background-image: url('/assets/images/Canada June 2023 wildfire - h_11.03339173.jpg');
-            ">
-        <div class="row h-100">
-          <div class="col-6">
-            <div class="d-flex flex-column h-100">
-              <div class="mt-auto p-2 bd-highlight hero-text-level-1 image-text-0">
-                Community Wildfire Resilience Scorecard Released for
-                Piloting
-              </div>
-            </div>
-          </div>
-
-          <div class="col-6 col-sm-6">
-            <div class="d-flex align-items-end flex-column h-100">
-              <div class="p-1 hero-text-level-1 image-text-0">
-                Canada Wildfires Burning
-              </div>
-              <div class="p-1 hero-text-level-1">June 2023</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Banner Image-->
+  <div class="welcome-container">
+    <div class="welcome-crowdoing">
+      <h3>Catastrophic Wildfire Prevention & Consortium at CrowdDoing</h1>
+      <p>
+         A cross-sector, international consortium of wildfire experts, institutions and volunteers with a goal of preventing catastrophic wildfires through a portfolio of tailored, integrated innovations for communities.
+      </p>
+    </div>
+    <div class="welcome-arise">
+      <h3> Arise </h1>
+      <p>A cross-sector, international consortium of wildfire experts, institutions and volunteers with a goal of preventing catastrophic wildfires through a portfolio of tailored, integrated innovations for communities.</p>
     </div>
   </div>
-  <!-- /col-12-->
-  </div>
-  <!--/row-->
-  <button id="back-to-top"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></button>
-
-  <nav class="navbar2 navbar-expand-sm navbar-dark py-0 bg-system-pallette-b">
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#internal-navbar"
-      aria-controls="internal-navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="internal-navbar">
-      <!--navbar-navigation-->
-      <ul class="navbar-nav nav2 mx-auto">
-        <li class="nav-item">
-          <a href="#announcement" class="nav-link"> Announcement </a>
-        </li>
-        <li class="nav-item">
-          <a href="#assess-risk" class="nav-link"> Assess Risk </a>
-        </li>
-        <li class="nav-item">
-          <a href="#collaborate" class="nav-link"> Collaborate with us </a>
-        </li>
-        <li class="nav-item">
-          <a href="#scorecard-support" class="nav-link">
-            Scorecard Support
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#feedback" class="nav-link"> Share your Feedback </a>
-        </li>
-        <li class="nav-item">
-          <a href="#support-the-cause" class="nav-link">
-            Support the cause
-          </a>
-        </li>
-      </ul>
+  <div class="banner-container">
+    <img class="banner-image" src="/assets/images/Canada June 2023 wildfire - h_11.03339173.jpg" alt="Banner Image">
+    <div class="banner-text-right">Canada Wildfires Burning <br> June 2023</div>
+    <div class="banner-text-left">
+      Community Wildfire Resilience Scorecard Released for Piloting
     </div>
-    <!--/navbar-navigation-->
-  </nav>
-  <!-- =======================MASONRY================== -->
-  <div class="d-lg-flex flex-wrap " data-masonry='{"percentPosition": true
-    }'">
-    
-    <!-- 1 Announce card -->
-    <div class=" rs-card card order-0 order-lg-0">
-    <div class="text-label">ANNOUNCEMENT</div>
-    <div class="content-box" test-id="content-box-1">
-      <div class="content-box-header d-flex" id="content-box-1-header">
-        <div>
-          <div>
-            <img style="max-width: 70px" src="assets/images/cd-logo-name-resize-70.png">
-            <img style="max-width: 70px" src="assets/images/arise.png">
-          </div>
-        </div>
-        <div class="size1-text">
+  </div>
+  <div class="advanced-navbar">
+    <a href="#card1">Announcement</a>
+    <a href="#card2">Assess Risk</a>
+    <a href="#card3">Collaborate with us</a>
+    <a href="#card4">Scorecard Support</a>
+    <a href="#card5">Share Feedback</a>
+    <a href="#card6">Support Cause</a>
+    <a href="#card7">Subscribe</a>
+
+    <!-- Add more links for each card -->
+  </div>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div id="card1" class="card-box">
+      <div class="card-content">
+        <div class="card-title">
+          <img class="card-logo" src="assets/images/cd-logo-name-resize-70.png" alt="Card 1 Logo">
           Announcing the Community Wildfire Resilience Scorecard
         </div>
-      </div>
-      <!--/content-box-1-header-->
-      <div class="content-box-content" id="content-box-1-content">
-        <span class="paragraph-heading">Empower Communities to Assess Wildfire Risk, Boost
-          Preparedness</span>
-
-        <p class="paragraph-70">
-          Global Rollout Kicks Off With Pilot Program to Test Methodology.
-          Participants Wanted
-          <br />
-          Author(s): Claudia Brenner, Bobby Fishkin, Peter Williams, et al.
-          <br />
-          In partnership with ARISE-US / CrowdDoing Catastrophic Wildfire
-          Prevention & Consortium now published on the United Nations’
-          Disaster Risk & Resilience (UNDRR), Prevention Web site:
-          <a href="https://www.preventionweb.net/publication/community-wildfire-resilience-scorecard"
-            target="_blank">READ HERE
-          </a>
-        </p>
-        <p class="paragraph-70">
-          Read our Press Release --- xxx Read the ARISE global Press Release:
-          Igniting Resilience with the Wildfire Disaster Risk Reduction
-          Scorecard | ARISE
-        </p>
-      </div>
-      <!-- /content-box-1-content -->
-    </div>
-    <!-- /content-box-1 -->
-
-    <div class="content-box" test-id="content-box-prevention-web">
-      <div class="content-box-content" id="content-box-1-content">
-        <img src="assets/images/Community Wildfire Resilience Scorecard - Prevention Web - 2023-08-24_10-19-59.jpg"
-          style="max-width: 100%" />
-      </div>
-      <!-- /content-box-1-content -->
-    </div>
-    <!-- /content-box-1 -->
-  </div>
-  <!-- 2 Assess Card-->
-  <div class="rs-card card order-1 order-lg-1">
-    2 Assess
-    <div class="content-box" test-id="content-box-assess">
-      <div class="content-box-header d-flex size1-text" id="content-box-assess-header">
-        Assess Wildfire Risk and Readiness in Your Area
-      </div>
-      <!--/content-box-1-header-->
-      <div class="content-box-content" id="content-box-assess-content">
-        <p class="paragraph-70">
-          The ARISE-US/CrowdDoing CWP&C Community Wildfire Resilience
-          Scorecard framework incorporates cutting-edge resilience principles
-          and a diverse range of readiness factors.
-          <br />
-          The scorecard prepares a community to develop a prioritized action
-          plan to substantially reduce wildfire risks through integrated
-          planning, mitigation and governance.
-        </p>
-        <div class="w-100 text-center">
-          <button type="button" class="btn btn-dark">
-            Download the Scorecard
-          </button>
+        <div class="card-text">
+          <h3>Empower Communities to Assess Wildfire Risk, Boost Preparedness
+          </h3>
+          Global Rollout Kicks Off With Pilot Program to Test Methodology. Participants Wanted Author(s): Claudia Brenner, Bobby Fishkin, Peter Williams, et al.
+          <br>
+          In partnership with ARISE-US / CrowdDoing Catastrophic Wildfire Prevention & Consortium now published on the United Nations’ 
+          Disaster Risk & Resilience (UNDRR), Prevention Web site:  
+          <a href="https://www.preventionweb.net/publication/community-wildfire-resilience-scorecard" target="_blank">READ HERE</a>
+          <br>
+          Read our Press Release --- xxx Read the ARISE global Press Release: Igniting Resilience with the Wildfire Disaster Risk Reduction Scorecard | ARISE
+          </div>
+           <img class= "card-image" src="assets/images/Community Wildfire Resilience Scorecard - Prevention Web - 2023-08-24_10-19-59.jpg">
         </div>
-      </div>
-      <!-- /content-box-1-content -->
     </div>
-    <!-- /content-box-1 -->
-
-    <div class="content-box" test-id="content-box-toolkit">
-      <div class="w-100 text-center content-box-content" id="content-box-toolkit-content">
-        <img src="assets/images/toolkit.png" style="max-width: 80%" />
+  
+    <!-- Card 2 -->
+    <div id="card2" class="card-box">
+      <div class="card-content">
+        <div class="card-title">Assess Wildfire Risk and Readiness in Your Area</div>
+        <div class="card-text">
+          The ARISE-US/CrowdDoing CWP&C Community Wildfire Resilience Scorecard framework incorporates cutting-edge resilience principles and a diverse range of readiness factors.
+          <br>
+          The scorecard prepares a community to develop a prioritized action plan to substantially reduce wildfire risks through integrated planning, mitigation and governance.        </div>
+          <br>
+          <img class="card-image" src="assets/images/toolkit.png"/>
+        <a href="#" class="card-button">Download the scorecard</a>
       </div>
-      <!-- /content-box-1-content -->
-    </div>
-    <!-- /content-box-1 -->
-
-    <div class="content-box" test-id="content-box-download-help">
-      <div class="content-box-content" id="content-box-1-content">
-        <h3>Need a zip file extraction tool?</h3>
-        <div class="btn-group">
+      <div class="card-content">
+        <div class="card-title">Need a zip file extraction tool?</div>
+        <div class="card-btn-group">
           <div class="fa-icon">
             <a href="https://www.7-zip.org/download.html" title="Windows">
               <i class="fa-brands fa-windows fa-xl" alt="Windows"></i>
@@ -214,159 +101,111 @@
             </a>
           </div>
         </div>
-        <p>Problems Downloading? Contact us</p>
+        <div class="card-text">Problems Downloading? <a href="#card4">Contact Us</a></div>
       </div>
-      <!-- /content-box-1-content -->
     </div>
-
-    <div class="content-box" test-id="content-box-prevention-web">
-      <div class="content-box-content" id="content-box-1-content">
-        <h3>Subscribe for updates</h3>
-        <div class="content-box-content w-100 text-center">
-          <button type="button" class="btn btn-dark">Subscribe</button>
-        </div>
-      </div>
-      <!-- /content-box-1-content -->
-    </div>
-    <!-- /content-box-1 -->
-  </div>
-
-  <!-- 3 Collaborate Card -->
-  <div class="rs-card card order-2 order-lg-2">
-    3 Collaborate
-    <div class="content-box">
-      <!-- Collaborate with us content box -->
-      <div class="content-box-header size1-text">Collaborate With Us</div>
-      <div class="content-box-content">
-        <img id="collaborateimage"
-          src="assets/images/Aldercroft Heights team - locked gate - 03-10-21 -- 20220310_114434.jpg">
-        <p class="paragraph-70">
-          The global rollout kicks off with a pilot program enabling
-          municipalities worldwide to test and refine the Wildfire Resilience
-          Scorecard.
-          <br />
+<!-- </div>
+<div class="card-container"> -->
+    <!-- Card 3 -->
+    <div id="card3" class="card-box">
+      <div class="card-content">
+        <div class="card-title">Collaborate With Us</div>
+        <img class="card-image" src="assets/images/Aldercroft Heights team - locked gate - 03-10-21 -- 20220310_114434.jpg"/>
+        <div class="card-text">
+          The global rollout kicks off with a pilot program enabling municipalities worldwide to test and refine the Wildfire Resilience Scorecard.
           Pilot the Scorecard
-          <br />
-          Community collaboration is critical for preventing catastrophic
-          wildfires.
-        </p>
-      </div>
-      <div class="content-box-content w-100 text-center">
-        <button type="button" class="btn btn-dark">
-          Collaborate with us
-        </button>
+          Community collaboration is critical for preventing catastrophic wildfires</div>
+        <a href="#" class="card-button">Download the scorecard</a>
+
       </div>
     </div>
-    <!-- /Collaborate with us content box -->
-  </div>
-
-  <!--  5 FeedBack -->
-  <div class="rs-card card order-3 order-lg-3">
-    5 FeedBack
-    <div class="content-box">
-      <!-- Feedback content box -->
-      <div class="content-box-header size1-text">
-        Share Your Feedback & Learnings
-      </div>
-      <div class="content-box-content">
-        <p class="paragraph-70">
-          <b>Support Creation of Global Best Practices</b>
-          <br />
-          >Help us improve the scorecard, send us feedback, collaborate and
-          share learnings and best practices to accelerate our progress.
-          <br />
-          Also share any feedback you have, whether it is for the web site,
-          the scorecard, any processes, wildfires in general.
-        </p>
-      </div>
-      <div class="content-box-content w-100 text-center">
-        <button type="button" class="btn btn-dark">Pilot Feedback</button>
-      </div>
-    </div>
-    <!-- /Feedback content box -->
-  </div>
-
-  <!--6. Support the cause -->
-  <div class="rs-card card order-5 order-lg-5">
-    6 Support the cause
-    <div class="content-box">
-      <!-- Support the Cause content box -->
-      <div class="content-box-header size1-text">
-        Support the Cause
-      </div>
-      <div class="content-box-content">
-        <p class="paragraph-70">
-          We do invite reciprocity that can help us help future beneficiaries
-          of this toolset by collaborating to improve it.
-          <br />
-          To improve communities’ wildfire resilience overall through
-          scorecard enhancements and adoption, ARISE-US/CrowdDoing CWP&C
-          invite corporations and institutions to support this effort with:
-        </p>
-      </div>
-      <div class="content-box-content w-100 text-center">
-        <button type="button" class="btn btn-dark">
-          Support Wildfire Prevention
-        </button>
+    
+    <!-- Card 7 -->
+    <div id="card7" class="card-box">
+      <div class="card-content" id="#subscribe">
+        <div class="card-title">Subscribe for Updates!</div>
+        <br>
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+      
+          <a type="button" class="card-button" onclick="submitForm()">Join</a>
+      
+          <p class="success-message" id="successMessage"></p>
+        </form>
       </div>
     </div>
-    <!-- /Support the Cause content box -->
-  </div>
 
-  <!-- 4. Scorecard Support -->
-  <div class="rs-card card order-sm-4 order-lg-4">
-    4 Scorecard Support
-    <div class="content-box">
-      <!-- Scorecard Support content box -->
-      <div class="content-box-header">
-        <div class="size1-text">Need Scorecard Support? We can Help!</div>
+     <!-- Card 5 -->
+     <div id="card5" class="card-box">
+      <div class="card-content">
+        <div class="card-title">Share Your Feedback & Learnings</div>
+        <div class="card-text">
+          <h3>Support Creation of Global Best Practices</h3>
+          Help us improve the scorecard, send us feedback, collaborate and share learnings and best practices to accelerate our progress.
+          Also share any feedback you have, whether it is for the web site, the scorecard, any processes, wildfires in general.  
+        </div>
+        <a href="#" class="card-button1">Pilot Feedback</a>
+
       </div>
-      <div class="content-box-content">
-        <p class="paragraph-70">
-          <b>Need assistance with the scorecard?</b>
-          <br />
-          Schedule a meeting with so together we can assess the best ways to
-          support you.
-          <br />
+    </div>
+  <!-- </div>
+  <div class="card-container"> -->
+    <!-- Card 4 -->
+    <div id="card4" class="card-box">
+      <div class="card-content">
+        <div class="card-title">Need Scorecard Support? We can Help!</div>
+        <div class="card-text">
+          <h3>Need assistance with the scorecard?</h3>
+          Schedule a meeting with so together we can assess the best ways to support you.
           We offer workshops, webinars, on-the ground pilots and more.
-          <br />
-          And you can View our Frequently Asked Questions (FAQs) page
-        </p>
-      </div>
-      <div class="content-box-content w-100 text-center">
-        <button type="button" class="btn btn-dark">Contact Us</button>
+          <br><br>
+          For more information please visit Frequently Asked Questions (FAQs) page.    
+        </div>
+        <a href="#" class="card-button">Contact Us</a>
+
       </div>
     </div>
-    <!-- / Scorecard Support content box -->
+
+     <!-- Card 6 -->
+     <div id="card6" class="card-box">
+      <div class="card-content">
+        <div class="card-title">Support the Cause</div>
+        <div class="card-text">
+          We do invite reciprocity that can help us help future beneficiaries of this toolset by collaborating to improve it.
+          To improve communities wildfire resilience overall through scorecard enhancements and adoption, ARISE-US/CrowdDoing CWP&C invite corporations and institutions to support this effort with.
+        </div>
+        <a href="#" class="card-button">Support Wildfire Prevention</a>
+
+      </div>
+    </div>
   </div>
-  </div>
-  <!-- =======================/MASONRY================== -->
+  <button id="back-to-top"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></button>
+
 
   <div id="footer-container"></div>
   <!-- /footer-container -->
-
-  <!-- Javascript at bottom of page to facilitate faster page loads -->
-
-  <!-- BOOTSTRAP FROM CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
-    async></script>
-
   <!-- page specific scripts -->
   <script src="/assets/javascript/footer.js"></script>
   <script src="/assets/javascript/topnav.js"></script>
   <script src="/assets/javascript/header.js"></script>
   <script src="/assets/javascript/common.js"></script>
 
-
-
   <script>
     window.onload = (event) => {
       generateHeader("header-row");
-      generateTopNav("top-nav-container");
       generateStandardFooter();
     };
   </script>

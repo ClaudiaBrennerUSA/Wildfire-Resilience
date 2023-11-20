@@ -1,44 +1,32 @@
 function generateStandardFooter() {
   let footerMarkup = `
-  <footer>
-  <button id="back-to-top"><i class="fa-solid fa-circle-arrow-up">go to top</i></button>
-  <div class="row">
-    <div class="col-4" id="footer-logo">
-      <img style="width: inherit; height: inherit; margin-top: 2px;" src="assets/images/cd-logo-name-resize-70.png" alt="CrowdDoing">
-      <img style="height: inherit; width: inherit;" src="assets/images/wildfire_logo-removebg-preview.png" alt="Wildfire Prevention & Consortium">
-    </div>
-    <div class="col-4">
-      <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link4</a></li>
-        <li><a href="#">Link5</a></li>
-      </ul>
-    </div>
-    <div class="col-4">
-      <ul>
-        <li><a href="#">Link 6</a></li>
-        <li><a href="#">Link 7</a></li>
-        <li><a href="#">Link 8</a></li>
-        <li><a href="#">Link 9</a></li>
-        <li><a href="#">Link 10</a></li>
-      </ul>
-    </div>
+  <footer class="footer">
+  <img class="footer-logo" src="assets/images/wildfire3logos.png" alt="Footer Logo">
+  
+  <div class="social-icons">
+   <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="#" target="_blank"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>
   </div>
-  <div class="btn-group" id="social">
-    <span>
-      Follow us on Socials </br>
-    </span>
-    <a href="#" class="btn"><i class="fa-brands fa-facebook fa-2xl"></i></a>
-    <a href="#" class="btn"><i class="fa-brands fa-twitter fa-2xl"></i></a>
-    <a href="#" class="btn"><i class="fa-solid fa-share-nodes fa-2xl"></i></a>
-    <a href="#" class="btn"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+
+  <div class="footer-links">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+    <a href="#">Link 5</a>
+    <a href="#">Link 6</a>
+    <a href="#">Link 7</a>
+    <a href="#">Link 8</a>
+    <a href="#">Link 9</a>
+    <a href="#">Link 10</a>
   </div>
-  <div class="row" id="copyright">
-    <p> Copyright message will be here </p>
+
+  <div class="copyright">
+    &copy; 2023 Your Company. All rights reserved.
   </div>
-  </footer>
+</footer>
     `;
   footer = document.getElementById("footer-container");
   footer.innerHTML = footerMarkup;
