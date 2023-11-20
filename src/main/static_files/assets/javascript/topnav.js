@@ -65,3 +65,41 @@ let generateTopNav = (topNavContainerElementId) =>
   `;
   topNavContainer.innerHTML = markup;
 }
+
+// let generateTopNav = (topNavContainerElementId) =>
+// {
+//   let topNavContainer= document.getElementById(topNavContainerElementId);
+//   let markup = `
+//   <header>
+//     <div class="images-column">
+//       <img src="assets/images/wildfire3logos.png"
+//         alt="CrowdDoing">
+//     </div>
+//     <div class="content-column">
+//       <nav>
+//         <ul>
+//           <li><a href="#">Home</a></li>
+//           <li><a href="#">Using Scorecard</a></li>
+//           <li><a href="#">Press Release</a></li>
+//           <li><a href="#">Scorecard Info</a></li>
+//           <li><a href="#">FAQ</a></li>
+//           <li><a href="#">About</a></li>
+//           <li><a href="#">Subscribe</a></li>
+//           <li><a href="#">Contact Us</a></li>
+//             <li>
+//             <div class="search-box">
+//               <input type="text" placeholder="Search">
+//               <button type="button">Search</button>
+//             </div>
+//           </li>
+//         </ul>
+//       </nav>
+//       <div class="title">
+//         <h1>Community Wildfire Resilience Scorecard</h1>
+//         <p>Empower Communities to Assess Wildfire Risk, Boost Preparedness</p>
+//       </div>
+//     </div>
+//   </header>
+//   `;
+//   topNavContainer.innerHTML = markup;
+// }
