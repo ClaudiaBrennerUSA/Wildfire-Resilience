@@ -15,20 +15,26 @@ backToTopButton.addEventListener('click', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Get the current page URL
+function switchNavActive(){
+// Get the current page URL
   const currentPage = window.location.href;
 
   // Get all the links in the navigation
   const navLinks = document.querySelectorAll('nav a');
 
+
   // Loop through each link and check if it matches the current page URL
   navLinks.forEach(link => {
-    if (currentPage.includes(link.getAttribute('href'))) {
+    if(link.id == 'home'){
+      link.classList.add('active');
+    }
+    else if (link.id!='home' && currentPage.includes(link.getAttribute('href'))) {
       link.classList.add('active'); // Add a class to highlight the active link
+      document.querySelectorAll('nav a')[0].classList.remove('active');
     }
   });
-});
+}
+
 
 function submitForm() {
   // Simulated database storage
@@ -45,16 +51,8 @@ function submitForm() {
   document.getElementById('signupForm').reset();
 }
 
-// const hamburgerBtn = document.getElementById("hamburger");
-
-// hamburgerBtn.addEventListener("click", toggleHamburger);
-
 function toggleHamburger() {
   const navMenu = document.querySelector(".global-navbar");
   navMenu.classList.toggle("show");
-  // hamburgerBtn.setAttribute(
-  //     "aria-expanded",
-  //     hamburgerBtn.getAttribute("aria-expanded") === "false" ? "true" : "false"
-  // );
 }
 

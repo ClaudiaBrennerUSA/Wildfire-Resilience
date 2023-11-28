@@ -1,11 +1,13 @@
 body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
+  /* background-color: #f6f6f6; */
+  background-color: black;
 }
 
 header {
   display: grid;
-  grid-template-columns: 0.20fr 2fr; /* Adjust the size of column 1 */
+  grid-template-columns: 0.3fr 2fr; /* Adjust the size of column 1 */
   /* background-color: #333; */
   /* color: #fff; */
   padding: 15px;
@@ -18,7 +20,7 @@ header {
 .images-column img {
   width:100%; /* Adjust the size as needed */
   height: fit-content; /* Adjust the size as needed */
-  /* margin-bottom: 10px; */
+  margin-top: 6px;
 }
 
 .content-column {
@@ -36,6 +38,7 @@ header {
   list-style: none;
   display: flex;
   justify-content: flex-end; /* Align navigation to the right */
+  font-weight: 800;
 }
 
 .global-navbar ul li {
@@ -44,23 +47,33 @@ header {
 
 .global-navbar a {
   text-decoration:#555;
-  color: black;
-  font-weight: bold;
+  /* color: black; */
+  color: white;
+  /* font-weight: bold; */
 }
 
 .global-navbar a.active {
-  color: #ff0000; /* Change to your desired active link color */
+  color: #FFAC0D; /* Change to your desired active link color */
 }
 
 .title {
+  margin-top: 6px;
   align-items: flex-start;
-  text-align: left; /* Center align title */
+  /* text-align: center; */
+   /* Center align title */
+  margin-left: 17%;
 }
 .title h1{
+  color: #FF6701;
   margin: 0;
+  align-items: baseline;
+  font-weight: 500;
 }
 .title p{
-  margin: 0;
+  margin-top: 10px;
+  color: #197AFF;
+  font-size: x-large;
+  font-weight: 500;
 }
 
 .search-box {
@@ -69,12 +82,12 @@ header {
 }
 
 .search-box input {
-  padding: 5px;
+  /* padding: 5px; */
   margin-right: 5px;
 }
 
 .search-box button {
-  padding: 5px;
+  /* padding: 5px; */
   background-color: #555;
   color: #fff;
   border: none;
@@ -88,7 +101,8 @@ header {
   text-align: center;
   background-color: #fff;
   overflow: hidden;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.834);
+  margin-bottom:10px;
 }
 
 .welcome-crowdoing {
@@ -110,6 +124,7 @@ header {
   width: 100%;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 .banner-image {
@@ -124,7 +139,7 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
-  color: orange;
+  color: whitesmoke;
   font-size: 24px;
   font-weight: bold;
   text-align: right;
@@ -163,22 +178,19 @@ header {
 }
 
 .card-container {
-  /* display: flex;
-  /* flex-wrap:ap; */
-  /* justify-content: space-around; */
-  /* max-width: 800px; */
-  /* margin: 0 auto; */
   display: flex;
   flex-wrap: wrap;
+  /* background-color: #2f2e2e; */
 }
 
 .card-box {
   /* width: 50%; */
   width: calc(80% - 20px);
   margin: 20px;
-  background-color: #fff;
+  background-color: #000000;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-color: #2f2e2e;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   flex: 0 1 calc(48% - 1em);
@@ -201,18 +213,30 @@ header {
 
 .card-title {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  color: whitesmoke;
 }
 
 .card-text {
   font-size: 16px;
   line-height: 1.8;
   margin-bottom: 15px;
+  color: whitesmoke;
 }
-
+.card-text p{
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.card-text h5{
+  font-weight: 500;
+  font-style: oblique;
+  margin-bottom: 13px;
+  color: #FFAC0D;
+}
 .card-image {
   width: 100%;
   height: auto;
@@ -220,21 +244,9 @@ header {
 }
 
 .card-button {
-  display: block;
+  /* display: block; */
   padding: 10px 20px;
-  background-color: #3498db;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: large;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.card-button1 {
-  /* display: ; */
-  padding: 10px 20px;
-  background-color: #3498db;
+  background-color: #0d72ff;;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -252,11 +264,33 @@ header {
   justify-content: flex-start;
 }
 
+#card1-title,#card7-title,#card6-title{
+  color: #FF6701;
+}
+#card2-title,#card5-title{
+  color: #197AFF;
+}
+#card3-title,#card4-title{
+  color: #65a637;
+}
+#card3-button,#card4-button{
+  background-color: #65a637; ;
+}
+#card7-button,#card6-button{
+  background-color: #FF6701;
+}
+#card2-button,#card5-button{
+  background-color: #197AFF;
+}
+
+
+
 .fa-icon{
   padding: 5%;
 }
 .fa-icon a{
-  color: black;
+  /* color: black; */
+  color: whitesmoke;
   font-size: xx-large;
 }
 .fa-icon a:hover{
@@ -269,9 +303,10 @@ header {
 
 .form-group label {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 5px;
   text-align: left;
+  color:white;
 }
 
 .form-group input {
@@ -280,6 +315,7 @@ header {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: #f5f5f5;
 }
 
 .success-message {
@@ -310,29 +346,41 @@ header {
   border:none;
   background: transparent;
   font-size: x-large;
+  color: #FF6701;
 }
 
 .footer {
-  background-color: whitesmoke;
-  color: black;
+  /* background-color: rgb(216, 216, 216); */
+  display: flex;
+  background-color:#f6f6f6;
+  color: rgba(0, 0, 0, 0.722);
   padding: 20px;
-  text-align: center;
+  text-align: left;
+}
+
+.footer-column {
+  width: 25%;
+ box-sizing: border-box;
+}
+.footer-column h4{
+  font-weight: 600;
 }
 
 .footer-logo {
-  max-width: 100px;
+  max-width: 30%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 4px;
 }
 
 .social-icons {
-  margin-top: 20px;
+  padding: 0;
 }
 
 .social-icons a {
   display: inline-block;
-  margin: 0 10px;
-  color: black;
+  margin-right: 10px;
+  /* margin: 0 10px; */
+  color: rgba(0, 0, 0, 0.722);
   font-size: 20px;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
@@ -343,18 +391,26 @@ header {
 }
 
 .copyright {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   font-size: 14px;
 }
 
 .footer-links {
-  margin-top: 20px;
+  /* margin-top: 10px; */
+  list-style: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 0;
 }
 
 .footer-links a {
   display: inline-block;
-  margin: 0 10px;
-  color: black;
+  color: rgba(0, 0, 0, 0.722);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }

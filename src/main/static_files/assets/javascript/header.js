@@ -52,7 +52,7 @@ let generateHeader = (headerContainerElementId) =>
   let markup = `
   <header>
     <div class="images-column">
-      <img src="assets/images/wildfire3logos.png"
+      <img src="assets/images/wildfire3logos2.png"
         alt="CrowdDoing">
     </div>
     <div class="content-column">
@@ -61,7 +61,7 @@ let generateHeader = (headerContainerElementId) =>
       </button>
       <nav class="global-navbar">
       <ul>
-          <li><a href="/" id="home" class="active">Home</a></li>
+          <li><a href="/" id="home">Home</a></li>
           <li><a href="/using_the_scorecard" id="usescorecard">Using Scorecard</a></li>
           <li><a href="/press_release" id="press">Press Release</a></li>
           <li><a href="/scorecard_info" id="scorecardinfo">Scorecard Info</a></li>
