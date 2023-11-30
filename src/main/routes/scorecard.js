@@ -1,100 +1,157 @@
 const express = require('express');
 const router = express.Router();
+const app = express();
+const bodyParser = require('body-parser');
 
-const renderScorecardRequestForm = () =>
+const fs = require('fs')
+
+const downloadScorecardForm = require('../views/forms/download_scorecard_form.js');
+const DownloadScorecardRequestMongoDBRepository = require('../infrastructure/repositories/download_scorecard_request_mongodb_repository');
+
+
+let validateScorecardRequest = (body) =>
 {
-    let firstName = "Myfirstname";
-    let lastName = "Mylastname";
-    let phoneNumber = "";
-    let organization = "";
-    let role = "";
-    let postalCode = "";
+    console.log(">>> validateScorecardRequest()");
 
-    let  markup = `
-        <doctype html>
-        <html lang='en'>
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Request Scorecard</title>
+    let valid = true; 
 
-            <!-- Bootstrap CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        
-        
-            <!-- local styling -->
-            <link rel="stylesheet" type="text/css" href="/assets/style/system.css">
-        
-        </head>
-        <body>
-            <form class="mt-5" action="/scorecard" method="POST">
-                <div class="">
-                    <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your First Name" value="${firstName}"/>
-                </div>
-
-                </div>
-                <div class="form-group mt-2">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your Last Name" value="${lastName}"/>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="phoneNumber">Phone Number</label>
-                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Best Number to Reach You" value="${phoneNumber}"/>
-                </div>
-
-                <div class="form-group mt-2">
-                    <label for="organization">Organization</label>
-                    <input type="text" class="form-control" id="organization" name="organization" placeholder="Company, NGO, Municipality, or Entity this scorecard is for" value="${organization}"/>
-                </div>
-
-                <div class="form-group mt-2">
-                    <label for="role">Role</label>
-                    <input type="text" class="form-control" id="role" name="role" placeholder="Your Role at the organization Above" value="${role}"/>
-                </div>
-
-                <div class="form-group mt-2">
-                    <label for="postalCode">Zipcode / Postal Code</label>
-                    <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" value="${postalCode}"/>
-                </div>
+    console.log(">>> validateScorecardRequest()");    
+    return valid; 
+} // end validateScorecardRequest()
 
 
+/* -- -- // 
 
-
-
-                <button type="submit" class="btn btn-primary mt-2">Get Scorecard</button>
-            </form>
-
-
-            <!-- Javascript at bottom of page to facilitate faster page loads -->
-
-            <!-- BOOTSTRAP FROM CDN -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+let storeScorecardRequest = (req, res) =>
+{
+    let retVal = false; 
+    res.setHeader("Content-Type", "text/html");
+    res.write("<h2>Store Request Form  if Valid</h2>");
+    res.write("About to validate request</br>");
     
-            <!-- page specific scripts -->
-            <script src="/assets/javascript/footer.js"></script>
-    
-        </body>
-    `;
+    let requestIsValid = validateScorecardRequest(req, res);
+    if(!requestIsValid)
+    {
+        res.write("request is invalid");
+        res.render('/scorecard', req.body)
+    }
+    else
+    {
+        res.write("Request is valid, Okay to Download the Scorecard<br>");
+        let downloadIsSuccessful = downloadScorecard(req, res);
+        if(downloadIsSuccessful)
+        {
+            res.write("Download Succeeded");
+            let retVal = true;
+        }
+        else
+        {
+            res.write("Download failed");
+        }
 
-    return markup;
+    }
+    
+    res.end();
+    return retVal;
+}
+
+// -- */
+
+let storeScorecardRequest = async (request) =>
+{
+
+    console.log(">>> storeScorecardRequest()");
+    
+    let repo = new DownloadScorecardRequestMongoDBRepository();
+    let result = await repo.store(request);
+
+    console.log("<<< storeScorecardRequest()");
+
+    return result;
+    
+} // end storeScorecardRequest(request) 
+
+let handlePostRequest = async (req, res) =>
+{        
+    console.log(">>> handlePostRequest()");
+    
+    let requestIsValid = validateScorecardRequest(req.body);
+
+    if(requestIsValid)
+    {
+        let result = await storeScorecardRequest(req.body);
+        console.log("storeScorecardRequest() result is:")
+        console.log(result);
+
+        let filename= "/static_files/assets/content/scorecard_dummy.xlsx";
+
+        console.log("\n= = = = = \nBEFORE DOWNLOAD\n = = = = =");
+
+        // let file = fs.readFile(filename, 'binary');
+
+        // Use fs.readFile() method to read the file 
+        let file = fs.readFile('Demo.txt', 'utf8', function(err, data){ 
+            
+            // Display the file content 
+            console.log(data); 
+        }); 
+        
+        
+        
+        console.log('readFile called'); 
+        res.write(file, filename);
+
+        res.download("./scorecard.js");
+
+      
+
+        console.log("\n= = = = = \nAFTER DOWNLOAD\n = = = = =");
+
+
+        /* 
+        repo = new ContactUsRequestMongoDBRepository();
+        let model = req.body;
+        let result = await  repo.store(model);
+        let requestId = result.id.toString();
+        model['id'] = requestId;
+        let requestSent = sendRequest(model);
+        // navigate to success page 
+        */ 
+
+        res.write("<h1>Success the system should have downloaded</h1>");
+
+        res.end();
+        
+    }
+    else
+    {
+        let markup = downloadScorecardForm.renderScorecardRequestForm(req, res);
+        res.send(markup);
+    }
+ 
+    console.log("<<< handlePostRequest()");
+    
+    return;
 }
 
 
+let downloadScorecard = (req, res) =>
+{
+    res.write("Attempting Download<br>");
+    return false;
+}
 
 const requestDownload = (req, res) =>
 {
     console.info("Before Display Download Request Form");
-    let formMarkup = renderScorecardRequestForm();
-    res.send(`<h1>Download Form</h1> ${formMarkup}`);
+    let formMarkup = downloadScorecardForm.renderScorecardRequestForm(req, res);
+    res.write(`<h1>Download Form</h1> ${formMarkup}`);
     console.info("After Display Download Request Form");
 }
 
 
 
 router.get('/', requestDownload);
+router.post("/", bodyParser.urlencoded({extended: true}), handlePostRequest);
 
 module.exports = router;
