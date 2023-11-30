@@ -65,6 +65,12 @@ h1, p{
   background-color: #0056b3; /* Change to your preferred hover color */
 }
 
+#top-nav-container{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .global-navbar {
   display: flex;
   justify-content: left;
@@ -74,8 +80,18 @@ h1, p{
   color: #fff; 
   padding: 10px 0px;
   text-transform: uppercase;
+  
 }
-
+#back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+  z-index: 10;
+  border:none;
+  background: transparent;
+  font-size: x-large;
+}
 
 /* .global-navbar .nav-link.active {
   color: rgb(255, 128, 0);
@@ -140,11 +156,9 @@ h1, p{
 
 .content-box
 {
-  background-color: whitesmoke; 
-  padding-top: 3px;
+  background-color: whitesmoke;
   padding-left: 1em; 
   padding-right: 1em; 
-  padding-bottom: 2em; 
   margin-bottom: 2em;
 }
 
@@ -182,7 +196,7 @@ h1, p{
   _background-color:whitesmoke;
   width:100%;
   min-width:100%;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
   padding: 2px;
 }
 
@@ -199,6 +213,23 @@ h1, p{
       min-width: 50%;
   }
 }
+
+
+#collaborateimage{
+  width: -webkit-fill-available;
+}
+
+.fa-icon{
+  padding: 5%;
+}
+.fa-icon a{
+  color: black;
+  font-size: x-large;
+}
+.fa-icon a:hover{
+  color: blue;
+}
+
 
 /*
 Navbar - Arman's code
@@ -258,28 +289,6 @@ Navbar - Arman's code
   background-color: #ADD8E6;
 }
 
-
-
-
-
-
- /*
-  Claudia webflow file - hiral's code
-  */
-  /* body {
-    grid-column-gap: 2em;
-    grid-row-gap: 2.5em;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    color: #18181d;
-    text-align: left;
-    grid-auto-flow: row;
-    align-items: center;
-    font-family: 'Work Sans', sans-serif !important;
-    font-size: 1em;
-    line-height: 1.5em;
-    width: 100%;
-  } */
- 
   .content16-left-column {
     flex-direction: column;
     align-items: flex-start;
@@ -297,7 +306,6 @@ Navbar - Arman's code
 }
 .size1-text {
   white-space: normal;
-  margin: .7em;
   font-size: 2.5em;
   font-weight: 500;
   line-height: 52px;
@@ -347,3 +355,21 @@ Navbar - Arman's code
     font-weight:500; 
     font-size:21px;
   } 
+
+  footer{
+    margin-top: 10px;
+    background-color:white;
+  }  
+  footer .row #footer-logo {
+    display: flex;
+    justify-content:left;
+    padding-bottom: 0%;
+    margin: 0%;
+  }
+
+  footer .btn-group, #copyright {
+    display: block;
+    text-align: center;
+  }
+
+  
