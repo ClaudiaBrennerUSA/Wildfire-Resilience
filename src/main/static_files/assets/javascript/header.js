@@ -67,8 +67,8 @@ let generateHeader = (headerContainerElementId) =>
           <li><a href="/scorecard_info" id="scorecardinfo">Scorecard Info</a></li>
           <li><a href="/faq" id="faq">FAQ</a></li>
           <li><a href="/about_us" id="about">About</a></li>
-          <li><a href="#">Subscribe</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="/subscribe">Subscribe</a></li>
+          <li><a href="/contact_us">Contact Us</a></li>
             <li>
             <div class="search-box">
               <input type="text" placeholder="Search">
