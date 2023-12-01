@@ -115,26 +115,6 @@ let handleContactUsPostRequest = (req, res) =>
     }
 
 
-let testDbConnection = (req, res) =>
-{
-    console.log(">>> testDbConnection()");
-
-    const ContactUsRequestMongoDBRepository = require('./infrastructure/repositories/contact_us_request_mongodb_repository');
-    let repo = new ContactUsRequestMongoDBRepository();
-    let model = {
-        "first-name": "fntest000"
-    ,   "last-name": "lntest000"
-    ,   email : "email@mail.com"
-    ,   content: "request Content"
-    }
-
-    let result = repo.store(model);
-    console.log("126", result);
-
-    console.log("<<< testDbConnection()");
-
-
-}   // end testDbConnection() 
 
 let logMethod = (req, res) =>
 {
@@ -172,5 +152,7 @@ app.use(express.static('static_files'));
 
 const scorecardRouter = require('./routes/scorecard.js');
 const contactUsRouter = require('./routes/contact_us.js');
+const subscriptionRouter = require('./routes/subscribe.js');
 app.use('/scorecard', scorecardRouter);
 app.use('/contact_us', urlencodedParser, contactUsRouter);
+app.use('/subscribe', urlencodedParser, subscriptionRouter);

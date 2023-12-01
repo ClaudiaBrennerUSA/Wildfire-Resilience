@@ -1,8 +1,8 @@
-class ContactUsRequestSubmitted
+class SubscriptionRequestSubmitted
 {
     render = () =>
     {
-        console.log(">>> ContactUsRequestSubmitted::render()");
+        console.log(">>> SubscriptionRequestSubmitted::render()");
 
         let pageMarkup = `
     
@@ -20,7 +20,7 @@ class ContactUsRequestSubmitted
             <link rel="stylesheet" href="/assets/style/system.css" />
             <script src="https://kit.fontawesome.com/e29cb68718.js" crossorigin="anonymous" async></script>
             
-            <title>Contact Request Submitted - Community Resilience Wildfire Scorecard</title>
+            <title>Subscription Request Submitted - Community Resilience Wildfire Scorecard</title>
             </head>
             <body>
                 <div class="row-container" id="header-row" name="header-row"></div> <!--Header Populated By Javascript function -->
@@ -30,10 +30,10 @@ class ContactUsRequestSubmitted
                     Request Submitted<br>
                 </div>
                 <div class="w-100 text-center">
-                    <h2>Thank you for reaching out.</h2> 
+                    <h2>Thank you for subscribing.</h2> 
                     <p>
                         Your request has been successfully submitted.<br>
-                        A team member will be responding to you ASAP
+                        You will receive informative updates and event details shortly
                     </p>
 
                 </div>
@@ -65,11 +65,11 @@ class ContactUsRequestSubmitted
         </html>
             
         `;
-    console.log("<<< ContactUsRequestSubmitted::render()");
+    console.log("<<< SubscriptionRequestSubmitted::render()");
     
     return pageMarkup;
     
     }
-} // end class ContactUsRequestSubmitted
+} // end class SubscriptionRequestSubmitted
 
-module.exports = ContactUsRequestSubmitted;
+module.exports = SubscriptionRequestSubmitted;

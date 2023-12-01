@@ -5,18 +5,18 @@ const path = require ('path');
 const PORT = require('../config/env').PORT;
 const bodyParser = require('body-parser');
 
-const contactUsForm = require('../views/forms/contact_form.js');
-const ContactUsRequestMongoDBRepository = require('../infrastructure/repositories/contact_us_request_mongodb_repository');
+const SubscriptionForm = require('../views/forms/subscribe_form.js');
+const SubscriptionRequestMongoDBRepository = require('../infrastructure/repositories/subscription_request_mongodb_repository');
 
-const ContactUsRequestSubmitted = require('../views/contact_us_request_submitted');
+const SubscriptionRequestSubmitted = require('../views/subscription_request_submitted');
 
 const app = express();
 const urlencodedParser =  bodyParser.urlencoded({extended: false});
 
 
-let handleContactUsRequest = async (req, res) =>
+let handleSubscriptionRequest = async (req, res) =>
 {
-    console.log(">>> handleContactUsRequest()");
+    console.log(">>> handleSubscriptionRequest()");
 
 
     let method = req.method;
@@ -25,44 +25,43 @@ let handleContactUsRequest = async (req, res) =>
     {
         case "GET":
         {
-            await handleContactUsGetRequest(req, res);
+            await handleSubscriptionGetRequest(req, res);
             break; 
         }
         case "POST":
         {
-            await handleContactUsPostRequest(req, res);
+            await handleSubscriptionPostRequest(req, res);
             break;
         }
 
     } // end switch
 
-    console.log("<<< handleContactUsRequest()");
+    console.log("<<< handleSubscriptionRequest()");
 
     return;
-} // end handleContactUsRequest()
+} // end handleSubscriptionRequest()
 
-let handleContactUsGetRequest = (req, res) =>
+let handleSubscriptionGetRequest = (req, res) =>
 {
-    console.log(">>> handleContactUsGetRequest()");
+    console.log(">>> handleSubscriptionGetRequest()");
 
-    let markup = contactUsForm.generateContactUsForm(req, res);
+    let markup = SubscriptionForm.generateForm(req, res);
     res.send(markup);
 
-    console.log("<<< handleContactUsGetRequest()");
+    console.log("<<< handleSubscriptionGetRequest()");
 
     return;
-}    // end handleContactUsGetRequest()         
+} // end handleSubscriptionGetRequest()        
 
-let handleContactUsPostRequest = async (req, res) =>
+let handleSubscriptionPostRequest = async (req, res) =>
 {        
-    console.log(">>> handleContactUsPostRequest()");
+    console.log(">>> handleSubscriptionPostRequest()");
     
     let requestIsValid = validateContatctUsRequest(req.body);
 
     if(requestIsValid)
     {
-        //let markup = contactUsForm.generateContactUsForm(req, res);
-        repo = new ContactUsRequestMongoDBRepository();
+        repo = new SubscriptionRequestMongoDBRepository();
         let model = req.body;
         let result = await  repo.store(model);
         let requestId = result.id.toString();
@@ -70,20 +69,20 @@ let handleContactUsPostRequest = async (req, res) =>
         let requestSent = sendRequest(model);
         // navigate to success page 
         res.writeHead(301, {
-            Location: `/contact_us/request_submitted`
+            Location: `/subscribe/request_submitted`
           }).end();
   
     }
     else
     {
-        let markup = contactUsForm.generateContactUsForm(req, res);
+        let markup = SubscriptionForm.generateSubscriptionForm(req, res);
         res.send(markup);
     }
 
-    console.log("<<< handleContactUsPostRequest()");
+    console.log("<<< handleSubscriptionPostRequest()");
     
     return;
-} // end handleContactUsPostRequest()
+} // end handleSubscriptionPostRequest()
 
 let validateContatctUsRequest = (rawValues) =>
 {
@@ -106,7 +105,7 @@ let sendRequest = (request) =>
 
 let requestSubmitted = (req, res) =>
 {
-    let view = new ContactUsRequestSubmitted();
+    let view = new SubscriptionRequestSubmitted();
     let markup = view.render();
 
     res.write(markup);
@@ -115,8 +114,8 @@ let requestSubmitted = (req, res) =>
 } // end requestSubmitted()
 
 
-router.get('/', handleContactUsRequest);
+router.get('/', handleSubscriptionRequest);
 router.get('/request_submitted', requestSubmitted);
-router.post("/", bodyParser.urlencoded({extended: false}), handleContactUsRequest);
+router.post("/", bodyParser.urlencoded({extended: false}), handleSubscriptionRequest);
 
 module.exports = router;
