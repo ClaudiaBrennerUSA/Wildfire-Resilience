@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 const contactUsForm = require('../views/forms/contact_form.js');
 const ContactUsRequestMongoDBRepository = require('../infrastructure/repositories/contact_us_request_mongodb_repository');
 
+const ContactUsRequestSubmitted = require('../views/contact_us_request_submitted');
+
 const app = express();
 const urlencodedParser =  bodyParser.urlencoded({extended: false});
 
@@ -67,7 +69,10 @@ let handleContactUsPostRequest = async (req, res) =>
         model['id'] = requestId;
         let requestSent = sendRequest(model);
         // navigate to success page 
-        res.send("<h1>Success</h1>");
+        res.writeHead(301, {
+            Location: `/contact_us/request_submitted`
+          }).end();
+  
     }
     else
     {
@@ -99,7 +104,19 @@ let sendRequest = (request) =>
 
 }
 
+let requestSubmitted = (req, res) =>
+{
+    let view = new ContactUsRequestSubmitted();
+    let markup = view.render();
+
+    res.write(markup);
+    res.end();
+
+} // end requestSubmitted()
+
+
 router.get('/', handleContactUsRequest);
+router.get('/request_submitted', requestSubmitted);
 router.post("/", bodyParser.urlencoded({extended: false}), handleContactUsRequest);
 
 module.exports = router;

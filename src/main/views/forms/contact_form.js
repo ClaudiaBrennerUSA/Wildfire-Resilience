@@ -32,54 +32,17 @@ let generateContactUsForm = (req, res) =>
 
 
                 <!-- local styling -->
-                <!-- <link rel="stylesheet" type="text/css" href="../assets/style/system.css"> -->
+                <link rel="stylesheet" type="text/css" href="../assets/style/style.css" />
                 <link rel="stylesheet" type="text/css" href="../assets/style/system.css" />
+                <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">                
 
 
                 <title>Contact Us</title>
-                <style>
-                    .container {
-                        width: 500px;
-                        clear: both;
-                    }
-
-                    .container input {
-                        width: 100%;
-                        clear: both;
-                        margin-bottom:.5em;
-                    }
-                    .reverse-highlight {
-                        background-color: black;
-                        color: white;
-                    }
-
-                    /* SEE: https://tobiasahlin.com/blog/flexbox-break-to-new-row/ */
-                    .flex-validated-form-element-container {
-                        display: flex;
-                        flex-wrap: wrap;
-                        vertical-align: top;"
-                    }
-                    
-                    .flex-force-break {
-                        flex-basis: 100%;
-                        height: 0;
-                    }
-
-
-                    /* /SEE: https://tobiasahlin.com/blog/flexbox-break-to-new-row/ */
-
-                    .force-1em 
-                    {
-                        width: 1em;
-                        max-width: 1em; 
-                        min-width:1em;
-                    }
-                </style>
             </head>
             <body>
 
-                <!-- <div class="row-container" id="header-row" name="header-row"></div> --><!--Header Populated By Javascript function -->
-                <div class="row-container" id="top-nav-container" name="top-nav-container"></div><!--Top Navigation conatiner - to be replace with Sadiya's Header Populated By Javascript function -->
+                <div class="row-container" id="header-row" name="header-row"></div> <!--Header Populated By Javascript function -->
+                <!--<div class="row-container" id="top-nav-container" name="top-nav-container"></div> --><!--Top Navigation conatiner - to be replace with Sadiya's Header Populated By Javascript function -->
 
 
                     <div class="w-100 text-center hero-text-level-0 ">
@@ -91,13 +54,21 @@ let generateContactUsForm = (req, res) =>
                         <div class="card w-100 p-3">
 
                             <form class="needs-validation"   id="contact-us-form" name="contact-us-form" automation-id="contact-us-form"  action="" method="post" novalidate>
-                                <div class="reverse-highlight w-100" style="display: flex; vertical-align: top;"><label for='_id' style="width: 8em;">_id (hide me):</label><input type="text" class="form-control reverse-highlight" _id="id" name="_id" automation-id="_id" value="${(values['_id'] || -1)}"/><br/></div>
+                            <div class="reverse-highlight w-100" style="display: none; vertical-align: top;"><label for='_id' style="width: 8em;">_id (hide me):</label><input type="text" class="form-control reverse-highlight" _id="id" name="_id" automation-id="_id" value="${(values['_id'] || -1)}"/><br/></div>
 
-                                <div>
-                                    <div style="display: inline-block; vertical-align: top; width: 49%; min-width: 7em;"  ><label for='first-name' style="width: 8em;">First Name:</label><input type="text" class="form-control" id="first-name" name="first-name" automation-id="first-name"  value="${values['first-name']}" required /><div class="invalid-feedback">First Name is Required</div><br/></div>
-                                    <div style="display: inline-block; vertical-align: top; width: 50%; min-width: 7em;"><label for='last-name' style="width: 8em;">Last Name:</label><input type="text" class="form-control" id="last-name" name="last-name" automation-id="last-name" value="${values['last-name']}" required /><div class="invalid-feedback">Last Name is Required</div><br/></div>
+
+                                <div class="flex-validated-form-element-container mt-2">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" class="form-control" id="first-name" name="first-name" value="${values['first-name']}" required />
+                                    <div class="invalid-feedback">First Name is Required</div>
                                 </div>
-                                
+        
+                                <div class="flex-validated-form-element-container mt-2">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" class="form-control" id="last-name" name="last-name" value="${values['last-name']}" required />
+                                    <div class="invalid-feedback">Last Name is Required</div>
+                                </div>
+        
                                 
                                 <div class="flex-validated-form-element-container">
                                 <label for='email' style="width: 8em;">email:</label>
@@ -121,7 +92,7 @@ let generateContactUsForm = (req, res) =>
                                 
                                 
                                 <div class="flex-validated-form-element-container"  style="text-align: left;">
-                                    <label for='content' style="width: 6.5em;">content:</label>
+                                    <label for='content' style="width: 6.5em;">Message:</label>
                                     <textarea class="form-control" id="content" name="content" automation-id="content" rows="10" cols="40">${values.content}</textarea>
                                 </div>
 
@@ -158,13 +129,13 @@ let generateContactUsForm = (req, res) =>
                 <!-- <script src="/assets/javascript/common.js"></script> -->
                 <script src="/assets/javascript/footer.js"></script>
                 <script src="/assets/javascript/topnav.js"></script>
-                <!-- <script src="/assets/javascript/header.js"></script> -->
+                <script src="/assets/javascript/header.js"></script>
 
 
                 <script>
                     window.onload = (event) => {
-                    // generateHeader("header-row");
-                    generateTopNav("top-nav-container");
+                    generateHeader("header-row");
+                    //generateTopNav("top-nav-container");
                     generateStandardFooter();
                     };
                 </script>
