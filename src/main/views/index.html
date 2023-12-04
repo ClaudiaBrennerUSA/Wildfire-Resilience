@@ -21,7 +21,7 @@
     <img class="banner-image" src="/assets/images/Canada June 2023 wildfire - h_11.03339173.jpg" alt="Banner Image">
     <div class="banner-text-right">Canada Wildfires Burning <br> June 2023</div>
     <div class="banner-text-left">
-      Community Wildfire Resilience Scorecard Released for Piloting
+      Community Wildfire Resilience Scorecard <br> Released for Piloting
     </div>
   </div>
   <div class="welcome-container">
@@ -32,21 +32,26 @@
       </p>
     </div>
     <div class="welcome-arise">
-      <h3> Arise </h1>
+      <h3> ARISE - US </h1>
       <p>
         ARISE-US is the US network of ARISE2 , established by the United Nations (UN) to build public-private collaboration in disaster resilience. We are a 100% volunteer organization operating in 35 countries worldwide, with some 450 corporate members and many more NGO and governmental partners. We published the original UN City Disaster Resilience Scorecard, now used by roughly 350 cities world-wide (including many in the US), on which this wildfire-specific scorecard is modeled, as well as several other scorecards, and a free critical asset management tool.
       </p>
     </div>
   </div>
+  
+  <button id="hamburger2" aria-expanded="false" onclick="toggleAdvHamburger()">
+     <i class="fa-solid fa-bars" aria-hidden="true"></i> MENU
+  </button>
+  
   <div class="advanced-navbar">
     <a href="#card1">Announcement</a>
     <a href="#card2">Assess Risk</a>
-    <a href="#card3">Collaborate with us</a>
-    <a href="#card4">Scorecard Support</a>
-    <a href="#card5">Share Feedback</a>
-    <a href="#card6">Support Cause</a>
-    <a href="#card7">Subscribe</a>
-
+    <a href="#card3">Collaborate</a>
+    <a href="#card4">Scorecard Details</a>
+    <a href="#card5">Support</a>
+    <a href="#card6">Feedback</a>
+    <a href="#card7">Contribute</a>
+    <a href="#card8">Subscribe</a>
     <!-- Add more links for each card -->
   </div>
   <div class="card-container">
@@ -82,7 +87,7 @@
         </div>
           <br>
           <img class="card-image" src="assets/images/toolkit.png"/>
-        <a href="/scorecard" class="card-button">Download the scorecard </a>
+        <a href="#" class="card-button" id="card2-button">Download the scorecard </a>
       </div>
       <div class="card-content">
         <div class="card-title">Need a zip file extraction tool?</div>
@@ -106,13 +111,12 @@
         <div class="card-text">Problems Downloading? <a href="#card4">Contact Us</a></div>
       </div>
     </div>
-<!-- </div>
-<div class="card-container"> -->
+
     <!-- Card 3 -->
     <div id="card3" class="card-box">
       <div class="card-content">
         <div class="card-title"><h2 id="card3-title">Collaborate With Us</h2></div>
-        <img class="card-image" src="assets/images/Aldercroft Heights locked gate - circle - 03-10-22 -- 20220310_114534.jpg"/>
+        <img class="card-image" src="assets/images/ALDERC_3.jpg"/>
         <div class="card-text">
           <p>The global rollout kicks off with a pilot program enabling municipalities worldwide to test and refine the Wildfire Resilience Scorecard.
           Pilot the Scorecard
@@ -120,14 +124,50 @@
           </p>
         </div>
         <a href="#" class="card-button" id="card3-button">Collaborate with Us</a>
+      </div>
+    </div>
 
+    <!-- Card 4 -->
+    <div id="card4" class="card-box">
+      <div class="card-content">
+        <div class="card-title"><h2 id="card4-title">Scorecard Details</h2></div>
+        <img class="card-image" src=""/> IMage box <br>
+        <div class="sub-card-box" id="whatScorecard">
+          <div class="card-question">
+            <h5>What is the Scorecard?</h5>
+            <a href="#scorecard1" class="toggle-link"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
+          </div>
+          <div class="sub-card-text" id="scorecard1">
+            <p>The Scorecard creates a baseline assessment of how a community is currently positioned through a set of questions that enables it to assess its wildfire resilience.</p>
+            <p>The score enables measurement of a community's progress in moving forward, or  the impact of retrograde steps needed - for example how a community expands into the wildland urban interface (WUI).</p>
+          </div>
+        </div>
+        <div class="sub-card-box" id="whyScorecard">
+          <div class="card-question">
+            <h5>Why do you need the Scorecard?</h5>
+            <a href="#scorecard2" class="toggle-link"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
+          </div>
+          <div class="sub-card-text" id="scorecard2">
+            <p>The Scorecard is intended to provide multiple benefits such as reduction in the likelihood and/or severity and extent of a potential wildfire occurring in your area; • reduction in the risk of loss of life or injury, damage to property, loss of key services, harm to air and water quality in the community, to name just a few.</p>  
+          </div>
+        </div>
+        <div class="sub-card-box" id="howScorecard">
+          <div class="card-question">
+            <h5>How do you use the Scorecard?</h5>
+            <a href="#scorecard3" class="toggle-link"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
+          </div>
+          <div class="sub-card-text" id="scorecard3">
+            <p>The Scorecard is designed to encourage holistic thinking about all the elements of wildfire hazard, exposure and vulnerability, at the property,  community and landscape scales.</p>
+            <p>We suggest you start with what and who (Stakeholders) you have at hand, and use the results to embark on the  communication, persuasion and dialog required to bring other stakeholders into alignment and into action.</p>  
+          </div>
+        </div>
       </div>
     </div>
     
-    <!-- Card 7 -->
-    <div id="card7" class="card-box">
+    <!-- Card 8 -->
+    <div id="card8" class="card-box">
       <div class="card-content" id="#subscribe">
-        <div class="card-title"><h2 id="card7-title">Subscribe for Updates!</h2></div>
+        <div class="card-title"><h2 id="card8-title">Subscribe for Updates!</h2></div>
         <br>
         <form id="signupForm">
           <div class="form-group">
@@ -145,17 +185,17 @@
             <input type="email" id="email" name="email" required>
           </div>
       
-          <a type="button" id="card7-button" class="card-button" onclick="submitForm()">Join</a>
+          <a type="button" id="card8-button" class="card-button" onclick="submitForm()">Join</a>
       
           <p class="success-message" id="successMessage"></p>
         </form>
       </div>
     </div>
 
-     <!-- Card 5 -->
-     <div id="card5" class="card-box">
+     <!-- Card 6 -->
+     <div id="card6" class="card-box">
       <div class="card-content">
-        <div class="card-title"><h2 id="card5-title">Share Your Feedback & Learnings</h2></div>
+        <div class="card-title"><h2 id="card6-title">Share Your Feedback & Learnings</h2></div>
         <div class="card-text">
           <h5>Support Creation of Global Best Practices</h5>
           <p>
@@ -164,37 +204,36 @@
            <p> Also share any feedback you have, whether it is for the web site, the scorecard, any processes, wildfires in general.  
           </p>
         </div>
-        <a href="#" class="card-button" id="card5-button">Pilot Feedback</a>
+        <a href="#" class="card-button" id="card6-button">Pilot Feedback</a>
 
       </div>
     </div>
-  <!-- </div>
-  <div class="card-container"> -->
-    <!-- Card 4 -->
-    <div id="card4" class="card-box">
+ 
+    <!-- Card 5 -->
+    <div id="card5" class="card-box">
       <div class="card-content">
-        <div class="card-title"><h2 id="card4-title">Need Scorecard Support? We can Help!</h2></div>
+        <div class="card-title"><h2 id="card5-title">Need Scorecard Support? We can Help!</h2></div>
         <div class="card-text">
           <h5>Need assistance with the scorecard?</h5>
           <p>Schedule a meeting with so together we can assess the best ways to support you.
           We offer workshops, webinars, on-the ground pilots and more.</p>
           <p>For more information please visit Frequently Asked Questions (FAQs) page.</p> 
         </div>
-        <a href="#" class="card-button" id="card4-button">Contact Us</a>
+        <a href="#" class="card-button" id="card5-button">Contact Us</a>
 
       </div>
     </div>
 
-     <!-- Card 6 -->
-     <div id="card6" class="card-box">
+     <!-- Card 7 -->
+     <div id="card7" class="card-box">
       <div class="card-content">
-        <div class="card-title"><h2 id="card6-title">Support the Cause</h2></div>
+        <div class="card-title"><h2 id="card7-title">Contribute to the Cause</h2></div>
         <div class="card-text">
          <p> We do invite reciprocity that can help us help future beneficiaries of this toolset by collaborating to improve it.</p>
           <p>To improve communities wildfire resilience overall through scorecard enhancements and adoption, ARISE-US/CrowdDoing CWP&C invite corporations and institutions to support this effort with.
         </p>
         </div>
-        <a href="#" class="card-button" id="card6-button">Support Wildfire Prevention</a>
+        <a href="#" class="card-button" id="card7-button">Support Wildfire Prevention</a>
 
       </div>
     </div>

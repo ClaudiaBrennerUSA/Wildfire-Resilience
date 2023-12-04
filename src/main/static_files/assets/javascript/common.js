@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
 
 backToTopButton.addEventListener('click', () => {
   window.scrollTo({
-    top: 0,
+    top: 50,
     behavior: 'smooth'
   });
 });
@@ -21,7 +21,6 @@ function switchNavActive(){
 
   // Get all the links in the navigation
   const navLinks = document.querySelectorAll('nav a');
-
 
   // Loop through each link and check if it matches the current page URL
   navLinks.forEach(link => {
@@ -34,7 +33,6 @@ function switchNavActive(){
     }
   });
 }
-
 
 function submitForm() {
   // Simulated database storage
@@ -56,3 +54,26 @@ function toggleHamburger() {
   navMenu.classList.toggle("show");
 }
 
+function toggleAdvHamburger(){
+  const advMenu = document.querySelector(".advanced-navbar");
+  advMenu.classList.toggle("show");
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleLinks = document.querySelectorAll('.toggle-link');
+
+  for (const link of toggleLinks) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      const targetCardID = link.getAttribute('href').substring(1);
+      const targetCard = document.getElementById(targetCardID);
+
+      if (targetCard.style.display === 'none' || targetCard.style.display === '') {
+        targetCard.style.display = 'block';
+      } else {
+        targetCard.style.display = 'none';
+      }
+    });
+  }
+});
