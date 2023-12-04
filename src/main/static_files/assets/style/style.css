@@ -9,20 +9,37 @@
 
   header {
     display: grid;
-    grid-template-columns: 0.3fr 2fr;
+    grid-template-columns: 0.4fr 2fr;
     padding: 15px;
   }
 
   .images-column {
     grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
   }
 
-  .images-column img {
-    width: 100%;
-    /* Adjust the size as needed */
-    height: fit-content;
-    /* Adjust the size as needed */
-    margin-top: 6px;
+  /* .images-column img {
+    width: 50px; 
+    height: 50px; 
+  } */
+
+  .top-left-image {
+    width: 5em;
+    height: auto;
+  }
+  
+  .top-right-image {
+    width: 9em;
+    height: auto;
+  }
+  
+  .centered-image {
+   width: 10em;
   }
 
   .content-column {
@@ -81,7 +98,7 @@
 
   .title p {
     margin-top: 10px;
-    color: #197AFF;
+    color: #65a637;
     font-size: x-large;
     font-weight: 500;
   }
@@ -230,7 +247,7 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    color: whitesmoke;
+    color: #f5f5f5;
   }
 
   .card-text {
@@ -366,6 +383,12 @@
     font-weight: 400;
     font-size: 17px;
     color: whitesmoke;
+  }
+
+  #scorecard-image{
+    width: 15em;
+    height: 16em;
+    margin-left: 30%;
   }
 
   .fa-icon {
@@ -519,16 +542,28 @@
   }
 
   .images-column {
-    width: 6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .top-left-image {
+    width: 4em;
     height: auto;
+  }
+  
+  .top-right-image {
+    width: 8em;
+    height: auto;
+  }
+  
+  .centered-image {
+   width: 7em;
   }
 
   .content-column {
     align-items: end;
-  }
-
-  .images-column img {
-    display: flex;
   }
 
   .title {
@@ -715,6 +750,13 @@
     margin-top: 15px;
   }
 
+  #scorecard-image {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
   .card-question{
     font-size: 15px;
   }
@@ -744,55 +786,63 @@
 
 @media only screen and (min-width:550px) and (max-width: 1024px) {
   header {
-    display: grid;
-    grid-template-columns: 0.5fr 2fr;
-    padding: 15px;
-  }
-
-  .images-column {
-    grid-column: 1;
-  }
-
-  .images-column img {
-    width: 7em;
-    height: fit-content;
-    margin-top: 6px;
-  }
-
-  .content-column {
-    grid-column: 2;
     display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
   }
 
-  .title {
+  .images-column {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row;
     align-items: center;
-    margin-left: -2em;
+    justify-content: center;
+    align-content: center;
+  }
+  .top-left-image {
+    width: 4em;
+    height: auto;
+  }
+  
+  .top-right-image {
+    width: 9em;
+    height: auto;
+  }
+  
+  .centered-image {
+   width: 8em;
+  }
+
+  .content-column {
+    align-items: end;
+  }
+
+  .title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
   }
 
   .title h1 {
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 0;
   }
 
   .title p {
-    margin: 0;
+    margin: 0.8em;
     font-size: 1.2em;
   }
 
   #hamburger {
     display: block;
     position: relative;
-    width: fit-content;
-    margin-inline-start: auto;
+
   }
 
   .global-navbar {
     display: none;
   }
-
 
   .global-navbar ul li:first-child ul:nth-child(1) {
     border-right: none;
@@ -805,11 +855,10 @@
 
   .global-navbar ul {
     display: flex;
-    list-style: square;
+    list-style: none;
     flex-direction: column;
     align-items: stretch;
     row-gap: 0.25rem;
-    padding: 1rem;
   }
 
   .global-navbar a {
@@ -820,6 +869,7 @@
     font-size: 1 rem;
     margin: 0;
   }
+
 
   .banner-container {
     display: block;
@@ -951,6 +1001,12 @@
     justify-content: flex-start;
     margin-top: 15px;
   }
+ 
+  #scorecard-image {
+    width: 15em;
+    height: 16em;
+    margin-left: 35%;
+  }
 
   .card-question{
     font-size: 1.1em;
@@ -981,6 +1037,34 @@
 }
 
 @media only screen and (min-width:1024px) and (max-width:1300px) {
+  header {
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+  }
+
+  .images-column {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .top-left-image {
+    width: 4em;
+    height: auto;
+  }
+  
+  .top-right-image {
+    width: 6em;
+    height: auto;
+  }
+  
+  .centered-image {
+   width: 8em;
+  }
+
   .global-navbar ul {
     align-items: flex-start;
     list-style: none;
@@ -989,5 +1073,10 @@
     /* Align navigation to the right */
     font-weight: 700;
     font-size: large;
+  }
+  #scorecard-image {
+    width: 15em;
+    height: 16em;
+    margin-left: 25%;
   }
 }
