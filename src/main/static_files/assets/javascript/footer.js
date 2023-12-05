@@ -2,7 +2,11 @@ function generateStandardFooter() {
   let footerMarkup = `
   <footer class="footer">
   <div class="footer-column">
-   <img class="footer-logo" src="assets/images/wildfire3logos1.png" alt="Footer Logo">
+   <div class="footer-logo">
+      <img src="assets/images/cd-logo-white.png" alt="CDlogo" class="top-left-image">
+      <img src="assets/images/CWPC-white.png" alt="CWPC" class="top-right-image">
+      <img src="assets/images/arise.png" alt="arise" class="centered-image">
+      </div>
    <div class="copyright">
     &copy; 2023. All rights reserved.
   </div>
@@ -34,7 +38,7 @@ function generateStandardFooter() {
      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-     <a href="#" target="_blank"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>'
+     <a href="#" target="_blank"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>
      </div>
      <div class="footer-links">
       <ul>
