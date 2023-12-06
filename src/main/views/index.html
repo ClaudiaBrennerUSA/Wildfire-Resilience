@@ -14,7 +14,7 @@
   <title>Community Resilience Wildfire Scorecard</title>
 </head>
 
-<body class="container-fluid">
+<body>
   <div id="header-row" name="header-row">
   </div>
   <div class="banner-container">
@@ -47,14 +47,14 @@
     <a href="#card1">Announcement</a>
     <a href="#card2">Assess Risk</a>
     <a href="#card3">Collaborate</a>
-    <a href="#card4">Scorecard Details</a>
+    <a href="#card4">Details</a>
     <a href="#card5">Support</a>
     <a href="#card6">Feedback</a>
     <a href="#card7">Contribute</a>
     <a href="#card8">Subscribe</a>
     <!-- Add more links for each card -->
   </div>
-  <div class="card-container">
+  <div class="card-container container-fluid">
     <!-- Card 1 -->
     <div id="card1" class="card-box">
       <div class="card-content">
@@ -132,7 +132,7 @@
       <div class="card-content">
         <div class="card-title"><h2 id="card4-title">Scorecard Details</h2></div>
         <div class="card-image">
-          <img id="scorecard-image" src="assets/images/ScorecardIconGray.png"/>
+          <img id="scorecard-image" src="assets/images/ScorecardDetails.png"/>
         </div>
         <div class="sub-card-box" id="whatScorecard">
           <div class="card-question">
@@ -186,8 +186,13 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
           </div>
+
+          <div class="form-group">
+            <label for="zipcode">Zip/Postal Code:</label>
+            <input type="text" id="zipcode" name="zipcode" required>
+          </div>
       
-          <a type="button" id="card8-button" class="card-button" onclick="submitForm()">Join</a>
+          <a type="button" id="card8-button" class="card-button" onclick="submitForm()">Subscribe</a>
       
           <p class="success-message" id="successMessage"></p>
         </form>
