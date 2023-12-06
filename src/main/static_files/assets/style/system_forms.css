@@ -6,38 +6,91 @@
 .container input {
     width: 100%;
     clear: both;
-    margin-bottom:.5em;
+    margin-bottom: .5em;
 }
 
 
-    /* 
-    Allow forms to present validation feedback on a new line
-    SEE: https://tobiasahlin.com/blog/flexbox-break-to-new-row/ 
-    */
-    .flex-validated-form-element-container {
-        display: flex;
-        flex-wrap: wrap;
-        vertical-align: top;
+/* 
+Allow forms to present validation feedback on a new line
+SEE: https://tobiasahlin.com/blog/flexbox-break-to-new-row/ 
+*/
+.flex-validated-form-element-container {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: top;
 
-    }
-    
-    .flex-force-break {
-        flex-basis: 100%;
-        height: 0;
-    }
+}
+
+.flex-force-break {
+    flex-basis: 100%;
+    height: 0;
+}
 
 
-    /* END Allow forms to present validation feedback on a new line */          
+/* END Allow forms to present validation feedback on a new line */
 
-    .force-1em 
-    {
-        width: 1em;
-        max-width: 1em; 
-        min-width:1em;
-    }                
-    
+.force-1em {
+    width: 1em;
+    max-width: 1em;
+    min-width: 1em;
+}
 
-    .reverse-highlight {
-        background-color: black;
-        color: white;
-    }
+
+.reverse-highlight {
+    background-color: black;
+    color: white;
+}
+
+.form-title {
+    color: #197AFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+.contact-form-title{
+    color: #65a637;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+
+}
+form label{
+    margin: 6px;
+}
+.form-control{
+    background-color:rgba(245, 245, 245, 0.952);
+}
+
+
+.card{
+    background-color: black;
+    color: white;
+    border-color: #2f2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
+    margin-bottom: 30px;
+}
+
+.subcribe-card-button{
+    background-color:#197AFF;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: large;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+.contact-card-button{
+    background-color:#65a637;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: large;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+}
