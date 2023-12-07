@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (targetCard.style.display === 'none' || targetCard.style.display === '') {
         targetCard.style.display = 'block';
+        // targetCard.style.borderTop = '2px solid #f6f6f6';
       } else {
         targetCard.style.display = 'none';
       }

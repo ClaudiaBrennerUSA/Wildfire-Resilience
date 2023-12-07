@@ -30,12 +30,15 @@ let generateContactUsForm = (req, res) =>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
                     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"
                 <!-- local styling -->
-                <link rel="stylesheet" type="text/css" href="../assets/style/style.css" />
-                <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">                
+                <link rel="stylesheet" type="text/css" href="/assets/style/style.css" />
+                <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">      
+                <script src="https://kit.fontawesome.com/e29cb68718.js" crossorigin="anonymous" async></script>
+          
                 <title>Contact Us</title>
             </head>
             <body>
                 <div id="header-row" name="header-row"></div>
+                
                 <div class="contact-form-title">
                     <h1>Contact Us</h1>
                 </div>
@@ -118,14 +121,14 @@ let generateContactUsForm = (req, res) =>
                 <!-- page specific scripts -->
                 <!-- <script src="/assets/javascript/common.js"></script> -->
                 <script src="/assets/javascript/footer.js"></script>
-                <script src="/assets/javascript/topnav.js"></script>
+                <script src="/assets/javascript/common.js"></script>
                 <script src="/assets/javascript/header.js"></script>
 
 
                 <script>
                     window.onload = (event) => {
                     generateHeader("header-row");
-                    //generateTopNav("top-nav-container");
+                    switchNavActive();
                     generateStandardFooter();
                     };
                 </script>

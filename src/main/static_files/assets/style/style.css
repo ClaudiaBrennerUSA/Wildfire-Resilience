@@ -490,10 +490,6 @@
   .about-welcome-container p{
     font-size: 1.1em;
   }
-
-  #about-container{
-    padding: 20px;
-  }
   .about-title {
     display: flex;
     flex-direction: column;
@@ -509,7 +505,7 @@
     display: flex;
     flex-direction: column;
     color: rgba(245, 245, 245, 0.89);
-    margin: 10px;
+    /* margin: 10px; */
   }
   .author-container {
     display: flex;
@@ -581,7 +577,11 @@
     color:#FFAC0D;
   }
   .fab {
+    color: whitesmoke;
     font-size: x-large;  
+  }
+  a .fab:hover{
+    color: #0d72ff;
   }
 
   #faq-container{
@@ -612,6 +612,17 @@
     font-size: 1.1em;
     margin-top: 10px;
     color:#f5f5f5
+  }
+
+  #scorecardInfographic{
+    width: 100%;
+  }
+  #scorecardInfographic img{
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
   }
 
   #back-to-top {
@@ -945,6 +956,127 @@
     line-height: inherit;
   }
 
+  #scorecardInfographic {
+    position: relative;
+    width: 150%;
+  }
+  #scorecardInfographic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: -20%;
+  }
+
+  .about-welcome-container{
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.834);
+  }
+  .about-welcome-container h3{
+    font-size: 1.4em;
+    color: #FFAC0D;
+  }
+  .about-welcome-container p{
+    font-size: 1.1em;
+  }
+  .about-welcome-container .welcome-crowdoing,.about-welcome-container .welcome-arise{
+    padding: 2px;
+  }
+  .about-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.5%;
+    color: #197AFF;
+  }
+  .about-title h5{
+    font-size: 1.1em;
+    color: rgba(245, 245, 245, 0.89);
+  }
+
+  .about-sub-title h1{
+    display: flex;
+    flex-direction: column;
+    color: rgba(245, 245, 245, 0.89);
+    font-size: 1.6em;
+  }
+  .author-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .author-box{
+    width: calc(90% - 5px);
+    background-color: #000000;
+    border-radius: 8px;
+    border-color: #2f2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    flex: 0 1 calc(48% - 1em);
+    align-items: flex-start;
+  }
+  .author-title{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .author-image{
+    grid-column: 1;
+  }
+  .author-image img{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .author-info{
+    grid-column: 2;
+    margin: 10px 10px 10px 20px;
+    color: rgba(245, 245, 245, 0.89);
+  }
+  .author-text{
+    font-size: 1.1em;
+    color: rgba(245, 245, 245, 0.89);
+  }
+
+  .colloborator-container,.team-container {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #fff;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.834);
+    margin: 10px;
+  }
+  .author-collab,.web-team {
+    grid-column: 1;
+    color: #fff;
+  }
+
+  .reviewer-collab,.web-support {
+    grid-column: 2;
+    color: #fff;
+  }
+  .author-collab ul li,.web-team ul li,
+  .reviewer-collab ul li,.web-support ul li {
+    font-size: 1em;
+    margin-top: 3px;
+  }
+  .author-collab h4,.web-team h4,
+  .reviewer-collab h4,.web-support h4{
+    color:#FFAC0D;
+  }
+  .fab {
+    color: whitesmoke;
+    font-size: x-large;  
+  }
+  a .fab:hover{
+    color: #0d72ff;
+  }
+
   .footer {
     display: flex;
     flex-direction: column;
@@ -1212,6 +1344,129 @@
     font-size: medium;
     line-height: inherit;
   }
+
+  #scorecardInfographic {
+    position: relative;
+    width: 150%;
+  }
+  #scorecardInfographic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: -20%;
+  }
+
+  .about-welcome-container{
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.834);
+  }
+  .about-welcome-container h3{
+    font-size: 1.4em;
+    color: #FFAC0D;
+  }
+  .about-welcome-container p{
+    font-size: 1.1em;
+  }
+  .about-welcome-container .welcome-crowdoing,.about-welcome-container .welcome-arise{
+    padding: 2px;
+  }
+  .about-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3.5%;
+    color: #197AFF;
+  }
+  .about-title h5{
+    font-size: 1.1em;
+    color: rgba(245, 245, 245, 0.89);
+  }
+
+  .about-sub-title h1{
+    display: flex;
+    flex-direction: column;
+    color: rgba(245, 245, 245, 0.89);
+    font-size: 1.6em;
+  }
+  .author-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .author-box{
+    width: 95%;
+    background-color: #000000;
+    border-radius: 8px;
+    border-color: #2f2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    flex: 0 1 calc(48% - 1em);
+    align-items: flex-start;
+  }
+  .author-title{
+    display: grid;
+    grid-template-columns: 0.4fr 2fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .author-image{
+    grid-column: 1;
+  }
+  .author-image img{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .author-info{
+    grid-column: 2;
+    margin: 10px 10px 10px 20px;
+    color: rgba(245, 245, 245, 0.89);
+  }
+  .author-text{
+    font-size: 1.1em;
+    color: rgba(245, 245, 245, 0.89);
+  }
+
+  .colloborator-container,.team-container {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #fff;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.834);
+    margin: 10px;
+  }
+  .author-collab,.web-team {
+    grid-column: 1;
+    color: #fff;
+  }
+
+  .reviewer-collab,.web-support {
+    grid-column: 2;
+    color: #fff;
+  }
+  .author-collab ul li,.web-team ul li,
+  .reviewer-collab ul li,.web-support ul li {
+    font-size: 1em;
+    margin-top: 3px;
+  }
+  .author-collab h4,.web-team h4,
+  .reviewer-collab h4,.web-support h4{
+    color:#FFAC0D;
+  }
+  .fab {
+    color: whitesmoke;
+    font-size: x-large;  
+  }
+  a .fab:hover{
+    color: #0d72ff;
+  }
+
+
   .footer {
     display: flex;
     flex-direction: column;

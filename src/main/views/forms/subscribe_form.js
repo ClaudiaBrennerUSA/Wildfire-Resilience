@@ -30,15 +30,18 @@ let markup = `
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <!-- local styling -->
         <link rel="stylesheet" type="text/css" href="/assets/style/style.css" />
-        <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">                
+        <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">
+        <script src="https://kit.fontawesome.com/e29cb68718.js" crossorigin="anonymous" async></script>                
         <title>Subscribe</title>
     </head>
     <body>
 
-        <div class="row-container" id="header-row" name="header-row"></div> <!--Header Populated By Javascript function -->
+        <div class="row-container" id="header-row" name="header-row"></div>
+        
             <div class="form-title">
                 <h1>Subscribe for Updates!</h1>
             </div>
+
 
             <div class="container">
                 <div class="card w-100 p-3">
@@ -115,14 +118,14 @@ let markup = `
         <!-- page specific scripts -->
         <!-- <script src="/assets/javascript/common.js"></script> -->
         <script src="/assets/javascript/footer.js"></script>
-        <script src="/assets/javascript/topnav.js"></script>
+        <script src="/assets/javascript/common.js"></script>
         <script src="/assets/javascript/header.js"></script>
 
 
         <script>
             window.onload = (event) => {
             generateHeader("header-row");
-            //generateTopNav("top-nav-container");
+            switchNavActive();
             generateStandardFooter();
             };
         </script>
