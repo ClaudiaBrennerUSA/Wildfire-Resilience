@@ -72,7 +72,7 @@ let markup = `
                         </div>
                         
                         <div class="flex-validated-form-element-container"><label for='organization' style="width: 8em;">Organization:</label><input type="text" class="form-control" id="organization" name="organization" automation-id="organization" value="${values['organization']}"/><br/></div>
-                        <div class="flex-validated-form-element-container"><label for='title'style="width: 8em;">Title:</label><input type="text" class="form-control" id="title" name="title" automatiion-id="title"  value="${values['title']}"/></div>
+                        <div class="flex-validated-form-element-container"><label for='title'style="width: 8em;">Role:</label><input type="text" class="form-control" id="title" name="title" automatiion-id="title"  value="${values['title']}"/></div>
                         
                         
                         

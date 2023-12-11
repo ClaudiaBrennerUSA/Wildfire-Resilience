@@ -72,7 +72,7 @@ let generateContactUsForm = (req, res) =>
                             </div>
                             
                             <div class="flex-validated-form-element-container">
-                                <label for='title'>Title:</label>
+                                <label for='title'>Role:</label>
                                 <input type="text" class="form-control" id="title" name="title" automatiion-id="title"  value="${values['title']}"/>
                             </div>
                             

@@ -31,7 +31,7 @@
   }
   
   .top-right-image {
-    width: 9em;
+    width: 8.5em;
     height: auto;
   }
   
@@ -625,6 +625,24 @@
     object-fit: cover;
   }
 
+  #scorecard-info-container{
+    padding: 20px;
+    color: whitesmoke;
+  }
+  #scorecard-info-container ul{
+    padding: inherit;
+  }
+  #scorecard-info-container h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.4em;
+    color: #FFAC0D;
+  }
+  #scorecard-info-container h5{
+    color: #FFAC0D;
+  }
+
   #back-to-top {
     position: fixed;
     right: 20px;
@@ -942,10 +960,10 @@
   }
 
   #scorecard-image {
-    width: auto;
+    width: 15em;
     height: auto;
-    margin: 0;
-    padding: 0;
+    display: block;
+    margin: auto;
   }
 
   .card-question{
@@ -1332,9 +1350,8 @@
   }
  
   #scorecard-image {
-    width: 15em;
-    height: 16em;
-    margin-left: 35%;
+    display: block;
+    margin: auto;
   }
 
   .card-question{
@@ -1598,9 +1615,10 @@
     font-size: large;
   }
   #scorecard-image {
-    width: 15em;
-    height: 16em;
-    margin-left: 25%;
+    display: block;
+    margin: auto;
+    width: auto;
+    height: auto;
   }
 
   .footer {
