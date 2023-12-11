@@ -53,7 +53,7 @@ let generateHeader = (headerContainerElementId) =>
   <header>
     <div class="images-column">
       <div>
-        <img src="assets/images/cd-logo-white.png" alt="CDlogo" class="top-left-image">
+        <img src="assets/images/cd-logo.png" alt="CDlogo" class="top-left-image">
         <img src="assets/images/CWPCLogoW.png" alt="CWPC" class="top-right-image">
       </div>
       <div>

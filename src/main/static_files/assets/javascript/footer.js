@@ -3,7 +3,7 @@ function generateStandardFooter() {
   <footer class="footer">
   <div class="footer-column">
    <div class="footer-logo">
-      <img src="assets/images/cd-logo-white.png" alt="CDlogo" class="top-left-image">
+      <img src="assets/images/cd-logo.png" alt="CDlogo" class="top-left-image">
       <img src="assets/images/CWPCLogoW.png" alt="CWPC" class="top-right-image">
       <img src="assets/images/arise.png" alt="arise" class="centered-image">
       </div>
