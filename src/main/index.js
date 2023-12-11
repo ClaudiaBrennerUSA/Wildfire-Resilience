@@ -8,6 +8,10 @@ const ContactUsRequestMongoDBRepository = require('./infrastructure/repositories
 const app = express();
 const bodyParser = require('body-parser');
 const urlencodedParser =  bodyParser.urlencoded({extended: false});
+const jsonParser =  bodyParser.json();
+
+app.use(urlencodedParser);
+app.use(jsonParser);
 
 const contactUsForm = require('./views/forms/contact_form.js');
 
@@ -153,6 +157,13 @@ app.use(express.static('static_files'));
 const scorecardRouter = require('./routes/scorecard.js');
 const contactUsRouter = require('./routes/contact_us.js');
 const subscriptionRouter = require('./routes/subscribe.js');
+
+const apiRouter = require('./routes/api/index.js');
+
+
 app.use('/scorecard', scorecardRouter);
 app.use('/contact_us', urlencodedParser, contactUsRouter);
 app.use('/subscribe', urlencodedParser, subscriptionRouter);
+// app.use('/api', urlencodedParser, apiRouter);
+app.use('/api', apiRouter);
+

@@ -171,30 +171,38 @@
       <div class="card-content" id="#subscribe">
         <div class="card-title"><h2 id="card8-title">Subscribe for Updates!</h2></div>
         <br>
-        <form id="signupForm">
+        <form id="signupForm" method="post"> <!--  __onsubmit="submissionEventHandler(event)"-->
+          
+          <div class="form-group d-none">
+            <label for="_id">ID (HIDE ME)</label>:</label>
+            <input type="text" id="_id" name="_id" value="-1" />
+          </div>          
+
           <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
           </div>
       
           <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
           </div>
       
           <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="sender-email">Email:</label>
+            <input type="email" id="sender-email" name="sender-email" required>
           </div>
 
           <div class="form-group">
-            <label for="zipcode">Zip/Postal Code:</label>
-            <input type="text" id="zipcode" name="zipcode" required>
+            <label for="postal-code">Zipcode/Postal Code:</label>
+            <input type="text" id="postal-code" name="postal-code" required>
           </div>
       
-          <a type="button" id="card8-button" class="card-button" onclick="submitForm()">Subscribe</a>
+          <!-- <a type="button" id="card8-button" class="card-button" onclick="submitForm()">Subscribe</a> -->
+          <input type="submit" class="card-button" id="subscribe" name="subscribe" automation-id="subscribe" value="Subscribe"/>
       
           <p class="success-message" id="successMessage"></p>
+          <div id="submit-success-message"></div>
         </form>
       </div>
     </div>
@@ -253,12 +261,60 @@
   <script src="/assets/javascript/footer.js"></script>
   <script src="/assets/javascript/header.js"></script>
   <script src="/assets/javascript/common.js"></script>
+  <script src="/assets/javascript/submit_from_view.js"></script>
+
+<script>
+  /* 
+var _formElement = '';
+var _postURI = '';
+
+
+const submissionEventHandler = (event) =>
+{
+
+    console.log(">>> submissionEventHandler()");
+
+    alert(">>> submissionEventHandler()");
+
+
+    event.preventDefault();
+    let allElementsCollection = _formElement.elements;
+    let allElements = Array.from(allElementsCollection);
+    allElements.forEach(element => 
+      {
+        console.log(`element.name =|${element.name}| element.type = |${element.type}| element.value=|${element.value}|`);
+      }
+    );
+
+    console.log("<<< submissionEventHandler()");
+    alert("<<< submissionEventHandler()");
+
+
+
+} // end submissionEventHandler()
+
+
+
+const setupAjaxSubmit = (formId, postURI) =>
+{
+    console.log(">>> setupAjaxSubmit()");
+
+    _formElement = document.getElementById(formId);
+    _formElement.addEventListener("submit", submissionEventHandler);
+    _postURI = postURI;
+
+    console.log("<<< setupAjaxSubmit()");
+
+} // end setupAjaxSubmit()
+ // - - - - - - - */ 
+</script>
 
   <script>
     window.onload = (event) => {
       generateHeader("header-row");
       generateStandardFooter();
       switchNavActive();
+      setupAjaxSubmit('signupForm', '/api/subscription');
     };
   </script>
 </body>

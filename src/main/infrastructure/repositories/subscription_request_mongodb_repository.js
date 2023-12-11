@@ -66,7 +66,7 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
         console.log("insertResult |", insertResult, "|");
 
 
-        retval = {"operation" : "INSERT", "id" : newId};
+        retval = {"operation" : "INSERT", "success":"SUCCEEDED", "id" : newId};
 
         model._id = newId.toString();
         console.log("70", model);

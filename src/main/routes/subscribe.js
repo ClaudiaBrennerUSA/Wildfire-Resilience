@@ -91,6 +91,13 @@ let validateContatctUsRequest = (rawValues) =>
 
 let sendRequest = (request) =>
 {
+    /*  
+    --
+    -- This funcction is to send the request via email or some other means to a delegate to notify them that the request has been submitted 
+    -- so they can take necessay action to fulfill the request
+    --
+    */
+
     success = true;
     console.log(">>> sendRequest()");
     console.log("request is " );
