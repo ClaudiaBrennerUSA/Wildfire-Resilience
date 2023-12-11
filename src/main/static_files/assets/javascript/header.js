@@ -52,14 +52,12 @@ let generateHeader = (headerContainerElementId) =>
   let markup = `
   <header>
     <div class="images-column">
-      <!--<img src="assets/images/wildfire3logos2.png"
-        alt="CrowdDoing">-->
-        <div>
-      <img src="assets/images/cd-logo-white.png" alt="CDlogo" class="top-left-image">
-      <img src="assets/images/CWPC-white.png" alt="CWPC" class="top-right-image">
+      <div>
+        <img src="assets/images/cd-logo-white.png" alt="CDlogo" class="top-left-image">
+        <img src="assets/images/CWPCLogoW.png" alt="CWPC" class="top-right-image">
       </div>
       <div>
-      <img src="assets/images/arise.png" alt="arise" class="centered-image">
+        <img src="assets/images/arise.png" alt="arise" class="centered-image">
       </div>
     </div>
     <div class="content-column">

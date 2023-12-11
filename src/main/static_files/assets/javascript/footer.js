@@ -4,7 +4,7 @@ function generateStandardFooter() {
   <div class="footer-column">
    <div class="footer-logo">
       <img src="assets/images/cd-logo-white.png" alt="CDlogo" class="top-left-image">
-      <img src="assets/images/CWPC-white.png" alt="CWPC" class="top-right-image">
+      <img src="assets/images/CWPCLogoW.png" alt="CWPC" class="top-right-image">
       <img src="assets/images/arise.png" alt="arise" class="centered-image">
       </div>
    <div class="copyright">
@@ -16,9 +16,9 @@ function generateStandardFooter() {
     <h4>Company</h4>
     <div class="footer-links">
       <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Press Release</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/about_us">About</a></li>
+        <li><a href="/press_release">Press Release</a></li>
+        <li><a href="/contact_us">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -26,23 +26,23 @@ function generateStandardFooter() {
     <h4>Scorecard</h4>
     <div class="footer-links">
       <ul>
-        <li><a href="#">Using the Scorecard</a></li>
-        <li><a href="#">Scorecard Info</a></li>
-        <li><a href="#">FAQs</a></li>
+        <li><a href="/using_the_scorecard">Using the Scorecard</a></li>
+        <li><a href="/scorecard_info">Scorecard Information</a></li>
+        <li><a href="/faq">FAQs</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-column">
     <h4>Follow Us</h4>
     <div class="social-icons">
-     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-     <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-     <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+     <a href="https://www.linkedin.com/company/crowddoing/" target="_blank"><i class="fab fa-linkedin"></i></a>
+     <a href="https://www.facebook.com/profile.php?id=100066404896166" target="_blank"><i class="fab fa-facebook"></i></a>
+     <a href="https://www.youtube.com/@crowddoing" target="_blank"><i class="fab fa-youtube"></i></a>
      <a href="#" target="_blank"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>
      </div>
      <div class="footer-links">
       <ul>
-        <li><a href="#">Subscribe</a></li>
+        <li><a href="/subscribe">Subscribe</a></li>
       </ul>
     </div>
   </div>
