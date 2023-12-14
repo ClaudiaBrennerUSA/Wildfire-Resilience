@@ -100,11 +100,13 @@ let generateForm = (req, res) =>
                                 </div>
                                 
                                 <div class="form-title">
-                                <span class="lead">Support the  Wildfire Scorecard and Catastrophic Prevention Efforts</span>
-                                (Select all that apply)
-                                    <p>
-                                    <br/>I or my organization are interested in supporting the Catastrophic Wildfire Prevention &amp; Consortium at CrowdDoing venture in the following ways:
-                                    </p>
+                                    <span class="lead card-title">Support the  Wildfire Scorecard and Catastrophic Prevention Efforts</span>
+                                    <div class="w-100 card-text">
+                                        <div class="w-100 text-center" > (Select all that apply)</div>
+                                        <p>
+                                        <br/>I or my organization are interested in supporting the Catastrophic Wildfire Prevention &amp; Consortium at CrowdDoing venture in the following ways:
+                                        </p>
+                                    </div>
                                 </div>
             
                                 

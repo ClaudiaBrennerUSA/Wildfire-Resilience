@@ -87,7 +87,7 @@
         </div>
           <br>
           <img class="card-image" src="assets/images/ScorecardE10wlogos.png"/>
-        <a href="#" class="card-button" id="card2-button">Download the scorecard </a>
+        <a href="/scorecard" class="card-button" id="card2-button">Download the scorecard </a>
       </div>
       <div class="card-content">
         <div class="card-title">Need a zip file extraction tool?</div>
@@ -123,7 +123,8 @@
           Community collaboration is critical for preventing catastrophic wildfires.
           </p>
         </div>
-        <a href="#" class="card-button" id="card3-button">Collaborate with Us</a>
+        <a href="#" class="card-button" id="card3-button" onclick = "comingSoon(this, 'collaborate-pending');">Collaborate with Us</a> <span class="card-text">&nbsp; &nbsp; (coming soon)</span>
+        <div class="d-none card-title" id="collaborate-pending">Collaborate with us is coming soon</div>
       </div>
     </div>
 
@@ -219,8 +220,8 @@
            <p> Also share any feedback you have, whether it is for the web site, the scorecard, any processes, wildfires in general.  
           </p>
         </div>
-        <a href="#" class="card-button" id="card6-button">Pilot Feedback</a>
-
+        <a href="#" class="card-button" id="card6-button" onclick = "comingSoon(this, 'pilot-feedback-pending');">Pilot Feedback</a><span class="card-text">&nbsp; &nbsp; (coming soon)</span>
+        <div id="pilot-feedback-pending" class="d-none m-3 lead card-title">Pilot Feedback is Coming Soon</div>
       </div>
     </div>
  
@@ -234,7 +235,7 @@
           We offer workshops, webinars, on-the ground pilots and more.</p>
           <p>For more information please visit Frequently Asked Questions (FAQs) page.</p> 
         </div>
-        <a href="#" class="card-button" id="card5-button">Contact Us</a>
+        <a href="/contact_us" class="card-button" id="card5-button">Contact Us</a>
 
       </div>
     </div>
@@ -248,7 +249,7 @@
           <p>To improve communities wildfire resilience overall through scorecard enhancements and adoption, ARISE-US/CrowdDoing CWP&C invite corporations and institutions to support this effort with.
         </p>
         </div>
-        <a href="#" class="card-button" id="card7-button">Support Wildfire Prevention</a>
+        <a href="/support_the_cause" class="card-button" id="card7-button">Support Wildfire Prevention</a>
 
       </div>
     </div>
@@ -263,51 +264,6 @@
   <script src="/assets/javascript/common.js"></script>
   <script src="/assets/javascript/submit_from_view.js"></script>
 
-<script>
-  /* 
-var _formElement = '';
-var _postURI = '';
-
-
-const submissionEventHandler = (event) =>
-{
-
-    console.log(">>> submissionEventHandler()");
-
-    alert(">>> submissionEventHandler()");
-
-
-    event.preventDefault();
-    let allElementsCollection = _formElement.elements;
-    let allElements = Array.from(allElementsCollection);
-    allElements.forEach(element => 
-      {
-        console.log(`element.name =|${element.name}| element.type = |${element.type}| element.value=|${element.value}|`);
-      }
-    );
-
-    console.log("<<< submissionEventHandler()");
-    alert("<<< submissionEventHandler()");
-
-
-
-} // end submissionEventHandler()
-
-
-
-const setupAjaxSubmit = (formId, postURI) =>
-{
-    console.log(">>> setupAjaxSubmit()");
-
-    _formElement = document.getElementById(formId);
-    _formElement.addEventListener("submit", submissionEventHandler);
-    _postURI = postURI;
-
-    console.log("<<< setupAjaxSubmit()");
-
-} // end setupAjaxSubmit()
- // - - - - - - - */ 
-</script>
 
   <script>
     window.onload = (event) => {
@@ -316,6 +272,32 @@ const setupAjaxSubmit = (formId, postURI) =>
       switchNavActive();
       setupAjaxSubmit('signupForm', '/api/subscription');
     };
+  </script>
+
+  <script>
+
+let stopit = (event) =>
+    {
+      console.log(">>> stopit");
+      console.log(`preventing default for ${event.target.id}`);
+      event.preventDefault();
+      console.log("<<< stopit");
+    }
+
+    let comingSoon = (clickedElement, targetElementId, callback) =>
+    {
+      console.log(">>> comingSoon()");
+
+      let hiddenElement = document.getElementById(targetElementId);
+      hiddenElement.class="d-block";
+      console.log( "comingSoon()  do you see it ?");
+
+      
+      stopit(event);  
+
+    console.log("<<< comingSoon()");
+    }
+
   </script>
 </body>
 </html>
