@@ -81,8 +81,8 @@ let downloadScorecard = async (req, res) =>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-            <link rel="stylesheet" href="/assets/style/style.css" />
             <link rel="stylesheet" href="/assets/style/system.css" />
+            <link rel="stylesheet" href="/assets/style/style.css" />
             <script src="https://kit.fontawesome.com/e29cb68718.js" crossorigin="anonymous" async></script>
         <title>Ddownload Scorecard - Community Resilience Wildfire Scorecard</title>
         </head>
@@ -93,7 +93,7 @@ let downloadScorecard = async (req, res) =>
             <div class="w-100 text-center hero-text-level-0 ">
                 Download the scorecard<br>
             </div>
-            <div class="w-100 text-center"><h2>Check your downloads for a file named "${scorecardfileName}"</h2> </div>
+            <div class="w-100 text-center lead card-title"><h2>Check your downloads for a file named "${scorecardfileName}"</h2> </div>
 
 
             <div id="footer-container"></div>  <!-- /footer-container -->
