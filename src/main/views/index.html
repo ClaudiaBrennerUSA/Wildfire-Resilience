@@ -123,8 +123,8 @@
           Community collaboration is critical for preventing catastrophic wildfires.
           </p>
         </div>
-        <a href="#" class="card-button" id="card3-button" onclick = "comingSoon(this, 'collaborate-pending');">Collaborate with Us</a> <span class="card-text">&nbsp; &nbsp; (coming soon)</span>
-        <div class="d-none card-title" id="collaborate-pending">Collaborate with us is coming soon</div>
+        <a href="#" class="card-button" id="card3-button" onclick = "comingSoon(this, 'collaborate-pending', 'Collaborate with Us');">Collaborate with Us</a> <span class="card-text">&nbsp; &nbsp; (coming soon)</span>
+        <div class="mt-3 lead card-title" id="collaborate-pending"></div>
       </div>
     </div>
 
@@ -220,8 +220,8 @@
            <p> Also share any feedback you have, whether it is for the web site, the scorecard, any processes, wildfires in general.  
           </p>
         </div>
-        <a href="#" class="card-button" id="card6-button" onclick = "comingSoon(this, 'pilot-feedback-pending');">Pilot Feedback</a><span class="card-text">&nbsp; &nbsp; (coming soon)</span>
-        <div id="pilot-feedback-pending" class="d-none m-3 lead card-title">Pilot Feedback is Coming Soon</div>
+        <a href="#" class="card-button" id="card6-button" onclick = "comingSoon(this, 'pilot-feedback-pending', 'Provide Pilot Feedback');">Pilot Feedback</a><span class="card-text">&nbsp; &nbsp; (coming soon)</span>
+        <div id="pilot-feedback-pending" class="m-3 lead card-title"></div>
       </div>
     </div>
  
@@ -284,12 +284,12 @@ let stopit = (event) =>
       console.log("<<< stopit");
     }
 
-    let comingSoon = (clickedElement, targetElementId, callback) =>
+    let comingSoon = (clickedElement, targetElementId, whatIsComing, callback) =>
     {
       console.log(">>> comingSoon()");
 
-      let hiddenElement = document.getElementById(targetElementId);
-      hiddenElement.class="d-block";
+      let targetElement = document.getElementById(targetElementId);
+      targetElement.textContent = `${whatIsComing} is coming soon!`
       console.log( "comingSoon()  do you see it ?");
 
       
