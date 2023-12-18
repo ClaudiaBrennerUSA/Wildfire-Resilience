@@ -157,8 +157,6 @@
   .banner-image {
     min-width: 100%;
     width: 100%;
-    min-height: 500px;
-    height: 500px;
     display: block;
   }
 
@@ -832,9 +830,8 @@
   }
 
   .banner-image {
-    width: min-content;
-    min-height: min-content;
-    height: 250px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 
   .banner-text-right,
@@ -843,8 +840,8 @@
   }
 
   .banner-text-left {
-    bottom: 50px;
-    left: 10px;
+    bottom: 22px;
+    left: 18px;
   }
   .banner-text-right {
     right: 10px;
@@ -1095,6 +1092,11 @@
     color: #0d72ff;
   }
 
+  .card-form{
+    display: block;
+    width: auto;
+  }
+
   .footer {
     display: flex;
     flex-direction: column;
@@ -1223,9 +1225,8 @@
   }
 
   .banner-image {
-    width: min-content;
-    min-height: min-content;
-    height: 250px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
   }
 
   .banner-text-right,

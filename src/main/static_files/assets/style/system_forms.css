@@ -1,53 +1,20 @@
-.container {
-    width: 500px;
-    clear: both;
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+body {
+font-family: 'Work Sans';
 }
 
-.container input {
+.form-container{
     width: 100%;
-    clear: both;
-    margin-bottom: .5em;
 }
 
-
-/* 
-Allow forms to present validation feedback on a new line
-SEE: https://tobiasahlin.com/blog/flexbox-break-to-new-row/ 
-*/
-.flex-validated-form-element-container {
-    display: flex;
-    flex-wrap: wrap;
-    vertical-align: top;
-
-}
-
-.flex-force-break {
-    flex-basis: 100%;
-    height: 0;
-}
-
-
-/* END Allow forms to present validation feedback on a new line */
-
-.force-1em {
-    width: 1em;
-    max-width: 1em;
-    min-width: 1em;
-}
-
-
-.reverse-highlight {
-    background-color: black;
-    color: white;
-}
-
-.form-title {
+.form-title,.download-form-title {
     color: #197AFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 15px;
 }
+
 .contact-form-title{
     color: #65a637;
     display: flex;
@@ -56,23 +23,28 @@ SEE: https://tobiasahlin.com/blog/flexbox-break-to-new-row/
     margin: 15px;
 
 }
-form label{
-    margin: 6px;
+
+.form-group label{
+    font-size: medium;
 }
 .form-control{
     background-color:rgba(245, 245, 245, 0.952);
 }
 
-
-.card{
+.card-form{
+    display: block;
+    width: fit-content;
+    padding: 10px;
     background-color: black;
     color: white;
     border-color: #2f2e2e;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
+    margin: auto;
     margin-bottom: 30px;
 }
 
-.subcribe-card-button{
+.subcribe-card-button,.download-card-button,.support-form-button{
+    width: -webkit-fill-available;
     background-color:#197AFF;
     padding: 5px 10px;
     color: #fff;
@@ -84,6 +56,7 @@ form label{
     margin-top: 10px;
 }
 .contact-card-button{
+    width: -webkit-fill-available;
     background-color:#65a637;
     padding: 5px 10px;
     color: #fff;
@@ -94,3 +67,16 @@ form label{
     transition: background-color 0.3s ease-in-out;
     margin-top: 10px;
 }
+
+/* @media only screen and (max-width: 550px){
+    .card-form{
+        display: block;
+        width: auto;
+    }
+}
+@media only screen and (min-width:550px) and (max-width: 1024px){
+    .card-form{
+        display: block;
+        width: auto;
+    }
+} */

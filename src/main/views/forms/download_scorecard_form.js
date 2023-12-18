@@ -41,107 +41,94 @@ const renderScorecardRequestForm = (req, res) =>
             <!-- Bootstrap CSS -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         
-        
             <!-- local styling -->
-            <link rel="stylesheet" type="text/css" href="/assets/style/system.css">
             <link rel="stylesheet" type="text/css" href="/assets/style/style.css">
-            <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">
-
-
-        
+            <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">        
         </head>
         <body>
-            
-            <div class="row-container" id="header-row" name="header-row"></div><!--Header Populated By Javascript function-->
-
-            <div class="container">
-
-                <div class="w-100 text-center hero-text-level-0 ">
+            <div id="header-row" name="header-row"></div>
+            <div class="download-form-title">
                 <h1>Download the Scorecard</h1>
-                </div>
-
-                <div class="card w-100 p-3">
-
+            </div>
+            <div class="container"> 
+                <div class="card-form">
                     <form class="needs-validation" action="/scorecard" method="POST" novalidate>
                     
                     <div class="reverse-highlight w-100" style="display: none; vertical-align: top;"><label for='_id' style="width: 8em;">_id (hide me):</label><input type="text" class="form-control reverse-highlight" _id="id" name="_id" automation-id="_id" value="${(values['_id'] || -1)}"/><br/></div>
 
-                        <div class="">
-                        <div class="flex-validated-form-element-container mt-2">
-                            <label for="first-name">First Name</label>
-                            <input type="text" class="form-control" id="first-name" name="first-name" placeholder="Your First Name" value="${values['first-name']}" required />
-                            <div class="invalid-feedback">First Name is Required</div>
-                        </div>
+                    <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" class="form-control" id="first-name" name="first-name"  value="${values['first-name']}" required />
+                        <div class="invalid-feedback">First Name is Required</div>
+                    </div>
 
-                        </div>
-                        <div class="flex-validated-form-element-container mt-2">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Your Last Name" value="${values['last-name']}" required />
-                            <div class="invalid-feedback">Last Name is Required</div>
-                        </div>
+                    <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                        <input type="text" class="form-control" id="last-name" name="last-name"  value="${values['last-name']}" required />
+                        <div class="invalid-feedback">Last Name is Required</div>
+                    </div>
 
 
-                        <div class="flex-validated-form-element-container mt-2">
-                        <label for='email'>email:</label>
-                        <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email" placeholder="Your valid email address"  value="${values['sender-email']}" required />
-                        <!-- <div class="flex-force-break"></div> -->
-                        <div class="invalid-feedback mb-3">A valid emaill address is Required</div>
-                        </div>
+                    <div class="form-group">
+                    <label for='email'>Email:</label>
+                    <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email"  value="${values['sender-email']}" required />
+                    <div class="invalid-feedback">A valid emaill address is Required</div>
+                    </div>
 
-                        <div class="flex-validated-form-element-container mt-2">
-                            <label for="phone-number">Phone Number</label>
-                            <input type="text" class="form-control" id="phone-number" name="phone-number" placeholder="Best Number to Reach You" value="${values['phone-number']}"/>
-                        </div>
+                    <div class="form-group">
+                    <label for="phone-number">Phone Number:</label>
+                        <input type="text" class="form-control" id="phone-number" name="phone-number"  value="${values['phone-number']}"/>
+                    </div>
 
-                        <div class="flex-validated-form-element-container mt-2">
-                            <label for="organization">Organization</label>
-                            <input type="text" class="form-control" id="organization" name="organization" placeholder="Company, NGO, Municipality, or Entity this scorecard is for" value="${values['organization']}"/>
-                        </div>
+                    <div class="form-group">
+                    <label for="organization">Organization:</label>
+                        <input type="text" class="form-control" id="organization" name="organization" placeholder="Company, NGO, Municipality, or Entity" value="${values['organization']}"/>
+                    </div>
 
-                        <div class="flex-validated-form-element-container mt-2">
-                            <label for="title">Role</label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Your Title or Role at the organization above" value="${values['title']}"/>
-                        </div>
-
-
-                        <div class="flex-validated-form-element-container mt-2">
-                            <label for='postal-code'>Zipcode /Postal Code:</label>
-                            <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code" placeholder="Zipcode or Postal Code of the Organization" value="${values['postal-code']}" required />
-                            <div class="invalid-feedback mb-3">Zipcode / Postal Code is Required></div>
-                        </div>
-                                                
-
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input force-1em" id="subscribe"  name="subscribe" automation-id="subscribe" value="${values['subscribe']}" ${values['subscribe']}>
-                            <label class="form-check-label" for="subscribe">Subscribe</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input force-1em" id="requests-pilot" name="requests-pilot" automation-id="requests-pilot"  value="${values['requests-pilot']}"  ${values['requests-pilot']}>
-                            <label class="form-check-label" for="requests-pilot">I am interested in piloting with CWP&C</label>
-                        </div>
+                    <div class="form-group">
+                    <label for="title">Role:</label>
+                        <input type="text" class="form-control" id="title" name="title" value="${values['title']}"/>
+                    </div>
 
 
-                        <div class="flex-validated-form-element-container"  style="text-align: left;">
-                            <label for='comments' style="width: 6.5em;">Comments:</label>
-                            <textarea class="form-control" id="comments" name="comments" automation-id="comments" rows="10" cols="40">${values.comments}</textarea>
-                        </div>
+                    <div class="form-group">
+                    <label for='postal-code'>Zipcode/Postal Code:</label>
+                        <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code"  value="${values['postal-code']}" required />
+                        <div class="invalid-feedback">Zipcode / Postal Code is Required></div>
+                    </div>
+                                            
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input force-1em" id="subscribe"  name="subscribe" automation-id="subscribe" value="${values['subscribe']}" ${values['subscribe']}>
+                        <label class="form-check-label" for="subscribe">Subscribe</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input force-1em" id="requests-pilot" name="requests-pilot" automation-id="requests-pilot"  value="${values['requests-pilot']}"  ${values['requests-pilot']}>
+                        <label class="form-check-label" for="requests-pilot">I am interested in piloting with CWP&C</label>
+                    </div>
 
 
-                        <button type="submit" class="btn btn-primary mt-2">Get Scorecard</button>
-                    </form>
+                    <div class="form-group">
+                        <label for='comments'>Comments:</label>
+                        <textarea class="form-control" id="comments" name="comments" automation-id="comments" rows="5" cols="50">${values.comments}</textarea>
+                    </div>
 
-                </div closes="card">
+
+                    <button type="submit" class="download-card-button">Download Scorecard</button>
+                 </form>
+
+                </div>
 
             </div ><!-- /form container -->
 
             <div id="footer-container"></div>  <!-- /footer-container -->
 
             <!-- Javascript at bottom of page to facilitate faster page loads -->
-
-            <!-- BOOTSTRAP FROM CDN -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>    
             <!-- page specific scripts -->
             <script src="/assets/javascript/footer.js"></script>
+                <script src="/assets/javascript/common.js"></script>
+                <script src="/assets/javascript/header.js"></script>
+
 
             <!-- form validation script  SEE: https://getbootstrap.com/docs/5.0/forms/validation/ --> 
             <script>
@@ -169,12 +156,6 @@ const renderScorecardRequestForm = (req, res) =>
             })()  
             // -- -- -- -- -- --  */
             </script>
-
-            <script src="/assets/javascript/footer.js"></script>
-            <script src="/assets/javascript/topnav.js"></script>
-            <script src="/assets/javascript/header.js"></script>
-            <script src="/assets/javascript/common.js"></script>
-          
 
             <script>
                 window.onload = (event) => {

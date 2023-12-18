@@ -43,51 +43,51 @@ let generateContactUsForm = (req, res) =>
                     <h1>Contact Us</h1>
                 </div>
                 <div class="container">
-                    <div class="card w-100 p-3">
+                    <div class="card-form">
                         <form class="needs-validation"   id="contact-us-form" name="contact-us-form" automation-id="contact-us-form"  action="" method="post" novalidate>
                         <div class="reverse-highlight w-100" style="display: none; vertical-align: top;"><label for='_id' style="width: 8em;">_id (hide me):</label><input type="text" class="form-control reverse-highlight" _id="id" name="_id" automation-id="_id" value="${(values['_id'] || -1)}"/><br/></div>
-                            <div class="flex-validated-form-element-container mt-2">
-                                <label for="first-name">First Name:</label>
-                                <input type="text" class="form-control" id="first-name" name="first-name" value="${values['first-name']}" required />
-                                <div class="invalid-feedback">First Name is Required</div>
-                            </div>
-                            <div class="flex-validated-form-element-container mt-2">
-                                <label for="last-name">Last Name:</label>
-                                <input type="text" class="form-control" id="last-name" name="last-name" value="${values['last-name']}" required />
-                                <div class="invalid-feedback">Last Name is Required</div>
-                            </div>
-    
+                        
+                        <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                            <input type="text" class="form-control" id="first-name" name="first-name" value="${values['first-name']}" required />
+                            <div class="invalid-feedback">First Name is Required</div>
+                        </div>
+                        <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                            <input type="text" class="form-control" id="last-name" name="last-name" value="${values['last-name']}" required />
+                            <div class="invalid-feedback">Last Name is Required</div>
+                        </div>
+
+                        
+                        <div class="form-group">
+                        <label for='email'>Email:</label>
+                        <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email" value="${values['sender-email']}" required />
+                        <!-- <div class="flex-force-break"></div> -->
+                        <div class="invalid-feedback mb-3">A valid email address is Required</div>
+                        </div>
+                        
+                        <div class="form-group">
+                        <label for='organization' >Organization:</label>
+                            <input type="text" class="form-control" id="organization" name="organization" automation-id="organization" value="${values['organization']}"/>
+                        </div>
                             
-                            <div class="flex-validated-form-element-container">
-                            <label for='email'>Email:</label>
-                            <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email" value="${values['sender-email']}" required />
-                            <!-- <div class="flex-force-break"></div> -->
-                            <div class="invalid-feedback mb-3">A valid emaill address is Required</div>
-                            </div>
-                            
-                            <div class="flex-validated-form-element-container">
-                                <label for='organization' >Organization:</label>
-                                <input type="text" class="form-control" id="organization" name="organization" automation-id="organization" value="${values['organization']}"/>
-                                <br/>
-                            </div>
-                            
-                            <div class="flex-validated-form-element-container">
-                                <label for='title'>Role:</label>
+                        <div class="form-group">
+                        <label for='title'>Role:</label>
                                 <input type="text" class="form-control" id="title" name="title" automatiion-id="title"  value="${values['title']}"/>
                             </div>
                             
                             
                             
-                            <div class="flex-validated-form-element-container">
-                                <label for='postal-code'>Zip/Postal Code:</label>
+                            <div class="form-group">
+                            <label for='postal-code'>Zip/Postal Code:</label>
                                 <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code"  value="${values['postal-code']}" required />
-                                <div class="invalid-feedback mb-3">Zipcode / Postal Code is Required></div>
+                                <div class="invalid-feedback mb-3">Zipcode / Postal Code is Required</div>
                             </div>
                             
                             
-                            <div class="flex-validated-form-element-container"  style="text-align: left;">
-                                <label for='content'>Message:</label>
-                                <textarea class="form-control" id="content" name="content" automation-id="content" rows="5" cols="40">${values.content}</textarea>
+                            <div class="form-group">
+                            <label for='content'>Message:</label>
+                                <textarea class="form-control" id="content" name="content" automation-id="content" rows="5" cols="50">${values.content}</textarea>
                             </div>
 
                             <div class="form-check">
@@ -99,8 +99,8 @@ let generateContactUsForm = (req, res) =>
                                 <input type="checkbox" class="form-check-input force-1em" id="requests-pilot" name="requests-pilot" automation-id="requests-pilot"  value="${values['requests-pilot']}"  __onclick="checkme(this)"   ${values['requests-pilot']}>
                                 <label class="form-check-label" for="requests-pilot">I am interested in piloting with CWP&C</label>
                             </div>
-                            <br/>
-                            <input class="contact-card-button" type="submit" id="'submitRequest" name="submitRequest" automation-id="sumitRequest" value="Submit Request">
+
+                            <input class="contact-card-button" type="submit" id="'submitRequest" name="submitRequest" automation-id="sumitRequest" value="Contact Us">
                         </form>
 
                     </div closes="card"> 
@@ -112,14 +112,12 @@ let generateContactUsForm = (req, res) =>
                 <!-- Javascript at bottom of page to facilitate faster page loads -->
 
                 <!-- BOOTSTRAP FROM CDN -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-                    crossorigin="anonymous"></script>
+                
                 <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
                     integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
                     async></script>
+
                 <!-- page specific scripts -->
-                <!-- <script src="/assets/javascript/common.js"></script> -->
                 <script src="/assets/javascript/footer.js"></script>
                 <script src="/assets/javascript/common.js"></script>
                 <script src="/assets/javascript/header.js"></script>
