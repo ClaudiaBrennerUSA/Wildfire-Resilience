@@ -53,13 +53,14 @@ let generateHeader = (headerContainerElementId) =>
   <header>
     <div class="images-column">
       <div>
-        <img src="assets/images/cd-logo.png" alt="CDlogo" class="top-left-image">
-        <img src="assets/images/CWPCLogoW.png" alt="CWPC" class="top-right-image">
+       <a href="/">  <img src="assets/images/cd-logo.png" alt="CDlogo" class="top-left-image"> </a>
+       <a href="/">   <img src="assets/images/CWPCLogoW.png" alt="CWPC" class="top-right-image"> </a>
       </div>
       <div>
-        <img src="assets/images/arise.png" alt="arise" class="centered-image">
+        <a href="/">  <img src="assets/images/arise.png" alt="arise" class="centered-image"> </a>
       </div>
     </div>
+    </a>
     <div class="content-column">
       <button id="hamburger" aria-expanded="false" onclick="toggleHamburger()">
        <i class="fa-solid fa-bars" aria-hidden="true"></i>
