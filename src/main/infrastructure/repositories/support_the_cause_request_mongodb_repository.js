@@ -4,22 +4,22 @@ const env = require('../../config/env');
 
 
 
-class SubscriptionRequestMongoDBRepository extends MongoDBRepository
+class SupportTheCauseRequestMongoDBRepository extends MongoDBRepository
 {
-    collection = 'SubscriptionRequests';
+    collection = 'SupportTheCauseRequests';
 
     constructor()
     {
-        console.log(">>> SubscriptionRequestMongoDBRepository.constructor()");
+        console.log(">>> SupportTheCauseRequestMongoDBRepository.constructor()");
 
         super();
 
-        console.log("<<< SubscriptionRequestMongoDBRepository.constructor()");
+        console.log("<<< SupportTheCauseRequestMongoDBRepository.constructor()");
     }
 
     store = async (model) =>
     {
-        console.log(">>> SubscriptionRequestMongoDBRepository.store()");
+        console.log(">>> SupportTheCauseRequestMongoDBRepository.store()");
         let retval = null;
         let mongodbClient;
 
@@ -42,23 +42,21 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
             retval =  ('-1' == model._id) ? await this.create(modelToStore) : await this.update(modelToStore);
         }
 
-        console.log("<<< SubscriptionRequestMongoDBRepository.store()");
+        console.log("<<< SupportTheCauseRequestMongoDBRepository.store()");
         return  retval;
     } // end function store()
 
     create = async (model) =>
     {
-        console.log(">>> SubscriptionRequestMongoDBRepository.create()");
+        console.log(">>> SupportTheCauseRequestMongoDBRepository.create()");
         
-        let reval = null;
+        let retval = null;
 
         if (undefined == this.client || null == this.client)
         {
             retval = await this.connect(connectionUri, connectionOptions);
         }
         
-
-        let retval = null;
 
         let insertResult = await this.db.collection(this.collection).insertOne(model);
         let newId = insertResult.insertedId;
@@ -69,15 +67,15 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
         retval = {"operation" : "INSERT", "success":"SUCCEEDED", "id" : newId};
 
         model._id = newId.toString();
-        console.log("70", model);
+        console.log("SupportTheCauseRequestMongoDBRepository.create() 72 model is | ", model, '|');
 
-        console.log("SubscriptionRequestMongoDBRepository.create() 77 " );
+        console.log("SupportTheCauseRequestMongoDBRepository.create() 74 " );
         console.log(`result |${insertResult}`);
         console.log(insertResult);
         console.log('retval is ');
         console.log(retval);
 
-        console.log("<<< SubscriptionRequestMongoDBRepository.create()");
+        console.log("<<< SupportTheCauseRequestMongoDBRepository.create()");
 
         return retval;
     } // end insert()
@@ -85,7 +83,7 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
 
     update = async (model) =>
     {
-        console.log(">>> SubscriptionRequestMongoDBRepository.update()");
+        console.log(">>> SupportTheCauseRequestMongoDBRepository.update()");
         
         let retval = null;
 
@@ -105,7 +103,7 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
 
 
 
-        console.log("SubscriptionRequestMongoDBRepository.update() 108 " );
+        console.log("SupportTheCauseRequestMongoDBRepository.update() 108 " );
         console.log(`result |${result}`);
         console.log(result);
         console.log('retval is ');
@@ -114,7 +112,7 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
 
 
 
-        console.log("<<< SubscriptionRequestMongoDBRepository.update()");
+        console.log("<<< SupportTheCauseRequestMongoDBRepository.update()");
 
         return retval;
     } // end update()   
@@ -166,9 +164,21 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
         modelToStore['organization'] = model['organization'];
         modelToStore['title'] = model['title'];
         modelToStore['postal-code'] = model['postal-code'];
-        modelToStore['subscribe'] = (!undefined !=  model['title']) ?  "YES" : "NO";
-        modelToStore['requests-pilot'] = (undefined !=  model['requests-pilot']) ?  "YES" : "NO";
+
+
+        modelToStore['share-learnings'] =  (undefined !=  model['share-learnings']) ?  "YES" : "NO";
+        modelToStore['volunteer-time'] =  (undefined !=  model['volunteer-time']) ?  "YES" : "NO";
+        modelToStore['subject-matter-expertise'] =  (undefined !=  model['subject-matter-expertise']) ?  "YES" : "NO";
+        modelToStore['data-or-compute'] =  (undefined !=  model['data-or-compute']) ?  "YES" : "NO";
+
+        modelToStore['sponsor-or-in-kind'] = (undefined !=  model['sponsor-or-in-kind']) ?  "YES" : "NO";
+        modelToStore['funding'] =  (undefined !=  model['funding']) ?  "YES" : "NO";
+        modelToStore['other-support'] =  (undefined !=  model['other-support']) ?  "YES" : "NO";
         modelToStore['content'] = model['content'];
+
+
+        modelToStore['subscribe'] = (undefined !=  model['subscribe']) ?  "YES" : "NO";
+        modelToStore['requests-pilot'] = (undefined !=  model['requests-pilot']) ?  "YES" : "NO";
 
 
         console.log('convertPostValuesToModel() 138');
@@ -180,4 +190,4 @@ class SubscriptionRequestMongoDBRepository extends MongoDBRepository
 
 } // end class 
 
-module.exports = SubscriptionRequestMongoDBRepository;
+module.exports = SupportTheCauseRequestMongoDBRepository;

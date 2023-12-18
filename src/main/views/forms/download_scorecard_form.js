@@ -43,8 +43,8 @@ const renderScorecardRequestForm = (req, res) =>
         
         
             <!-- local styling -->
-            <link rel="stylesheet" type="text/css" href="/assets/style/style.css">
             <link rel="stylesheet" type="text/css" href="/assets/style/system.css">
+            <link rel="stylesheet" type="text/css" href="/assets/style/style.css">
             <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">
 
 

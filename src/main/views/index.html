@@ -87,7 +87,7 @@
         </div>
           <br>
           <img class="card-image" src="assets/images/ScorecardE10wlogos.png"/>
-        <a href="#" class="card-button" id="card2-button">Download the scorecard </a>
+        <a href="/scorecard" class="card-button" id="card2-button">Download the scorecard </a>
       </div>
       <div class="card-content">
         <div class="card-title">Need a zip file extraction tool?</div>
@@ -123,7 +123,8 @@
           Community collaboration is critical for preventing catastrophic wildfires.
           </p>
         </div>
-        <a href="#" class="card-button" id="card3-button">Collaborate with Us</a>
+        <a href="#" class="card-button" id="card3-button" onclick = "comingSoon(this, 'collaborate-pending', 'Collaborate with Us');">Collaborate with Us</a> <span class="card-text">&nbsp; &nbsp; (coming soon)</span>
+        <div class="mt-3 lead card-title" id="collaborate-pending"></div>
       </div>
     </div>
 
@@ -171,30 +172,38 @@
       <div class="card-content" id="#subscribe">
         <div class="card-title"><h2 id="card8-title">Subscribe for Updates!</h2></div>
         <br>
-        <form id="signupForm">
+        <form id="signupForm" method="post"> <!--  __onsubmit="submissionEventHandler(event)"-->
+          
+          <div class="form-group d-none">
+            <label for="_id">ID (HIDE ME)</label>:</label>
+            <input type="text" id="_id" name="_id" value="-1" />
+          </div>          
+
           <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
           </div>
       
           <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
           </div>
       
           <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="sender-email">Email:</label>
+            <input type="email" id="sender-email" name="sender-email" required>
           </div>
 
           <div class="form-group">
-            <label for="zipcode">Zip/Postal Code:</label>
-            <input type="text" id="zipcode" name="zipcode" required>
+            <label for="postal-code">Zipcode/Postal Code:</label>
+            <input type="text" id="postal-code" name="postal-code" required>
           </div>
       
-          <a type="button" id="card8-button" class="card-button" onclick="submitForm()">Subscribe</a>
+          <!-- <a type="button" id="card8-button" class="card-button" onclick="submitForm()">Subscribe</a> -->
+          <input type="submit" class="card-button" id="subscribe" name="subscribe" automation-id="subscribe" value="Subscribe"/>
       
           <p class="success-message" id="successMessage"></p>
+          <div id="submit-success-message"></div>
         </form>
       </div>
     </div>
@@ -211,8 +220,8 @@
            <p> Also share any feedback you have, whether it is for the web site, the scorecard, any processes, wildfires in general.  
           </p>
         </div>
-        <a href="#" class="card-button" id="card6-button">Pilot Feedback</a>
-
+        <a href="#" class="card-button" id="card6-button" onclick = "comingSoon(this, 'pilot-feedback-pending', 'Provide Pilot Feedback');">Pilot Feedback</a><span class="card-text">&nbsp; &nbsp; (coming soon)</span>
+        <div id="pilot-feedback-pending" class="m-3 lead card-title"></div>
       </div>
     </div>
  
@@ -226,7 +235,7 @@
           We offer workshops, webinars, on-the ground pilots and more.</p>
           <p>For more information please visit Frequently Asked Questions (FAQs) page.</p> 
         </div>
-        <a href="#" class="card-button" id="card5-button">Contact Us</a>
+        <a href="/contact_us" class="card-button" id="card5-button">Contact Us</a>
 
       </div>
     </div>
@@ -240,7 +249,7 @@
           <p>To improve communities wildfire resilience overall through scorecard enhancements and adoption, ARISE-US/CrowdDoing CWP&C invite corporations and institutions to support this effort with.
         </p>
         </div>
-        <a href="#" class="card-button" id="card7-button">Support Wildfire Prevention</a>
+        <a href="/support_the_cause" class="card-button" id="card7-button">Support Wildfire Prevention</a>
 
       </div>
     </div>
@@ -253,13 +262,42 @@
   <script src="/assets/javascript/footer.js"></script>
   <script src="/assets/javascript/header.js"></script>
   <script src="/assets/javascript/common.js"></script>
+  <script src="/assets/javascript/submit_from_view.js"></script>
+
 
   <script>
     window.onload = (event) => {
       generateHeader("header-row");
       generateStandardFooter();
       switchNavActive();
+      setupAjaxSubmit('signupForm', '/api/subscription');
     };
+  </script>
+
+  <script>
+
+let stopit = (event) =>
+    {
+      console.log(">>> stopit");
+      console.log(`preventing default for ${event.target.id}`);
+      event.preventDefault();
+      console.log("<<< stopit");
+    }
+
+    let comingSoon = (clickedElement, targetElementId, whatIsComing, callback) =>
+    {
+      console.log(">>> comingSoon()");
+
+      let targetElement = document.getElementById(targetElementId);
+      targetElement.textContent = `${whatIsComing} is coming soon!`
+      console.log( "comingSoon()  do you see it ?");
+
+      
+      stopit(event);  
+
+    console.log("<<< comingSoon()");
+    }
+
   </script>
 </body>
 </html>
