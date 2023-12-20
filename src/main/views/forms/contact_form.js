@@ -58,7 +58,6 @@ let generateContactUsForm = (req, res) =>
                             <div class="invalid-feedback">Last Name is Required</div>
                         </div>
 
-                        
                         <div class="form-group">
                         <label for='email'>Email:</label>
                         <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email" value="${values['sender-email']}" required />
@@ -178,6 +177,7 @@ let generateContactUsForm = (req, res) =>
                     alert("HERE IS |" + element.name + " WAS CLICKED and is now |" + element.value + "|");
                 }
                 </script>
+                <script type="text/javascript" src="https://api.useberry.com/integrations/liveUrl/scripts/useberryScript.js"></script> 
                         
             </body>
         </html>
@@ -196,8 +196,4 @@ let populateValues = (values) =>
     ("<<< contact_form.js::populateValues()");
     return values;
 }
-
-
-
-
 module.exports = {generateContactUsForm};

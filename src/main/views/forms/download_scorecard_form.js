@@ -72,7 +72,7 @@ const renderScorecardRequestForm = (req, res) =>
                     <div class="form-group">
                     <label for='email'>Email:</label>
                     <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email"  value="${values['sender-email']}" required />
-                    <div class="invalid-feedback">A valid emaill address is Required</div>
+                    <div class="invalid-feedback">A valid email address is Required</div>
                     </div>
 
                     <div class="form-group">
@@ -160,10 +160,10 @@ const renderScorecardRequestForm = (req, res) =>
             <script>
                 window.onload = (event) => {
                 generateHeader("header-row");
-                //generateTopNav("header-row");
                  generateStandardFooter();
                 };
             </script>
+            <script type="text/javascript" src="https://api.useberry.com/integrations/liveUrl/scripts/useberryScript.js"></script> 
     
         </body>
     `;

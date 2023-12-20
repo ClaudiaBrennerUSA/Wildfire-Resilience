@@ -10,7 +10,6 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/style/style.css" />
   <script src="https://kit.fontawesome.com/e29cb68718.js" crossorigin="anonymous" async></script>
-  <script src="script.js" defer></script>
   <title>Community Resilience Wildfire Scorecard</title>
 </head>
 
@@ -235,8 +234,8 @@
           We offer workshops, webinars, on-the ground pilots and more.</p>
           <p>For more information please visit Frequently Asked Questions (FAQs) page.</p> 
         </div>
-        <a href="/contact_us" class="card-button" id="card5-button">Contact Us</a>
-
+        <a class="card-button" id="card5-button" href="/contact_us">Contact Us</a>
+        
       </div>
     </div>
 
@@ -257,13 +256,14 @@
   <button id="back-to-top"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></button>
 
   <div id="footer-container"></div>
-  <!-- /footer-container -->
+  
+  
   <!-- page specific scripts -->
   <script src="/assets/javascript/footer.js"></script>
   <script src="/assets/javascript/header.js"></script>
   <script src="/assets/javascript/common.js"></script>
   <script src="/assets/javascript/submit_from_view.js"></script>
-
+  <script type="text/javascript" src="https://api.useberry.com/integrations/liveUrl/scripts/useberryScript.js"></script> 
 
   <script>
     window.onload = (event) => {
@@ -274,30 +274,5 @@
     };
   </script>
 
-  <script>
-
-let stopit = (event) =>
-    {
-      console.log(">>> stopit");
-      console.log(`preventing default for ${event.target.id}`);
-      event.preventDefault();
-      console.log("<<< stopit");
-    }
-
-    let comingSoon = (clickedElement, targetElementId, whatIsComing, callback) =>
-    {
-      console.log(">>> comingSoon()");
-
-      let targetElement = document.getElementById(targetElementId);
-      targetElement.textContent = `${whatIsComing} is coming soon!`
-      console.log( "comingSoon()  do you see it ?");
-
-      
-      stopit(event);  
-
-    console.log("<<< comingSoon()");
-    }
-
-  </script>
 </body>
 </html>

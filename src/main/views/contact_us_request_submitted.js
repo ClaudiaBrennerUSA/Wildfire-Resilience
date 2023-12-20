@@ -23,9 +23,8 @@ class ContactUsRequestSubmitted
             <title>Contact Request Submitted - Community Resilience Wildfire Scorecard</title>
             </head>
             <body>
-                <div class="row-container" id="header-row" name="header-row"></div> <!--Header Populated By Javascript function -->
-                <!-- <div class="row-container" id="top-nav-container" name="top-nav-container"> --></div><!--Top Navigation conatiner - to be replace with Sadiya's Header Populated By Javascript function -->
-    
+                <div id="header-row" name="header-row"></div> <!--Header Populated By Javascript function -->
+                    
                 <div class="w-100 text-center hero-text-level-0 ">
                     Request Submitted<br>
                 </div>
@@ -51,7 +50,8 @@ class ContactUsRequestSubmitted
                 <!-- page specific scripts -->
                 <script src="/assets/javascript/footer.js"></script>
                 <script src="/assets/javascript/header.js"></script>
-                <script src="/assets/javascript/topnav.js"></script>
+                <script src="/assets/javascript/common.js"></script>
+                <script type="text/javascript" src="https://api.useberry.com/integrations/liveUrl/scripts/useberryScript.js"></script> 
                 
     
                 <script>

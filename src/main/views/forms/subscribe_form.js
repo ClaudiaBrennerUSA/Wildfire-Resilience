@@ -118,6 +118,7 @@ let markup = `
         <script src="/assets/javascript/footer.js"></script>
         <script src="/assets/javascript/common.js"></script>
         <script src="/assets/javascript/header.js"></script>
+        <script type="text/javascript" src="https://api.useberry.com/integrations/liveUrl/scripts/useberryScript.js"></script> 
 
 
         <script>
