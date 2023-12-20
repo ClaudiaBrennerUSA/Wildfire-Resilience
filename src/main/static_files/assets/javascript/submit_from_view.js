@@ -2,14 +2,11 @@ var _formElement = '';
 var _postURI = '/api/subscribe';
 var _result = "nothing yet";
 
-
 const submissionEventHandler = async (event) =>
 {
 
     console.log(">>> submissionEventHandler()");
-
     
-
     event.preventDefault();
     let json = convertFormDataToJSON(_formElement);
     let requestResult = await submitSubscriptionRequest(json, _postURI);

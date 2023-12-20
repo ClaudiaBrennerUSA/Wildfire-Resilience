@@ -44,6 +44,7 @@ const renderScorecardRequestForm = (req, res) =>
             <!-- local styling -->
             <link rel="stylesheet" type="text/css" href="/assets/style/style.css">
             <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">        
+            <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">        
         </head>
         <body>
             <div id="header-row" name="header-row"></div>
@@ -72,7 +73,7 @@ const renderScorecardRequestForm = (req, res) =>
                     <div class="form-group">
                     <label for='email'>Email:</label>
                     <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email"  value="${values['sender-email']}" required />
-                    <div class="invalid-feedback">A valid emaill address is Required</div>
+                    <div class="invalid-feedback">A valid email address is Required</div>
                     </div>
 
                     <div class="form-group">
@@ -89,8 +90,7 @@ const renderScorecardRequestForm = (req, res) =>
                     <label for="title">Role:</label>
                         <input type="text" class="form-control" id="title" name="title" value="${values['title']}"/>
                     </div>
-
-
+                                            
                     <div class="form-group">
                     <label for='postal-code'>Zipcode/Postal Code:</label>
                         <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code"  value="${values['postal-code']}" required />
@@ -107,18 +107,16 @@ const renderScorecardRequestForm = (req, res) =>
                         <label class="form-check-label" for="requests-pilot">I am interested in piloting with CWP&C</label>
                     </div>
 
-
                     <div class="form-group">
                         <label for='comments'>Comments:</label>
                         <textarea class="form-control" id="comments" name="comments" automation-id="comments" rows="5" cols="50">${values.comments}</textarea>
                     </div>
 
-
                     <button type="submit" class="download-card-button">Download Scorecard</button>
                  </form>
 
                 </div>
-
+                
             </div ><!-- /form container -->
 
             <div id="footer-container"></div>  <!-- /footer-container -->
@@ -160,10 +158,10 @@ const renderScorecardRequestForm = (req, res) =>
             <script>
                 window.onload = (event) => {
                 generateHeader("header-row");
-                //generateTopNav("header-row");
                  generateStandardFooter();
                 };
             </script>
+            <script type="text/javascript" src="https://api.useberry.com/integrations/liveUrl/scripts/useberryScript.js"></script> 
     
         </body>
     `;

@@ -58,7 +58,6 @@ let generateContactUsForm = (req, res) =>
                             <div class="invalid-feedback">Last Name is Required</div>
                         </div>
 
-                        
                         <div class="form-group">
                         <label for='email'>Email:</label>
                         <input type="email" class="form-control" id="sender-email" name="sender-email" automation-id="sender-email" value="${values['sender-email']}" required />
@@ -70,20 +69,17 @@ let generateContactUsForm = (req, res) =>
                         <label for='organization' >Organization:</label>
                             <input type="text" class="form-control" id="organization" name="organization" automation-id="organization" value="${values['organization']}"/>
                         </div>
-                            
+                    
                         <div class="form-group">
                         <label for='title'>Role:</label>
                                 <input type="text" class="form-control" id="title" name="title" automatiion-id="title"  value="${values['title']}"/>
                             </div>
-                            
-                            
                             
                             <div class="form-group">
                             <label for='postal-code'>Zip/Postal Code:</label>
                                 <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code"  value="${values['postal-code']}" required />
                                 <div class="invalid-feedback mb-3">Zipcode / Postal Code is Required</div>
                             </div>
-                            
                             
                             <div class="form-group">
                             <label for='content'>Message:</label>
@@ -113,9 +109,11 @@ let generateContactUsForm = (req, res) =>
 
                 <!-- BOOTSTRAP FROM CDN -->
                 
+                
                 <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
                     integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
                     async></script>
+
 
                 <!-- page specific scripts -->
                 <script src="/assets/javascript/footer.js"></script>
@@ -178,6 +176,7 @@ let generateContactUsForm = (req, res) =>
                     alert("HERE IS |" + element.name + " WAS CLICKED and is now |" + element.value + "|");
                 }
                 </script>
+                <script type="text/javascript" src="https://api.useberry.com/integrations/liveUrl/scripts/useberryScript.js"></script> 
                         
             </body>
         </html>
@@ -196,8 +195,4 @@ let populateValues = (values) =>
     ("<<< contact_form.js::populateValues()");
     return values;
 }
-
-
-
-
 module.exports = {generateContactUsForm};
