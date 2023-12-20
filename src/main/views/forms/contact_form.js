@@ -44,6 +44,7 @@ let generateContactUsForm = (req, res) =>
                 </div>
                 <div class="container">
                     <div class="card-form">
+                    <div class="card-form">
                         <form class="needs-validation"   id="contact-us-form" name="contact-us-form" automation-id="contact-us-form"  action="" method="post" novalidate>
                         <div class="reverse-highlight w-100" style="display: none; vertical-align: top;"><label for='_id' style="width: 8em;">_id (hide me):</label><input type="text" class="form-control reverse-highlight" _id="id" name="_id" automation-id="_id" value="${(values['_id'] || -1)}"/><br/></div>
                         
@@ -72,6 +73,8 @@ let generateContactUsForm = (req, res) =>
                             
                         <div class="form-group">
                         <label for='title'>Role:</label>
+                        <div class="form-group">
+                        <label for='title'>Role:</label>
                                 <input type="text" class="form-control" id="title" name="title" automatiion-id="title"  value="${values['title']}"/>
                             </div>
                             
@@ -79,11 +82,16 @@ let generateContactUsForm = (req, res) =>
                             
                             <div class="form-group">
                             <label for='postal-code'>Zip/Postal Code:</label>
+                            <div class="form-group">
+                            <label for='postal-code'>Zip/Postal Code:</label>
                                 <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code"  value="${values['postal-code']}" required />
                                 <div class="invalid-feedback mb-3">Zipcode / Postal Code is Required</div>
                             </div>
                             
                             
+                            <div class="form-group">
+                            <label for='content'>Message:</label>
+                                <textarea class="form-control" id="content" name="content" automation-id="content" rows="5" cols="50">${values.content}</textarea>
                             <div class="form-group">
                             <label for='content'>Message:</label>
                                 <textarea class="form-control" id="content" name="content" automation-id="content" rows="5" cols="50">${values.content}</textarea>
@@ -100,6 +108,8 @@ let generateContactUsForm = (req, res) =>
                             </div>
 
                             <input class="contact-card-button" type="submit" id="'submitRequest" name="submitRequest" automation-id="sumitRequest" value="Contact Us">
+
+                            <input class="contact-card-button" type="submit" id="'submitRequest" name="submitRequest" automation-id="sumitRequest" value="Contact Us">
                         </form>
 
                     </div closes="card"> 
@@ -112,9 +122,11 @@ let generateContactUsForm = (req, res) =>
 
                 <!-- BOOTSTRAP FROM CDN -->
                 
+                
                 <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
                     integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
                     async></script>
+
 
                 <!-- page specific scripts -->
                 <script src="/assets/javascript/footer.js"></script>

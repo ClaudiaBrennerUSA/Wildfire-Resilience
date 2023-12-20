@@ -44,11 +44,17 @@ const renderScorecardRequestForm = (req, res) =>
             <!-- local styling -->
             <link rel="stylesheet" type="text/css" href="/assets/style/style.css">
             <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">        
+            <link rel="stylesheet" type="text/css" href="/assets/style/system_forms.css">        
         </head>
         <body>
             <div id="header-row" name="header-row"></div>
             <div class="download-form-title">
+            <div id="header-row" name="header-row"></div>
+            <div class="download-form-title">
                 <h1>Download the Scorecard</h1>
+            </div>
+            <div class="container"> 
+                <div class="card-form">
             </div>
             <div class="container"> 
                 <div class="card-form">
@@ -61,7 +67,17 @@ const renderScorecardRequestForm = (req, res) =>
                         <input type="text" class="form-control" id="first-name" name="first-name"  value="${values['first-name']}" required />
                         <div class="invalid-feedback">First Name is Required</div>
                     </div>
+                    <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" class="form-control" id="first-name" name="first-name"  value="${values['first-name']}" required />
+                        <div class="invalid-feedback">First Name is Required</div>
+                    </div>
 
+                    <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                        <input type="text" class="form-control" id="last-name" name="last-name"  value="${values['last-name']}" required />
+                        <div class="invalid-feedback">Last Name is Required</div>
+                    </div>
                     <div class="form-group">
                     <label for="last-name">Last Name:</label>
                         <input type="text" class="form-control" id="last-name" name="last-name"  value="${values['last-name']}" required />
@@ -79,7 +95,15 @@ const renderScorecardRequestForm = (req, res) =>
                     <label for="phone-number">Phone Number:</label>
                         <input type="text" class="form-control" id="phone-number" name="phone-number"  value="${values['phone-number']}"/>
                     </div>
+                    <div class="form-group">
+                    <label for="phone-number">Phone Number:</label>
+                        <input type="text" class="form-control" id="phone-number" name="phone-number"  value="${values['phone-number']}"/>
+                    </div>
 
+                    <div class="form-group">
+                    <label for="organization">Organization:</label>
+                        <input type="text" class="form-control" id="organization" name="organization" placeholder="Company, NGO, Municipality, or Entity" value="${values['organization']}"/>
+                    </div>
                     <div class="form-group">
                     <label for="organization">Organization:</label>
                         <input type="text" class="form-control" id="organization" name="organization" placeholder="Company, NGO, Municipality, or Entity" value="${values['organization']}"/>
@@ -89,8 +113,18 @@ const renderScorecardRequestForm = (req, res) =>
                     <label for="title">Role:</label>
                         <input type="text" class="form-control" id="title" name="title" value="${values['title']}"/>
                     </div>
+                    <div class="form-group">
+                    <label for="title">Role:</label>
+                        <input type="text" class="form-control" id="title" name="title" value="${values['title']}"/>
+                    </div>
 
 
+                    <div class="form-group">
+                    <label for='postal-code'>Zipcode/Postal Code:</label>
+                        <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code"  value="${values['postal-code']}" required />
+                        <div class="invalid-feedback">Zipcode / Postal Code is Required></div>
+                    </div>
+                                            
                     <div class="form-group">
                     <label for='postal-code'>Zipcode/Postal Code:</label>
                         <input type="text" class="form-control" id="postal-code" name="postal-code" automation-id="postal-code"  value="${values['postal-code']}" required />
@@ -106,8 +140,20 @@ const renderScorecardRequestForm = (req, res) =>
                         <input type="checkbox" class="form-check-input force-1em" id="requests-pilot" name="requests-pilot" automation-id="requests-pilot"  value="${values['requests-pilot']}"  ${values['requests-pilot']}>
                         <label class="form-check-label" for="requests-pilot">I am interested in piloting with CWP&C</label>
                     </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input force-1em" id="subscribe"  name="subscribe" automation-id="subscribe" value="${values['subscribe']}" ${values['subscribe']}>
+                        <label class="form-check-label" for="subscribe">Subscribe</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input force-1em" id="requests-pilot" name="requests-pilot" automation-id="requests-pilot"  value="${values['requests-pilot']}"  ${values['requests-pilot']}>
+                        <label class="form-check-label" for="requests-pilot">I am interested in piloting with CWP&C</label>
+                    </div>
 
 
+                    <div class="form-group">
+                        <label for='comments'>Comments:</label>
+                        <textarea class="form-control" id="comments" name="comments" automation-id="comments" rows="5" cols="50">${values.comments}</textarea>
+                    </div>
                     <div class="form-group">
                         <label for='comments'>Comments:</label>
                         <textarea class="form-control" id="comments" name="comments" automation-id="comments" rows="5" cols="50">${values.comments}</textarea>
@@ -116,7 +162,10 @@ const renderScorecardRequestForm = (req, res) =>
 
                     <button type="submit" class="download-card-button">Download Scorecard</button>
                  </form>
+                    <button type="submit" class="download-card-button">Download Scorecard</button>
+                 </form>
 
+                </div>
                 </div>
 
             </div ><!-- /form container -->
@@ -126,6 +175,9 @@ const renderScorecardRequestForm = (req, res) =>
             <!-- Javascript at bottom of page to facilitate faster page loads -->
             <!-- page specific scripts -->
             <script src="/assets/javascript/footer.js"></script>
+                <script src="/assets/javascript/common.js"></script>
+                <script src="/assets/javascript/header.js"></script>
+
                 <script src="/assets/javascript/common.js"></script>
                 <script src="/assets/javascript/header.js"></script>
 
