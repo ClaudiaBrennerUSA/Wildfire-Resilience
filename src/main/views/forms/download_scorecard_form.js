@@ -116,8 +116,7 @@ const renderScorecardRequestForm = (req, res) =>
                  </form>
 
                 </div>
-                </div>
-
+                
             </div ><!-- /form container -->
 
             <div id="footer-container"></div>  <!-- /footer-container -->
