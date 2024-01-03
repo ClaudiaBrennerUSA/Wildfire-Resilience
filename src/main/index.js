@@ -15,8 +15,7 @@ app.use(jsonParser);
 
 const contactUsForm = require('./views/forms/contact_form.js');
 
-const home = (req, res) =>
-{
+const home = (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'))
 }
 
