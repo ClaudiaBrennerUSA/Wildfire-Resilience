@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require ('path');
-const PORT = require('./config/env').PORT;
+// const PORT = require('./config/env').PORT;
 
 const ContactUsRequestMongoDBRepository = require('./infrastructure/repositories/contact_us_request_mongodb_repository');
 
@@ -15,8 +15,7 @@ app.use(jsonParser);
 
 const contactUsForm = require('./views/forms/contact_form.js');
 
-const home = (req, res) =>
-{
+const home = (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'))
 }
 
@@ -130,10 +129,10 @@ let logMethod = (req, res) =>
 
 
 
-const listenCallBackFunction = () =>
-{
-    console.log("listening on port ", PORT);
-}        
+// const listenCallBackFunction = () =>
+// {
+//     console.log("listening on port ", PORT);
+// }        
 
 app.get('/', home);
 app.get('/using_the_scorecard', usingTheScorecard);
@@ -151,7 +150,7 @@ app.get("/dbpoc", urlencodedParser, dbPoc);
 
 
 
-app.listen(PORT, listenCallBackFunction);
+// app.listen(PORT, listenCallBackFunction);
 app.use(express.static('static_files'));
 
 const scorecardRouter = require('./routes/scorecard.js');
