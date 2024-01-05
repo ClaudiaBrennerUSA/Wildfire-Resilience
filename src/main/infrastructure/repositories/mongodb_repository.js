@@ -10,21 +10,15 @@
 
 
 const {MongoClient} = require('mongodb');
-const env = require('../../config/env');
-/*
-const host = '3.17.29.115:5917';
-const userName = 'admin';
-const password = 'probono_root';
-const defaultDB = 'test'
-const connectionUri = `mongodb://${userName}:${password}@${host}/?retryWrites=true&w=majority`; // /${defaultDB}?retryWrites=true&w=majority
-*/
+const dotenv = require('dotenv');
+dotenv.config();
 
-/*
-const connectionOptions = {
-    useNewUrlParser : true
-,   useUnifiedTopology : true
-};
-*/
+const CONNECTION_URI = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.HOST}/${process.env.DEFAULT_DB}?retryWrites=true&w=majority`;
+
+// const connectionOptions = {
+//     useNewUrlParser: process.env.USE_NEW_URL_PARSER === 'true',
+//     useUnifiedTopology: process.env.USE_UNIFIED_TOPOLOGY === 'true'
+// };
 
 class MongoDBRepository
 {
@@ -46,7 +40,7 @@ class MongoDBRepository
 
         if (undefined == this.client || null == this.client)
         {
-            retval = await this.connect(env.connectionUri, env.connectionOptions);
+            retval = await this.connect(CONNECTION_URI);
         }
 
         console.log("<<< MongoDBRepository.connectToDataSource()");

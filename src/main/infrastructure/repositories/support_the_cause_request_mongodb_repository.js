@@ -1,7 +1,7 @@
 const {MongoClient, ObjectId} = require('mongodb');
 const MongoDBRepository = require('./mongodb_repository');
-const env = require('../../config/env');
-
+const dotenv = require('dotenv');
+dotenv.config();
 
 
 class SupportTheCauseRequestMongoDBRepository extends MongoDBRepository
@@ -29,7 +29,7 @@ class SupportTheCauseRequestMongoDBRepository extends MongoDBRepository
             mongodbClient = await this.connectToDataSource();
         }
 
-        let db = this.client.db(env.defaultDB);
+        let db = this.client.db(process.env.DEFAULT_DB);
         this.db = db; 
         this.dbName = db.databaseName;
 
