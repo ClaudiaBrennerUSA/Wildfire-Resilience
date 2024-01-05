@@ -4,13 +4,14 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const fs = require('fs')
+const path = require('path');
 
 const downloadScorecardForm = require('../views/forms/download_scorecard_form.js');
 const DownloadScorecardRequestMongoDBRepository = require('../infrastructure/repositories/download_scorecard_request_mongodb_repository');
 
-const {PORT} = require('../config/env');
-const {scorecardPath} = require('../config/env');
-const {scorecardfileName} = require('../config/env');
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 let validateScorecardRequest = (body) =>
 {
@@ -88,12 +89,11 @@ let downloadScorecard = async (req, res) =>
         </head>
         <body>
             <div class="row-container" id="header-row" name="header-row"></div> <!--Header Populated By Javascript function -->
-            <!-- <div class="row-container" id="top-nav-container" name="top-nav-container"> --></div><!--Top Navigation conatiner - to be replace with Sadiya's Header Populated By Javascript function -->
-
+        
             <div class="w-100 text-center hero-text-level-0 ">
                 Download the scorecard<br>
             </div>
-            <div class="w-100 text-center lead card-title"><h2>Check your downloads for a file named "${scorecardfileName}"</h2> </div>
+            <div class="w-100 text-center lead card-title"><h2>Check your downloads for a file named "${process.env.SCORECARD_FILENAME}"</h2> </div>
 
 
             <div id="footer-container"></div>  <!-- /footer-container -->
@@ -132,8 +132,9 @@ let downloadScorecard = async (req, res) =>
                 generateStandardFooter();
 
                 // start the download using a hidden link
-                let uri = '${scorecardPath}/${scorecardfileName}';
-                let targetFileName='${scorecardfileName}';
+                let uri = '${process.env.SCORECARD_PATH}' + '/' + '${process.env.SCORECARD_FILENAME}';
+                console.log(uri);
+                let targetFileName='${process.env.SCORECARD_FILENAME}';
                 downloadURI(uri, targetFileName);
 
                 };

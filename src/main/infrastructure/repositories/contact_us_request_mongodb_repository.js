@@ -1,7 +1,7 @@
 const {MongoClient, ObjectId} = require('mongodb');
 const MongoDBRepository = require('./mongodb_repository');
-const env = require('../../config/env');
-
+const dotenv = require('dotenv');
+dotenv.config();
 
 
 class ContactUsRequestMongoDBRepository extends MongoDBRepository
@@ -29,7 +29,7 @@ class ContactUsRequestMongoDBRepository extends MongoDBRepository
             mongodbClient = await this.connectToDataSource();
         }
 
-        let db = this.client.db(env.defaultDB);
+        let db = this.client.db(process.env.DEFAULT_DB);
         this.db = db; 
         this.dbName = db.databaseName;
         //let colArray = await db.listCollections().toArray();
@@ -56,7 +56,7 @@ class ContactUsRequestMongoDBRepository extends MongoDBRepository
 
         if (undefined == this.client || null == this.client)
         {
-            retval = await this.connect(connectionUri, connectionOptions);
+            retval = await this.connect(process.env.CONNECTION_URI, connectionOptions);
         }
         
         //let modelToStore = this.convertPostValuesToModel(model);
