@@ -2,7 +2,6 @@ const express = require('express');
 // const router = express.Router();
 
 const path = require ('path');
-const PORT = require('../config/env.js').PORT;
 const bodyParser = require('body-parser');
 
 const supportTheCauseForm = require('../views/forms/support_the_cause_form.js');
