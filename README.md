@@ -11,9 +11,9 @@ Assuming you have Node.js and npm installed, run the following commands.
 1. The following need to be installed (if you haven't)
 ```bash
 npm install; 
-npm install express; 
-npm install mongodb;
-npm install dotenv;
+npm install express 
+npm install mongodb
+npm install dotenv
 ```
 
 2. Create a file in the root directory i.e src/main/.env
