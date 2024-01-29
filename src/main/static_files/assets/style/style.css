@@ -1,10 +1,12 @@
+/* Optional theme */
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @media all {
   body {
     margin: 0;
     font-family: 'Work Sans';
     /* background-color: #f6f6f6; */
-    background-color: black;
+    background-color: #121212;
   }
 
   header {
@@ -68,7 +70,7 @@
 
   .global-navbar a {
     text-decoration: #555;
-    /* color: black; */
+    /* color: #121212; */
     color: white;
     /* font-weight: bold; */
   }
@@ -211,7 +213,7 @@
     /* width: 50%; */
     width: calc(80% - 20px);
     margin: 20px;
-    background-color: #000000;
+    background-color: #121212;
     border-radius: 8px;
     border-color: #2f2e2e;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
@@ -285,7 +287,7 @@
   }
 
   .card-button:hover {
-    background-color: black;
+    background-color: #121212;
   }
 
   .card-btn-group {
@@ -342,6 +344,9 @@
   #scorecard3 {
     display: none;
   }
+  #scorecard4 {
+    display: none;
+  }
 
   .sub-card-box {
     /* width:  */
@@ -391,7 +396,7 @@
   }
 
   .fa-icon a {
-    /* color: black; */
+    /* color: #121212; */
     color: whitesmoke;
     font-size: xx-large;
   }
@@ -419,6 +424,30 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #f5f5f5;
+  }
+  .form-group input[type=submit] {
+    width: -webkit-fill-available;
+    background-color:#65a637;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: large;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+  }
+
+  #form-dialog{
+    background-color: #111111;
+    width: calc(50%);
+    font-size: 1.2em;
+  }
+  .success{
+    color: #65a637;
+  }
+  .error{
+    color: red;
   }
 
   .success-message {
@@ -641,6 +670,54 @@
     color: #FFAC0D;
   }
 
+  .modal.show{
+    display: block;
+    z-index: 1024;
+    background-color: rgba(255, 255, 255, 0.572); /* White with some transparency */
+  }
+  .modal-title{
+    color: #F6F6F6;
+  }
+  .modal-content{
+    color: #F6F6F6;
+    background-color: #121212;
+  }
+  .card-form{
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    background-color: #121212;
+    color: #F6F6F6;
+    border-color: #2f2e2e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .form-check{
+    padding-left: 0;
+
+  }
+
+  /* Contact Form styling */
+  .contact-form-title,.subscribe-form-title,.subscribe-form-title {
+    color: #65a637;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+  }
+  .form-submit-button {
+    width: -webkit-fill-available;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: large;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px;
+  }
+
+
   #back-to-top {
     position: fixed;
     right: 20px;
@@ -661,7 +738,7 @@
   .footer {
     /* background-color: rgb(216, 216, 216); */
     display: flex;
-    background-color: black;
+    background-color: #121212;
     color: #F6F6F6;
     padding: 20px;
     text-align: left;
@@ -947,7 +1024,7 @@
   }
 
   .card-button:hover {
-    background-color: black;
+    background-color: #121212;
   }
 
   .card-btn-group {
@@ -1341,7 +1418,7 @@
   }
 
   .card-button:hover {
-    background-color: black;
+    background-color: #121212;
   }
 
   .card-btn-group {
