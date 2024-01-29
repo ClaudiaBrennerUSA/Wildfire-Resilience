@@ -26,7 +26,7 @@ app.use(session({
 
 
 // Define routes with consistent formatting and error handling
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
@@ -104,7 +104,7 @@ app.post('/submit-contact-form', async (req, res) => {
         await contactCollection.insertOne(formData);
 
         if(pageName === 'index'){
-          res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('contact'));
+          res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('contact'));
         }
         else{
           res.redirect('contact_us?status=' +encodeURIComponent('success') + '&form=' + encodeURIComponent('contact'));
@@ -113,7 +113,7 @@ app.post('/submit-contact-form', async (req, res) => {
     catch(error){
         console.error(error);
         if(pageName === 'index'){
-          res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('contact'));
+          res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('contact'));
         }
         else{
           res.redirect('contact_us?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('contact')); 
@@ -134,7 +134,7 @@ app.post('/submit-subscribe-form', async (req, res) => {
       await subsCollection.insertOne(formData);
 
       if(pageName === 'index'){
-        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('subscribe'));
+        res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('subscribe'));
       }
       else{
         res.redirect('subscribe?status=' +encodeURIComponent('success') + '&form=' + encodeURIComponent('subscribe'));
@@ -143,7 +143,7 @@ app.post('/submit-subscribe-form', async (req, res) => {
   catch(error){
       console.error(error);
       if(pageName === 'index'){
-        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('subscribe'));
+        res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('subscribe'));
       }
       else{
         res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('subscribe')); 
@@ -164,7 +164,7 @@ app.post('/submit-download-form', async (req, res) => {
       await formCollection.insertOne(formData);
   
       if (pageName === 'index') {
-        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
+        res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
       } else {
         res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
       }
@@ -172,7 +172,7 @@ app.post('/submit-download-form', async (req, res) => {
   catch(error){
       console.error(error);
       if(pageName === 'index'){
-        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('download'));
+        res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('download'));
       }
       else{
         res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('download')); 
@@ -193,7 +193,7 @@ app.post('/submit-support-form', async (req, res) => {
       await formCollection.insertOne(formData);
   
       if (pageName === 'index') {
-        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
+        res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
       } else {
         res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
       }
@@ -201,7 +201,7 @@ app.post('/submit-support-form', async (req, res) => {
   catch(error){
       console.error(error);
       if(pageName === 'index'){
-        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('support'));
+        res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('support'));
       }
       else{
         res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('support')); 
@@ -222,7 +222,7 @@ app.post('/submit-collab-form', async (req, res) => {
       await formCollection.insertOne(formData);
   
       if (pageName === 'index') {
-        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
+        res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
       } else {
         res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
       }
@@ -230,7 +230,7 @@ app.post('/submit-collab-form', async (req, res) => {
   catch(error){
       console.error(error);
       if(pageName === 'index'){
-        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('collab'));
+        res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('collab'));
       }
       else{
         res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('collab')); 
@@ -251,7 +251,7 @@ app.post('/submit-feedback-form', async (req, res) => {
       await formCollection.insertOne(formData);
   
       if (pageName === 'index') {
-        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
+        res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
       } else {
         res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
       }
@@ -259,7 +259,7 @@ app.post('/submit-feedback-form', async (req, res) => {
   catch(error){
       console.error(error);
       if(pageName === 'index'){
-        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback'));
+        res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback'));
       }
       else{
         res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback')); 
