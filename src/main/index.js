@@ -1,174 +1,274 @@
 const express = require('express');
-const path = require ('path');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const path = require('path');
+var mongodb = require('mongodb');
+const { connectToDb } = require('./db');
+
 const dotenv = require('dotenv');
+const { runInNewContext } = require('vm');
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
-
-const ContactUsRequestMongoDBRepository = require('./infrastructure/repositories/contact_us_request_mongodb_repository');
-
-
 const app = express();
-const bodyParser = require('body-parser');
-const urlencodedParser =  bodyParser.urlencoded({extended: false});
-const jsonParser =  bodyParser.json();
+const port = process.env.PORT || 3000;
 
-app.use(urlencodedParser);
-app.use(jsonParser);
+app.use(bodyParser.urlencoded({ extended: false }));
 
-const contactUsForm = require('./views/forms/contact_form.js');
-
-const home = (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/index.html'))
-}
-
-const usingTheScorecard = (req, res) =>
-{
-    console.log("HELLO from using");
-    res.sendFile(path.join(__dirname, 'views/using_the_scorecard.html'))
-}
-
-const faq = (req, res) =>
-{
-    res.sendFile(path.join(__dirname, 'views/faq.html'))
-}
-
-const news = (req, res) =>
-{
-    res.sendFile(path.join(__dirname, 'views/press_release.html'))
-}
-
-const scorecardInfo = (req, res) =>
-{
-    res.sendFile(path.join(__dirname, 'views/scorecard_info.html'))
-}
-
-const aboutUs = (req, res) =>
-{
-    res.sendFile(path.join(__dirname, 'views/about_us.html'))
-}
-
-
-const postPoc = (req, res) =>
-{
-    createContactUsRequest(req, res);
-}
-
-const dbPoc = (req, res) =>
-{
-    testDbConnection(req, res);
-}
-
-
-let validateContatctUsRequest = (rawValues) =>
-{
-    return true;
-}
-
-
-let createContactUsRequest = (req, res) =>
-{
-    let method = req.method;
-
-    switch (method)
-    {
-        case "GET":
-        {
-            handleContactUsGetRequest(req, res);
-            break; 
-        }
-        case "POST":
-        {
-            handleContactUsPostRequest(req, res);
-            break;
-        }
-
-    } // end switch
-
-    return;
-}
-
-let handleContactUsGetRequest = (req, res) =>
-    {
-        logMethod(req, res);
-        let markup = contactUsForm.generateContactUsForm(req, res);
-        res.send(markup);
-        return;
-    }            
-
-let handleContactUsPostRequest = (req, res) =>
-    {        
-        logMethod(req, res);
-     
-        let requestIsValid = validateContatctUsRequest(req.body);
-
-        if(requestIsValid)
-        {
-            //let markup = contactUsForm.generateContactUsForm(req, res);
-            repo = new ContactUsRequestMongoDBRepository();
-            let model = req.body;
-            let result = repo.store(model);
-            // navigate to success page 
-            res.send("<h1>Success</h1>");
-        }
-        else
-        {
-            let markup = contactUsForm.generateContactUsForm(req, res);
-            res.send(markup);
-        }
-        
-        return;
-    }
-
-
-
-let logMethod = (req, res) =>
-{
-    let method = req.method;
-    console.log(`createContactUsRequest(req, res) called with ${method}`);
-    return;
-}
-
-
-
-
-const listenCallBackFunction = () =>
-{
-    console.log("listening on port ", PORT);
-}        
-
-app.get('/', home);
-app.get('/using_the_scorecard', usingTheScorecard);
-app.get('/faq', faq);
-app.get('/press_release', news);
-app.get('/news', news);
-app.get('/scorecard_info', scorecardInfo);
-app.get('/about_us', aboutUs);
-
-
-app.get("/postpoc", urlencodedParser, postPoc);
-app.post("/postpoc", urlencodedParser, postPoc);
-
-app.get("/dbpoc", urlencodedParser, dbPoc);
-
-
-
-app.listen(PORT, listenCallBackFunction);
+// Serve static files from the 'static_files' directory.
+// equivalent to public files
 app.use(express.static('static_files'));
 
-const scorecardRouter = require('./routes/scorecard.js');
-const contactUsRouter = require('./routes/contact_us.js');
-const subscriptionRouter = require('./routes/subscribe.js');
-const supportTheCauseRouter = require('./routes/support_the_cause');
-
-const apiRouter = require('./routes/api/index.js');
-
-
-app.use('/scorecard', scorecardRouter);
-app.use('/contact_us', urlencodedParser, contactUsRouter);
-app.use('/subscribe', urlencodedParser, subscriptionRouter);
-app.use('/support_the_cause', urlencodedParser, supportTheCauseRouter);
+app.use(session({
+  secret: process.env.SESSION_KEY,
+  resave: false,
+  saveUninitialized: false,
+}));
 
 
-app.use('/api', apiRouter);
+// Define routes with consistent formatting and error handling
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/index.html'));
+});
 
+app.get('/using_the_scorecard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/using_the_scorecard.html'));
+});
+
+app.get('/faq', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/faq.html'));
+});
+
+app.get('/press_release', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/press_release.html'));
+});
+
+app.get('/scorecard_info', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/scorecard_info.html'));
+});
+
+app.get('/about_us', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/about_us.html'));
+});
+
+app.get('/subscribe', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/subscribe.html'));
+});
+
+//contact form directly
+app.get('/contact_us', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/contactus.html'));
+});
+
+//contact form pop-up
+app.get('/get-contact-form', (req, res) => {
+    const formPath = path.join(__dirname, 'views/contactform.html');
+    res.sendFile(formPath, {isPopup: true});
+});
+
+app.get('/contactform', (req,res) => {
+  res.sendFile(path.join(__dirname, 'views/contactform.html'));
+});
+
+app.get('/scorecardform', (req,res) => {
+  res.sendFile(path.join(__dirname, 'views/scorecardform.html'));
+});
+
+
+app.get('/supportform', (req,res) => {
+  const formPath = path.join(__dirname, 'views/supportCause.html');
+  res.sendFile(formPath, {isPopup: true});
+});
+
+app.get('/collabform', (req,res) => {
+  const formPath = path.join(__dirname, 'views/collaborateform.html');
+  res.sendFile(formPath, {isPopup: true});
+});
+
+app.get('/feedbackform', (req,res) => {
+  const formPath = path.join(__dirname, 'views/feedbackform.html');
+  res.sendFile(formPath, {isPopup: true});
+});
+
+
+app.post('/submit-contact-form', async (req, res) => {
+    // Process form data, save to MongoDB, send response
+    const pageName = req.body.pageName;
+    try{
+        const db = await connectToDb();
+
+        const contactCollection = db.collection('contactUs'); // Using specified collection
+        
+        const formData = req.body;
+        delete formData._id; // Remove any potential _id field
+        
+        await contactCollection.insertOne(formData);
+
+        if(pageName === 'index'){
+          res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('contact'));
+        }
+        else{
+          res.redirect('contact_us?status=' +encodeURIComponent('success') + '&form=' + encodeURIComponent('contact'));
+        }
+    }
+    catch(error){
+        console.error(error);
+        if(pageName === 'index'){
+          res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('contact'));
+        }
+        else{
+          res.redirect('contact_us?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('contact')); 
+        }
+    }
+});
+
+app.post('/submit-subscribe-form', async (req, res) => {
+  // Process form data, save to MongoDB, send response
+  const pageName = req.body.pageName;
+  try{
+      const db = await connectToDb();
+      const subsCollection = db.collection('subscribe'); // Using specified collection
+      
+      const formData = req.body;
+      delete formData._id; // Remove any potential _id field
+      
+      await subsCollection.insertOne(formData);
+
+      if(pageName === 'index'){
+        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('subscribe'));
+      }
+      else{
+        res.redirect('subscribe?status=' +encodeURIComponent('success') + '&form=' + encodeURIComponent('subscribe'));
+      }
+  }
+  catch(error){
+      console.error(error);
+      if(pageName === 'index'){
+        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('subscribe'));
+      }
+      else{
+        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('subscribe')); 
+      }
+  }
+});
+
+app.post('/submit-download-form', async (req, res) => {
+  // Process form data, save to MongoDB, send response
+  const pageName = req.body.pageName;
+  try{
+      const db = await connectToDb();
+      const formCollection = db.collection('downloadScorecard'); // Using specified collection
+      
+      const formData = req.body;
+      delete formData._id; // Remove any potential _id field
+      
+      await formCollection.insertOne(formData);
+  
+      if (pageName === 'index') {
+        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
+      } else {
+        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
+      }
+    }
+  catch(error){
+      console.error(error);
+      if(pageName === 'index'){
+        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('download'));
+      }
+      else{
+        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('download')); 
+      }
+  }
+});
+
+app.post('/submit-support-form', async (req, res) => {
+  // Process form data, save to MongoDB, send response
+  const pageName = req.body.pageName;
+  try{
+      const db = await connectToDb();
+      const formCollection = db.collection('supportCause'); // Using specified collection
+      
+      const formData = req.body;
+      delete formData._id; // Remove any potential _id field
+      
+      await formCollection.insertOne(formData);
+  
+      if (pageName === 'index') {
+        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
+      } else {
+        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
+      }
+    }
+  catch(error){
+      console.error(error);
+      if(pageName === 'index'){
+        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('support'));
+      }
+      else{
+        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('support')); 
+      }
+  }
+});
+
+app.post('/submit-collab-form', async (req, res) => {
+  // Process form data, save to MongoDB, send response
+  const pageName = req.body.pageName;
+  try{
+      const db = await connectToDb();
+      const formCollection = db.collection('collaborate'); // Using specified collection
+      
+      const formData = req.body;
+      delete formData._id; // Remove any potential _id field
+      
+      await formCollection.insertOne(formData);
+  
+      if (pageName === 'index') {
+        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
+      } else {
+        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
+      }
+    }
+  catch(error){
+      console.error(error);
+      if(pageName === 'index'){
+        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('collab'));
+      }
+      else{
+        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('collab')); 
+      }
+  }
+});
+
+app.post('/submit-feedback-form', async (req, res) => {
+  // Process form data, save to MongoDB, send response
+  const pageName = req.body.pageName;
+  try{
+      const db = await connectToDb();
+      const formCollection = db.collection('feedback'); // Using specified collection
+      
+      const formData = req.body;
+      delete formData._id; // Remove any potential _id field
+      
+      await formCollection.insertOne(formData);
+  
+      if (pageName === 'index') {
+        res.redirect('/home?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
+      } else {
+        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
+      }
+    }
+  catch(error){
+      console.error(error);
+      if(pageName === 'index'){
+        res.redirect('/home?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback'));
+      }
+      else{
+        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback')); 
+      }
+  }
+});
+
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
