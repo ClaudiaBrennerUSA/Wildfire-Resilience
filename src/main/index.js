@@ -1,12 +1,12 @@
 const express = require('express');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const bodyParser = require('body-parser');
 const path = require('path');
 var mongodb = require('mongodb');
 const { connectToDb } = require('./db');
 
 const dotenv = require('dotenv');
-const { runInNewContext } = require('vm');
 dotenv.config();
 
 const app = express();
@@ -18,7 +18,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // equivalent to public files
 app.use(express.static('static_files'));
 
+const dbstore = new MongoStore({
+  mongoUrl: process.env.CONNECTION_URI,
+  collection: process.env.SESSION_COLLECTION
+});
+
 app.use(session({
+  cookie: { maxAge: 86400000 },
+  store: dbstore,
   secret: process.env.SESSION_KEY,
   resave: false,
   saveUninitialized: false,
@@ -195,7 +202,7 @@ app.post('/submit-support-form', async (req, res) => {
       if (pageName === 'index') {
         res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
       } else {
-        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
+        res.redirect(pageName+'?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('support'));
       }
     }
   catch(error){
@@ -204,7 +211,7 @@ app.post('/submit-support-form', async (req, res) => {
         res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('support'));
       }
       else{
-        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('support')); 
+        res.redirect(pageName+'?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('support')); 
       }
   }
 });
@@ -224,7 +231,7 @@ app.post('/submit-collab-form', async (req, res) => {
       if (pageName === 'index') {
         res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
       } else {
-        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
+        res.redirect(pageName+'?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('collab'));
       }
     }
   catch(error){
@@ -233,7 +240,7 @@ app.post('/submit-collab-form', async (req, res) => {
         res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('collab'));
       }
       else{
-        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('collab')); 
+        res.redirect(pageName+'?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('collab')); 
       }
   }
 });
@@ -253,7 +260,7 @@ app.post('/submit-feedback-form', async (req, res) => {
       if (pageName === 'index') {
         res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
       } else {
-        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
+        res.redirect(pageName+'?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
       }
     }
   catch(error){
@@ -262,7 +269,7 @@ app.post('/submit-feedback-form', async (req, res) => {
         res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback'));
       }
       else{
-        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback')); 
+        res.redirect(pageName+'?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback')); 
       }
   }
 });

@@ -127,7 +127,7 @@
     text-align: center;
     background-color: #fff;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-color: #121212;
     margin-bottom: 10px;
   }
   .welcome-container h3{
@@ -351,12 +351,16 @@
   .sub-card-box {
     /* width:  */
     margin: 10px;
-    background-color: #000000;
+    background-color: #121212;
     border-radius: 8px;
     border-color: #2f2e2e;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
     overflow: hidden;
     align-items: flex-start;
+  }
+  figcaption{
+    color: gray;
+    font-size: 0.7em;
   }
 
   .card-question {
@@ -508,7 +512,7 @@
     text-align: left;
     background-color: #fff;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-color: #121212;
     margin-bottom: 10px;
   }
   .about-welcome-container h3{
@@ -541,7 +545,7 @@
   .author-box{
     width: calc(50% - 20px);
     margin: 20px;
-    background-color: #000000;
+    background-color: #121212;
     border-radius: 8px;
     border-color: #2f2e2e;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
@@ -581,7 +585,7 @@
     text-align: left;
     background-color: #fff;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-color: #121212;
     margin: 10px;
     /* padding:10px; */
   }
@@ -728,6 +732,11 @@
     background: transparent;
     font-size: x-large;
     color: #FF6701;
+  }
+  
+  .embedded-btn {
+    border-radius: 30px;
+    padding: 0.2em 0.7em;
   }
 
   #footer-container{
@@ -1005,10 +1014,11 @@
     color: #FFAC0D;
   }
 
+
   .card-image {
     width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 4px;
   }
 
   .card-button {
@@ -1064,7 +1074,7 @@
     width: 100%;
     text-align: left;
     background-color: #fff;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-color: #121212;
   }
   .about-welcome-container h3{
     font-size: 1.4em;
@@ -1102,7 +1112,7 @@
   }
   .author-box{
     width: calc(90% - 5px);
-    background-color: #000000;
+    background-color: #121212;
     border-radius: 8px;
     border-color: #2f2e2e;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
@@ -1140,7 +1150,7 @@
     text-align: left;
     background-color: #fff;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-color: #121212;
     margin: 10px;
   }
   .author-collab,.web-team {
@@ -1169,10 +1179,15 @@
     color: #0d72ff;
   }
 
+  a:visited {
+    color: #589eff;;
+  } 
+
   .card-form{
     display: block;
     width: auto;
   }
+
 
   .footer {
     display: flex;
@@ -1456,7 +1471,7 @@
     width: 100%;
     text-align: left;
     background-color: #fff;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-color: #121212;
   }
   .about-welcome-container h3{
     font-size: 1.4em;
@@ -1494,7 +1509,7 @@
   }
   .author-box{
     width: 95%;
-    background-color: #000000;
+    background-color: #121212;
     border-radius: 8px;
     border-color: #2f2e2e;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.332);
@@ -1532,7 +1547,7 @@
     text-align: left;
     background-color: #fff;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.834);
+    background-color: #121212;
     margin: 10px;
   }
   .author-collab,.web-team {

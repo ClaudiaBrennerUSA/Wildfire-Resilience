@@ -69,11 +69,13 @@ document.addEventListener('DOMContentLoaded', function () {
   const navMenu = document.querySelector(".global-navbar");
 });
 
-function openFormPopup(type) {
+function openFormPopup(type,page) {
   const formPopup = document.getElementById('formPopup');
   formPopup.classList.add('show'); // Use classList to show the modal
   const modalBody = document.getElementById('form-body');
-
+  if(page == undefined){
+    page = "index";
+  }
   switch(type){
     case 'contact':
       document.getElementById("formTitle").innerHTML = "Contact Form";
@@ -83,7 +85,7 @@ function openFormPopup(type) {
       .then(html => {
         modalBody.innerHTML = html;
         const inputElement = modalBody.querySelector('input[name="pageName"]');
-        inputElement.value = "index"; 
+        inputElement.value = page; 
       });
       break;
     
@@ -95,7 +97,7 @@ function openFormPopup(type) {
         .then(html => {
           modalBody.innerHTML = html;
           const inputElement = modalBody.querySelector('input[name="pageName"]');
-          inputElement.value = "index"; 
+          inputElement.value = page; 
         });
       break;
 
@@ -107,7 +109,7 @@ function openFormPopup(type) {
         .then(html => {
           modalBody.innerHTML = html;
           const inputElement = modalBody.querySelector('input[name="pageName"]');
-          inputElement.value = "index"; 
+          inputElement.value = page; 
         });
         break;
       
@@ -119,7 +121,7 @@ function openFormPopup(type) {
         .then(html => {
           modalBody.innerHTML = html;
           const inputElement = modalBody.querySelector('input[name="pageName"]');
-          inputElement.value = "index"; 
+          inputElement.value = page; 
         });
 
         break;
@@ -131,7 +133,7 @@ function openFormPopup(type) {
         .then(html => {
           modalBody.innerHTML = html;
           const inputElement = modalBody.querySelector('input[name="pageName"]');
-          inputElement.value = "index"; 
+          inputElement.value = page; 
         });
 
         break;
