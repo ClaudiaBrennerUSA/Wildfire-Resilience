@@ -17,6 +17,10 @@
     border-bottom: 3px solid #197AFF;
   }
 
+  a:visited {
+    color: #589eff;;
+  }
+
   .images-column {
     grid-column: 1;
     display: flex;
