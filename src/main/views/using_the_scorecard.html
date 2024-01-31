@@ -15,17 +15,42 @@
   <body >
     <div id="header-row" name="header-row">
     </div>
-    <div id="scorecard-container" class="container-fluid">
+    <div id="scorecard-container" class="container">
       <h1>Using The Scorecard</h1>
-      <p>
-        The Scorecard can be downloaded (xxxx link). and contains three documents: instructions (xxx link), spreadsheet, and a pdf file.
-      </p>
-      <p>
-        Once you have downloaded the Scorecard, you can fill out the scorecard individually or, most likely, you will 
-        form a group to go through and complete the scorecard together. You can fill out questions that are relevant to 
-        you. We do encourage everyone to view the questions and have a holistic approach to address what else may be 
-        considered to achieve a safe, healthy and resilient community. View Frequently Asked Questions (link).
-      </p>
+      <dialog id="form-dialog">
+        <button autofocus style="float: right;">Close</button><br>
+        <p id="submit-status-message">Form Dialog</p>
+      </dialog>
+      <div class="modal fade" id="formPopup" tabindex="-1" role="dialog" data-backdrop="false">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="formTitle"></h4>
+              <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close" onclick="closeFormPopup()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="form-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"  onclick="closeFormPopup()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scorecard-content">
+        <p>
+          The Scorecard can be downloaded 
+          <button id="btn-link" data-toggle="modal" data-target="#formPopup" onclick="openFormPopup('download','using_the_scorecard')">here</button>
+          and contains three documents: instructions, spreadsheet, and a pdf file.
+        </p>
+        <p>
+          Once you have downloaded the Scorecard, you can fill out the scorecard individually or, most likely, you will 
+          form a group to go through and complete the scorecard together. You can fill out questions that are relevant to 
+          you. We do encourage everyone to view the questions and have a holistic approach to address what else may be 
+          considered to achieve a safe, healthy and resilient community. View Frequently Asked Questions (link).
+        </p>
+      </div>
       <div id="scorecardInfographic">
         <img src="assets/images/scorecardinfosvg1.svg">
       </div>
@@ -43,6 +68,39 @@
       generateStandardFooter();
       switchNavActive();
     };
+    const pageUrlParams = new URLSearchParams(window.location.search);
+      const formType = pageUrlParams.get('form');
+      const submitStatus = pageUrlParams.get('status');
+      const messageDialog = document.getElementById('form-dialog'); // Get dialog reference
+      if (submitStatus === "success") {
+        messageDialog.classList.add('success');
+        const pTag = messageDialog.querySelector('p'); 
+
+        switch(formType){
+          case 'download':
+            const downloadElement = document.createElement('a');
+            downloadElement.href = '/assets/content/CWPnCScorecard.zip';
+            downloadElement.download = 'CWPnCScorecard.zip';
+            downloadElement.click();
+
+            pTag.textContent = "Thank you for downloading! If you have any questions or need assistance, feel free to contact us";
+          break;
+        }
+        messageDialog.showModal(); 
+      }
+      else{
+        messageDialog.classList.add('error');
+        const pTag = messageDialog.querySelector('p'); 
+        // Set the value of the p tag's content
+        pTag.textContent = "Error submitting the form, please try again later."; 
+      }
+
+      messageDialog.addEventListener("click", (event) => { // Attach to dialog
+        if (event.target.matches('button')) { // Check if button clicked
+          messageDialog.close();
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+      });
   </script>
   </body>
 </html>

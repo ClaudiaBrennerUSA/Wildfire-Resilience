@@ -22,7 +22,7 @@ let generateHeader = (headerContainerElementId) =>
           <li><a href="/" id="home">Home</a></li>
           <li><a href="/using_the_scorecard" id="usescorecard">Using Scorecard</a></li>
           <li><a href="/press_release" id="press">Press Release</a></li>
-          <li><a href="/scorecard_info" id="scorecardinfo">Scorecard Info</a></li>
+          <li><a href="/scorecard_info" id="scorecardinfo">Participation</a></li>
           <li><a href="/faq" id="faq">FAQ</a></li>
           <li><a href="/about_us" id="about">About</a></li>
           <li><a href="/subscribe">Subscribe</a></li>
