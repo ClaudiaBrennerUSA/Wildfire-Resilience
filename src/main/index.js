@@ -173,7 +173,7 @@ app.post('/submit-download-form', async (req, res) => {
       if (pageName === 'index') {
         res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
       } else {
-        res.redirect('subscribe?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
+        res.redirect(pageName+'?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('download'));
       }
     }
   catch(error){
@@ -182,7 +182,7 @@ app.post('/submit-download-form', async (req, res) => {
         res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('download'));
       }
       else{
-        res.redirect('subscribe?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('download')); 
+        res.redirect(pageName+'?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('download')); 
       }
   }
 });

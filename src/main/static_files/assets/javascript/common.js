@@ -177,8 +177,8 @@ if (formStatus === "success") {
       break;
     case 'download':
       const downloadElement = document.createElement('a');
-      downloadElement.href = '/assets/content/CWPnCScorecard.zip';
-      downloadElement.download = 'CWPnCScorecard.zip';
+      downloadElement.href = '/assets/content/WildfireScorecard-CWPC-01-31-24v02.zip';
+      downloadElement.download = 'WildfireScorecard-CWPC-01-31-24v02.zip';
       downloadElement.click();
 
       pTag.textContent = "Thank you for downloading! If you have any questions or need assistance, feel free to contact us";
