@@ -173,7 +173,7 @@ if (formStatus === "success") {
     case 'subscribe':
       // Set the value of the p tag's content
       pTag.textContent = "Thank you for subscribing to the Catastrophic Wildfire Resilience Preventative!"
-      +" We're thrilled to have you join our community. Stay tuned for exciting updates on this journey";
+      +" We're thrilled to have you join our community. Stay tuned for exciting updates on this journey.";
       break;
     case 'download':
       const downloadElement = document.createElement('a');
@@ -181,7 +181,7 @@ if (formStatus === "success") {
       downloadElement.download = 'WildfireScorecard-CWPC-01-31-24v02.zip';
       downloadElement.click();
 
-      pTag.textContent = "Thank you for downloading! If you have any questions or need assistance, feel free to contact us";
+      pTag.textContent = "Thank you for downloading! If you have any questions or need assistance, feel free to contact us.";
       break;
     case 'support':
       pTag.textContent = "Thank you for becoming an essential part of the community!"

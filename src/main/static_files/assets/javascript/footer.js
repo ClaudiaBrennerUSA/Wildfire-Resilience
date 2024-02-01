@@ -8,7 +8,7 @@ function generateStandardFooter() {
       <img src="assets/images/arise.png" alt="arise" class="centered-image">
       </div>
    <div class="copyright">
-    &copy; 2023. All rights reserved.
+    &copy; 2024. All rights reserved.
   </div>
   </div>
 
