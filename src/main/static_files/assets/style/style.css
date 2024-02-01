@@ -141,15 +141,13 @@
   .welcome-crowdoing {
     grid-column: 1;
     color: #fff;
-    padding: 20px;
-    /* border-bottom: 2px solid #2980b9; */
+    padding-right: 20px;
   }
 
   .welcome-arise {
     grid-column: 2;
     color: #fff;
     padding: 20px;
-    /* border-bottom: 2px solid #2980b9; */
   }
 
   .banner-container {
@@ -385,6 +383,16 @@
     margin-left: 20px;
   }
 
+  .toggle-link:hover {
+    color: blue;
+    margin-left: 20px;
+  }
+
+  .toggle-link:visited {
+    color: #FF6701;
+    margin-left: 20px;
+  }
+
   .sub-card-text {
     padding-top: 4px;
     margin-left: 10px;
@@ -572,10 +580,11 @@
   .author-container {
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
   }
   .author-box{
     width: calc(50% - 20px);
-    margin: 20px;
+    margin:0px 20px 20px 0px ;
     background-color: #121212;
     border-radius: 8px;
     border-color: #2f2e2e;
@@ -617,8 +626,6 @@
     background-color: #fff;
     overflow: hidden;
     background-color: #121212;
-    margin: 10px;
-    /* padding:10px; */
   }
   .author-collab,.web-team {
     grid-column: 1;
@@ -1205,10 +1212,6 @@
   a .fab:hover{
     color: #0d72ff;
   }
-
-  a:visited {
-    color: #589eff;;
-  } 
 
   .card-form{
     display: block;
