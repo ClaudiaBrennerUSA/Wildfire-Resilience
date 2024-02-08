@@ -14,7 +14,7 @@ let generateHeader = (headerContainerElementId) =>
     </div>
     </a>
     <div class="content-column">
-      <button id="hamburger" aria-expanded="false" onclick="toggleHamburger()">
+      <button id="hamburger" aria-expanded="false" onclick="toggleHamburger()" title="main menu">
        <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
       <nav class="global-navbar">
