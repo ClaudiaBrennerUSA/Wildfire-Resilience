@@ -3,13 +3,16 @@
 
 <head>
   <!-- Required meta tags -->
+  <meta name="description" content="Discover the Wildfire Scorecard, a disaster risk reduction (DRR) tool crafted to 
+  enhance communities' capacity in evaluating, preparing for, handling, and recuperating from wildfire incidents. 
+  Modeled after UNDRR's Disaster Resilience Scorecard for Cities, it incorporates the Ten Essentials of Disaster Resilience">
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/style/style.css" />
   <script src="https://kit.fontawesome.com/e29cb68718.js" crossorigin="anonymous" async></script>
-  <title>Community Resilience Wildfire Scorecard</title>
+  <title>Community Wildfire Resilience Scorecard</title>
 </head>
 
 <body>
@@ -17,26 +20,27 @@
   <div id="header-row" name="header-row">
   </div>
   <div class="banner-container">
-    <img class="banner-image" src="/assets/images/Canada June 2023 wildfire - h_11.03339173.jpg" alt="Banner Image">
+    <img class="banner-image" src="/assets/images/Canada June 2023 wildfire - h_11.03339173.jpg" 
+    alt="Canda June 2023 wildfire, catastrophic forest disaster">
     <div class="banner-text-right">Canada Wildfires Burning <br> June 2023</div>
     <div class="banner-text-left">
       Community Wildfire Resilience Scorecard <br> Released for Piloting
     </div>
   </div>
   
-  <button id="hamburger2" aria-expanded="false" onclick="toggleAdvHamburger()">
+  <button id="hamburger2" onclick="toggleAdvHamburger()" title="In page menu" aria-label="Click to expand the menu for cards">
      <i class="fa-solid fa-bars" aria-hidden="true"></i> MENU
   </button>
   
   <div class="advanced-navbar">
-    <a href="#card1">Announcement</a>
-    <a href="#card2">Assess Risk</a>
-    <a href="#card3">Collaborate</a>
-    <a href="#card4">Details</a>
-    <a href="#card5">Support</a>
-    <a href="#card6">Feedback</a>
-    <a href="#card7">Contribute</a>
-    <a href="#card8">Subscribe</a>
+    <a href="#card1" aria-label="Link to navigate to Announcement card">Announcement</a>
+    <a href="#card2" aria-label="Link to navigate to Assess Risk card">Assess Risk</a>
+    <a href="#card3" aria-label="Link to navigate to Collaborate card">Collaborate</a>
+    <a href="#card4" aria-label="Link to navigate to Scorecard Details card">Details</a>
+    <a href="#card5" aria-label="Link to navigate to Support us card">Support</a>
+    <a href="#card6" aria-label="Link to navigate to give us Feedback card">Feedback</a>
+    <a href="#card7" aria-label="Link to navigate to Contribute card">Contribute</a>
+    <a href="#card8" aria-label="Link to navigate to Subscribe for Updates card">Subscribe</a>
     <!-- Add more links for each card -->
   </div>
   <dialog id="form-dialog">
@@ -75,16 +79,22 @@
           <p>In partnership with ARISE-US / CrowdDoing Catastrophic Wildfire Prevention & Consortium (CWPC), the Scorecard 
             has been published on the United Nations’ 
           Disaster Risk & Resilience (UNDRR), Prevention Web site:  
-          <a href="https://www.preventionweb.net/publication/wildfire-resilience-scorecard" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.preventionweb.net/publication/wildfire-resilience-scorecard" 
+          target="_blank" rel="noopener noreferrer" 
+          aria-label="Read more about wildfire resilience score published on United Nations Disaster Risk & resilience prevention website">
             ARISE-US Press Release</a> and ARISE Global Press Release.
          </p> 
          <p>
-          <a href="https://www.ariseglobalnetwork.org/news/igniting-resilience-wildfire-disaster-risk-reduction-scorecard" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.ariseglobalnetwork.org/news/igniting-resilience-wildfire-disaster-risk-reduction-scorecard" 
+          target="_blank" rel="noopener noreferrer" 
+          aria-label="Read more about wildfire disaster risk reduction scorecard">
             Igniting Resilience with the Wildfire Disaster Risk Reduction Scorecard | ARISE
           </a>
           </p>
           </div>
-           <img class= "card-image" src="assets/images/Community Wildfire Resilience Scorecard - Prevention Web - 2023-08-24_10-19-59.jpg">
+           <img class= "card-image" 
+           src="assets/images/Community Wildfire Resilience Scorecard - Prevention Web - 2023-08-24_10-19-59.jpg"
+           alt = "Community Wildfire Resilience Scorecard - Prevention Web UNDDR CrowdDoing">
         </div>
     </div>
   
@@ -93,33 +103,37 @@
       <div class="card-content">
         <div class="card-title"><h2 id="card2-title">Assess Wildfire Risk and Readiness in Your Area</h2></div>
         <div class="card-text">
-          <p>The ARISE-US/CrowdDoing CWP&C Community Wildfire Resilience Scorecard framework incorporates cutting-edge resilience principles and a diverse range of readiness factors.</p>
+          <p>The ARISE-US/CrowdDoing CWPC Community Wildfire Resilience Scorecard framework incorporates cutting-edge resilience principles and a diverse range of readiness factors.</p>
           <p>The scorecard prepares a community to develop a prioritized action plan to substantially reduce wildfire risks through integrated planning, mitigation and governance.</p>
         </div>
           <br>
-        <img class="card-image" src="assets/images/ScorecardE10wlogos.png"/>
+        <img class="card-image" src="assets/images/ScorecardE10wlogos.png" 
+        alt="Wildfire Risk & Resilience community scorecard ten essentials">
         <button class="card-button" id="card2-button" data-toggle="modal" data-target="#formPopup" onclick="openFormPopup('download')">Download the scorecard</button>
       </div>
       <div class="card-content">
         <div class="card-title">Need a zip file extraction tool?</div>
         <div class="card-btn-group">
           <div class="fa-icon">
-            <a href="https://www.7-zip.org/download.html" title="Windows">
+            <a href="https://www.7-zip.org/download.html" title="Windows" 
+            aria-label="Download button for zip file extraction tool for windows operating system">
               <i class="fa-brands fa-windows fa-xl" alt="Windows"></i>
             </a>
           </div>
           <div class="fa-icon">
-            <a href="https://www.7-zip.org/download.html" title="Mac">
+            <a href="https://www.7-zip.org/download.html" title="Mac" 
+            aria-label="Download button for zip file extraction tool for Mac operating system">
               <i class="fa-brands fa-apple  fa-xl" aria-hidden="true"></i>
             </a>
           </div>
           <div class="fa-icon">
-            <a href="https://www.7-zip.org/download.html" title="Linux">
+            <a href="https://www.7-zip.org/download.html" title="Linux" 
+            aria-label="Download button for zip file extraction tool for Linux operating system">
               <i class="fa-brands fa-linux fa-xl" style="color: #ffffff;"></i>
             </a>
           </div>
         </div>
-        <div class="card-text">Problems Downloading? <a href="#card4">Contact Us</a></div>
+        <div class="card-text">Problems Downloading? <a href="#card5" aria-label="Problems in Downloading? Contact us">Contact Us</a></div>
       </div>
     </div>
 
@@ -128,7 +142,8 @@
       <div class="card-content">
         <div class="card-title"><h2 id="card3-title">Collaborate With Us</h2></div>
         <figure>
-          <img class="card-image" src="assets/images/ALDERC_3.jpg"/ style="margin-bottom: 4px;">
+          <img class="card-image" src="assets/images/ALDERC_3.jpg" style="margin-bottom: 4px;"
+          alt="Aldercroft Heights locked gate wildfire mitigation evacuation">
           <figcaption>Successful community pilot gathering in Aldercroft Heights with partners from the FireWise Council, 
             CAL FIRE, Guidewire and CWPC. The team is strategizing options to overcome owner's locked gates to ensure safe 
             alternative emergency evacuation.</figcaption>
@@ -149,12 +164,12 @@
       <div class="card-content">
         <div class="card-title"><h2 id="card4-title">Scorecard Details</h2></div>
         <div class="card-image">
-          <img id="scorecard-image" src="assets/images/ScorecardDetails.png"/>
+          <img id="scorecard-image" src="assets/images/ScorecardDetails.png" alt="Scorecard Details, what, why, how and who">
         </div>
         <div class="sub-card-box" id="whatScorecard">
           <div class="card-question">
             <h5>What is the Scorecard?</h5>
-            <a href="#scorecard1" class="toggle-link"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
+            <a href="#scorecard1" class="toggle-link" aria-label="Read more about what is a scorecard"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
           </div>
           <div class="sub-card-text" id="scorecard1">
             <p>The Scorecard creates a baseline assessment of how a community is currently positioned through a set of questions that enables it to assess its wildfire resilience.</p>
@@ -164,7 +179,7 @@
         <div class="sub-card-box" id="whyScorecard">
           <div class="card-question">
             <h5>Why do you need the Scorecard?</h5>
-            <a href="#scorecard2" class="toggle-link"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
+            <a href="#scorecard2" class="toggle-link" aria-label="Read more about why do you need a scorecard?"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
           </div>
           <div class="sub-card-text" id="scorecard2">
             <p>The Scorecard is intended to provide multiple benefits such as reduction in the likelihood and/or severity
@@ -175,7 +190,7 @@
         <div class="sub-card-box" id="howScorecard">
           <div class="card-question">
             <h5>How do you use the Scorecard?</h5>
-            <a href="#scorecard3" class="toggle-link"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
+            <a href="#scorecard3" class="toggle-link" aria-label="Read more about how do you use a scorecard?"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
           </div>
           <div class="sub-card-text" id="scorecard3">
             <p>The Scorecard is designed to encourage holistic thinking about all the elements of wildfire hazard, exposure and vulnerability, at the property,  community and landscape scales.</p>
@@ -185,7 +200,7 @@
         <div class="sub-card-box" id="whoScorecard">
           <div class="card-question">
             <h5>Who is the Scorecard for?</h5>
-            <a href="#scorecard4" class="toggle-link"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
+            <a href="#scorecard4" class="toggle-link" aria-label="Read more about who is the scorecard for"><i class="fa-solid fa-circle-plus fa-lg"></i></a>  
           </div>
           <div class="sub-card-text" id="scorecard4">
             <p>Anyone in the community with direct or contingent responsibility for wildfire risk reduction through mitigation, adaptation, event response and post event recovery.</p>
@@ -206,7 +221,7 @@
         <form id="subscribeForm" method="POST" action="/submit-subscribe-form"> 
           <input type="hidden" name="pageName" id="" value="index">
         <div class="form-group">
-          <label for="firstName" aria-required="true">First Name *:</label>
+          <label for="firstName">First Name *:</label>
           <input type="text" id="firstName" name="firstName" required>
         </div>
         <div class="form-group">
@@ -250,7 +265,7 @@
           <h5>Need assistance with the scorecard?</h5>
           <p>Schedule a meeting with us, together we can assess the best ways to support you.
           We offer workshops, webinars, on-the ground pilots and more.</p>
-          <p>For more information please visit <a href="/faq"> Frequently Asked Questions (FAQs)</a> page.</p> 
+          <p>For more information please visit <a href="/faq" aria-label="Link to FAQs to learn more"> Frequently Asked Questions (FAQs)</a> page.</p> 
         </div>
       <button class="card-button" id="card5-button" data-toggle="modal" data-target="#formPopup" onclick="openFormPopup('contact')">Contact Us</button>
       </div>
@@ -261,7 +276,7 @@
         <div class="card-title"><h2 id="card7-title">Contribute to the Cause</h2></div>
         <div class="card-text">
          <p> We do invite reciprocity that can help us help future beneficiaries of this toolset by collaborating to improve it.</p>
-          <p>To improve communities wildfire resilience overall through scorecard enhancements and adoption, ARISE-US/CrowdDoing CWP&C invite corporations and institutions to support this effort with.
+          <p>To improve communities wildfire resilience overall through scorecard enhancements and adoption, ARISE-US/CrowdDoing CWPC invite corporations and institutions to support this effort with.
         </p>
         </div>
         <button class="card-button" id="card7-button" data-toggle="modal" data-target="#formPopup" onclick="openFormPopup('support')">Support Wildfire Prevention</button>
@@ -269,7 +284,7 @@
     </div>  
   </div>  
 
-  <button id="back-to-top"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></button>
+  <button id="back-to-top" aria-label="Link to go back to the top" title="back-to-top"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></button>
 
   <div id="footer-container"></div>
   

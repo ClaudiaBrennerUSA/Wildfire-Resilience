@@ -35,10 +35,10 @@ function generateStandardFooter() {
   <div class="footer-column">
     <h4>Follow Us</h4>
     <div class="social-icons">
-     <a href="https://www.linkedin.com/company/crowddoing/" target="_blank"><i class="fab fa-linkedin"></i></a>
-     <a href="https://www.facebook.com/profile.php?id=100066404896166" target="_blank"><i class="fab fa-facebook"></i></a>
-     <a href="https://www.youtube.com/@crowddoing" target="_blank"><i class="fab fa-youtube"></i></a>
-     <a href="#" target="_blank"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>
+     <a href="https://www.linkedin.com/company/crowddoing/" target="_blank" aria-label="Link to our LinkedIn page"><i class="fab fa-linkedin"></i></a>
+     <a href="https://www.facebook.com/profile.php?id=100066404896166" target="_blank" aria-label="Link to our Facebook page"><i class="fab fa-facebook"></i></a>
+     <a href="https://www.youtube.com/@crowddoing" target="_blank" aria-label="Link to our youtube page"><i class="fab fa-youtube"></i></a>
+     <a href="#" target="_blank" aria-label="Get link to share our website"><i class="fa-sharp fa-solid fa-share-nodes"></i></a>
      </div>
      <div class="footer-links">
       <ul>
