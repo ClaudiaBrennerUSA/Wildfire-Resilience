@@ -4,8 +4,9 @@ const MongoStore = require('connect-mongo');
 const bodyParser = require('body-parser');
 const path = require('path');
 var mongodb = require('mongodb');
+const multer = require('multer');
+const { Readable } = require('stream');
 const { connectToDb } = require('./db');
-
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -102,7 +103,7 @@ app.post('/submit-contact-form', async (req, res) => {
     const pageName = req.body.pageName;
     try{
         const db = await connectToDb();
-
+        
         const contactCollection = db.collection('contactUs'); // Using specified collection
         
         const formData = req.body;
@@ -245,14 +246,78 @@ app.post('/submit-collab-form', async (req, res) => {
   }
 });
 
-app.post('/submit-feedback-form', async (req, res) => {
+const upload = multer({
+  fileFilter: (req, file, cb) => {
+    // Validate file type based on extension and MIME type
+    const allowedExtensions = ['jpg', 'jpeg', 'png', 'pdf', 'doc', 'docx','svg','ppt','xlsx','xls'];
+    const allowedMimetypes = ['image/jpeg', 'image/png', 'application/pdf', 'image/svg+xml', 
+    'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/vnd.ms-powerpoint','application/vnd.ms-excel',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+
+    if (!allowedExtensions.includes(file.originalname.split('.').pop().toLowerCase())) {
+        return cb(new Error('Invalid file extension'));
+    }
+
+    if (!allowedMimetypes.includes(file.mimetype)) {
+        return cb(new Error('Invalid file mimetype'));
+    }
+    cb(null, true);
+  },
+  limits: {
+      fileSize: 20 * 1024 * 1024 // 20MB maximum
+  }
+});
+
+app.post('/submit-feedback-form', upload.array('files'),async (req, res) => {
   // Process form data, save to MongoDB, send response
   const pageName = req.body.pageName;
+  const uploadedFiles = req.files;
+  console.log(uploadedFiles)
+  
+  const db = await connectToDb();
   try{
-      const db = await connectToDb();
-      const formCollection = db.collection('feedback'); // Using specified collection
+    const bucket = new mongodb.GridFSBucket(db);
+    
       
-      const formData = req.body;
+      const formCollection = db.collection('feedback');
+
+      const fileIds = [];
+
+      // Upload files to GridFS
+      for (const file of uploadedFiles) {
+        console.log("in for");
+        let {fieldname, originalname, mimetype, buffer} = file
+        console.log("file infor")
+        console.log(fieldname)
+        console.log(originalname)
+        console.log(mimetype)
+        console.log(buffer)
+
+        let fileInfo = {
+          filename: originalname,
+          contentType: mimetype,
+          length: buffer.length,
+        }
+        let uploadStream = bucket.openUploadStream(fieldname);
+        let readBuffer = new Readable()
+        readBuffer.push(buffer)
+        readBuffer.push(null)
+
+        const isUploaded = await new Promise((resolve, reject)=> {
+          readBuffer.pipe(uploadStream)
+          .on('finish',resolve("Upload Successful."))
+          .on('error',reject("error occured while file upload"))
+        });
+      
+        fileIds.push(uploadStream.id);
+      }
+
+      console.log(fileIds)
+      
+      const formData ={
+        firstName: req.body.firstName,
+        fileIds: fileIds
+      }
       delete formData._id; // Remove any potential _id field
       
       await formCollection.insertOne(formData);
@@ -274,6 +339,27 @@ app.post('/submit-feedback-form', async (req, res) => {
   }
 });
 
+//download files (will be used later)
+// Route to download files from GridFS
+// app.get('/download/:fileId', async (req, res) => {
+//   const fileId = req.params.fileId;
+
+//   try {
+//       const gfsFile = await gfs.files.findOne({ _id: mongodb.ObjectId(fileId) });
+//       if (!gfsFile) {
+//           return res.status(404).send('File not found');
+//       }
+
+//       res.setHeader('Content-Type', gfsFile.contentType);
+//       res.setHeader('Content-Disposition', `attachment; filename="${gfsFile.filename}"`);
+
+//       const readStream = gfs.createReadStream(gfsFile._id);
+//       readStream.pipe(res);
+//   } catch (error) {
+//       console.error(error);
+//       res.status(500).send('Error downloading file');
+//   }
+// });
 
 // Start the server
 app.listen(port, () => {

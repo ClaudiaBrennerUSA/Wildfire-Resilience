@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <form id="feedbackForm" method="POST" action="/submit-feedback-form">
+    <form id="feedbackForm" method="POST" action="/submit-feedback-form" enctype="multipart/form-data">
       <input type="hidden" name="pageName" id="">
       <div class="form-group">
         <label for="firstName">First Name *:</label>
@@ -38,9 +38,19 @@
         <label for="message">Message:</label>
        <textarea id="message" name="message" cols="50"></textarea>
       </div>
+      <div class="form-group">
+        <label for="files">Upload Files (Images, PDFs, Docs, Max 20MB each):</label>
+        <input type="file" id="files" name="files" style="color: black;" 
+        multiple accept=".jpg,.jpeg,.png,.svg,.pdf,.doc,.docx,.xlsx,.xls,.ppt">
+      </div>
+      <div class="form-group">
+        <label for="links">Links:</label>
+       <textarea id="links" name="links" cols="50" placeholder="If the file is too large or the extension is not accepted,
+        please enter links to your files here."></textarea>
+      </div>
       
       <div class="form-group">
-        <input class="form-submit-button" type="submit" value="Submit feedback">
+        <input class="form-submit-button" type="submit" value="Submit Feedback">
       </div>
     </form>
     <script src="/assets/javascript/common.js"></script>

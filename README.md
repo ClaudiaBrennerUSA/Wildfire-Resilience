@@ -1,7 +1,7 @@
 # About 
 The website is dedicated to the Community Wildfire Resilience scorecard (published on the United Nations Prevention Web), designed to help communities enhance their ability to assess risk and prepare for, manage, and recover from wildfires. The website provides detailed information on a scorecard, why it is essential, and how to use it. 
 
-Moreover, it also highlights the partnership between Catastrophic Wildfire Prevention & Consortium (CWP&C), CrowdDoing, and ARISE-US. You can also find multiple ways to volunteer, contact, or subscribe on the website.
+Moreover, it also highlights the partnership between Catastrophic Wildfire Prevention Consortium (CWPC), CrowdDoing, and ARISE-US. You can also find multiple ways to volunteer, contact, or subscribe on the website.
 
 ## Installation
 

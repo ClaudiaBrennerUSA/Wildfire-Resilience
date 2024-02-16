@@ -199,11 +199,12 @@ if (formStatus === "success") {
   }
   formDialog.showModal(); 
 }
-else{
+else if (formStatus === "error"){
   formDialog.classList.add('error');
   const pTag = formDialog.querySelector('p'); 
   // Set the value of the p tag's content
-  pTag.textContent = "Error submitting the form, please try again later."; 
+  pTag.textContent = "Error submitting the form, please try again later. If error continues please contact us."; 
+  formDialog.showModal(); 
 }  
 
 
