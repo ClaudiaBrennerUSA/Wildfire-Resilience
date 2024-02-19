@@ -1,5 +1,4 @@
-let generateHeader = (headerContainerElementId) =>
-{
+let generateHeader = (headerContainerElementId) => {
   let headerContainer = document.getElementById(headerContainerElementId);
   let markup = `
   <header>
@@ -27,7 +26,7 @@ let generateHeader = (headerContainerElementId) =>
           <li><a href="/about_us" id="about">About</a></li>
           <li><a href="/subscribe">Subscribe</a></li>
           <li><a href="/contact_us">Contact</a></li>
-            <li>
+            <li style="display:none;">
             <div class="search-box">
               <input type="text" placeholder="Search">
               <button type="button">Search</button>
@@ -43,4 +42,4 @@ let generateHeader = (headerContainerElementId) =>
   </header>
   `;
   headerContainer.innerHTML = markup;
-}
+};
