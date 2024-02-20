@@ -54,5 +54,4 @@ function generateStandardFooter() {
   footer.innerHTML = footerMarkup;
 
   return;
-
 }
