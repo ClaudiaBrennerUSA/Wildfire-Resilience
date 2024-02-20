@@ -97,7 +97,6 @@ app.get('/feedbackform', (req,res) => {
   res.sendFile(formPath, {isPopup: true});
 });
 
-
 app.post('/submit-contact-form', async (req, res) => {
     // Process form data, save to MongoDB, send response
     const pageName = req.body.pageName;
@@ -277,65 +276,71 @@ app.post('/submit-feedback-form', upload.array('files'),async (req, res) => {
   const db = await connectToDb();
   try{
     const bucket = new mongodb.GridFSBucket(db);
+    const formCollection = db.collection('feedback');
+
+    const fileIds = [];
+
+    // Upload files to GridFS
+    for (const file of uploadedFiles) {
+      console.log("in for");
+      let {fieldname, originalname, mimetype, buffer} = file
+      console.log("file infor")
+      console.log(fieldname)
+      console.log(originalname)
+      console.log(mimetype)
+      console.log(buffer)
+
+      let fileInfo = {
+        filename: originalname,
+        contentType: mimetype,
+        length: buffer.length,
+      }
+      let uploadStream = bucket.openUploadStream(fieldname);
+      let readBuffer = new Readable()
+      readBuffer.push(buffer)
+      readBuffer.push(null)
+
+      const isUploaded = await new Promise((resolve, reject)=> {
+        readBuffer.pipe(uploadStream)
+        .on('finish',resolve("Upload Successful."))
+        .on('error',reject("error occured while file upload"))
+      });
     
-      
-      const formCollection = db.collection('feedback');
-
-      const fileIds = [];
-
-      // Upload files to GridFS
-      for (const file of uploadedFiles) {
-        console.log("in for");
-        let {fieldname, originalname, mimetype, buffer} = file
-        console.log("file infor")
-        console.log(fieldname)
-        console.log(originalname)
-        console.log(mimetype)
-        console.log(buffer)
-
-        let fileInfo = {
-          filename: originalname,
-          contentType: mimetype,
-          length: buffer.length,
-        }
-        let uploadStream = bucket.openUploadStream(fieldname);
-        let readBuffer = new Readable()
-        readBuffer.push(buffer)
-        readBuffer.push(null)
-
-        const isUploaded = await new Promise((resolve, reject)=> {
-          readBuffer.pipe(uploadStream)
-          .on('finish',resolve("Upload Successful."))
-          .on('error',reject("error occured while file upload"))
-        });
-      
-        fileIds.push(uploadStream.id);
-      }
-
-      console.log(fileIds)
-      
-      const formData ={
-        firstName: req.body.firstName,
-        fileIds: fileIds
-      }
-      delete formData._id; // Remove any potential _id field
-      
-      await formCollection.insertOne(formData);
-  
-      if (pageName === 'index') {
-        res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
-      } else {
-        res.redirect(pageName+'?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
-      }
+      fileIds.push(uploadStream.id);
     }
+
+    console.log(fileIds)
+    
+    const formData ={
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      organization: req.body.organization,
+      role: req.body.role,
+      zipCode: req.body.zipCode,
+      subscribe: req.body.subscribe,
+      message: req.body.message,
+      links: req.body.links,
+      fileIds: fileIds
+    }
+    delete formData._id; // Remove any potential _id field
+    
+    await formCollection.insertOne(formData);
+
+    if (pageName === 'index') {
+      res.redirect('/?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
+    } else {
+      res.redirect(pageName+'?status=' + encodeURIComponent('success') + '&form=' + encodeURIComponent('feedback'));
+    }
+  }
   catch(error){
-      console.error(error);
-      if(pageName === 'index'){
-        res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback'));
-      }
-      else{
-        res.redirect(pageName+'?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback')); 
-      }
+    console.error(error);
+    if(pageName === 'index'){
+      res.redirect('/?status=' + encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback'));
+    }
+    else{
+      res.redirect(pageName+'?status=' +encodeURIComponent('error') + '&form=' + encodeURIComponent('feedback')); 
+    }
   }
 });
 
