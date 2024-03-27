@@ -20,7 +20,7 @@ function switchNavActive(){
   const currentPage = window.location.href;
 
   // Get all the links in the navigation
-  const navLinks = document.querySelectorAll('nav a');
+  const navLinks = document.querySelectorAll('nav li a');
 
   // Loop through each link and check if it matches the current page URL
   navLinks.forEach(link => {
@@ -29,7 +29,7 @@ function switchNavActive(){
     }
     else if (link.id!='home' && currentPage.includes(link.getAttribute('href'))) {
       link.classList.add('active'); // Add a class to highlight the active link
-      document.querySelectorAll('nav a')[0].classList.remove('active');
+      document.querySelectorAll('nav li a')[0].classList.remove('active');
     }
   });
 }
