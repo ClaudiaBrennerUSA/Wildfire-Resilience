@@ -66,15 +66,11 @@
     display: none;
   }
 
-  #header-nav{
+  .global-navbar {
+    /* background-color: #333; */
     display: grid;
     grid-template-columns: 0.4fr 10fr;
     align-items: center;
-  }
-
-  .global-navbar {
-    /* background-color: #333; */
-    grid-column: 2;
   }
 
   .global-navbar ul {

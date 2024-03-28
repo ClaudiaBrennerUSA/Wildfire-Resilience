@@ -40,6 +40,7 @@ let generateHeader = (headerContainerElementId) => {
       </div>
     </div>
     </header>
+    </header>
   `;
   headerContainer.innerHTML = markup;
 };
