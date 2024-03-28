@@ -2,7 +2,6 @@ let generateHeader = (headerContainerElementId) => {
   let headerContainer = document.getElementById(headerContainerElementId);
   let markup = `
   <header>
-    
     <div id="header-nav">
       <div class="images-column">
         <a href="/">  <img src="assets/images/cd-logo.png" alt="CDlogo" class="top-left-image"> </a>
@@ -39,7 +38,6 @@ let generateHeader = (headerContainerElementId) => {
         </div>
       </div>
     </div>
-    </header>
     </header>
   `;
   headerContainer.innerHTML = markup;

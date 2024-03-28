@@ -66,11 +66,15 @@
     display: none;
   }
 
-  .global-navbar {
-    /* background-color: #333; */
+  #header-nav{
     display: grid;
     grid-template-columns: 0.4fr 10fr;
     align-items: center;
+  }
+
+  .global-navbar {
+    /* background-color: #333; */
+    grid-column: 2;
   }
 
   .global-navbar ul {
@@ -1855,5 +1859,4 @@
     margin-top: 1%;
     margin-bottom: 5%;
   }
-
 }
